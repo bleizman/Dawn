@@ -188,26 +188,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1lt-4C-2Vu">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1lt-4C-2Vu">
                                 <rect key="frame" x="337" y="128" width="51" height="31"/>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aG5-Np-kku">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aG5-Np-kku">
                                 <rect key="frame" x="337" y="201" width="51" height="31"/>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="News Headlines" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSo-JR-h56">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="News Headlines" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSo-JR-h56">
                                 <rect key="frame" x="140" y="133" width="124" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sports Headlines" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpq-Mb-FkY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Sports Headlines" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpq-Mb-FkY">
                                 <rect key="frame" x="140" y="206" width="132" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Dawn Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDW-Hf-Hxs">
-                                <rect key="frame" x="241" y="65" width="118" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Dawn Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDW-Hf-Hxs">
+                                <rect key="frame" x="241" y="55" width="118" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="118" id="6ar-Cl-o2O"/>
                                 </constraints>
@@ -226,6 +226,7 @@
                             <constraint firstItem="L8V-cT-p9b" firstAttribute="top" secondItem="Rpq-Mb-FkY" secondAttribute="bottom" constant="324" id="YJv-nx-yTU"/>
                             <constraint firstItem="UDW-Hf-Hxs" firstAttribute="centerX" secondItem="5rr-t0-2go" secondAttribute="centerX" id="ce9-xB-4hB"/>
                             <constraint firstItem="1lt-4C-2Vu" firstAttribute="leading" secondItem="aG5-Np-kku" secondAttribute="leading" id="h6h-UF-ZE2"/>
+                            <constraint firstItem="UDW-Hf-Hxs" firstAttribute="top" secondItem="eiY-VZ-Vne" secondAttribute="bottom" constant="35" id="tqD-90-QEa"/>
                             <constraint firstItem="1lt-4C-2Vu" firstAttribute="centerY" secondItem="gSo-JR-h56" secondAttribute="centerY" id="zQk-le-AxX"/>
                             <constraint firstItem="aG5-Np-kku" firstAttribute="leading" secondItem="Rpq-Mb-FkY" secondAttribute="trailing" constant="65" id="zf0-cT-geO"/>
                         </constraints>
@@ -234,7 +235,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GO7-ux-gXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="1004"/>
+            <point key="canvasLocation" x="727" y="1327"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="PqW-DM-hj5">
