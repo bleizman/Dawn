@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		477C79821AD6DD63009363C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../../../../.Trash/AppDelegate.h; sourceTree = "<group>"; };
+		477C79891AD749DF009363C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		477F84EC1AD21CC000B3F9C0 /* Dawn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dawn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		477F84F01AD21CC000B3F9C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		477F84F11AD21CC000B3F9C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		477F84EE1AD21CC000B3F9C0 /* Dawn */ = {
 			isa = PBXGroup;
 			children = (
-				477C79821AD6DD63009363C9 /* AppDelegate.h */,
+				477C79891AD749DF009363C9 /* AppDelegate.h */,
 				477F84F41AD21CC000B3F9C0 /* AppDelegate.m */,
 				477F84F61AD21CC000B3F9C0 /* FirstViewController.h */,
 				477F84F71AD21CC000B3F9C0 /* FirstViewController.m */,
