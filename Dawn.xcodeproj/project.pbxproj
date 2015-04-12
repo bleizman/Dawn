@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		477C79B11ADB34DB009363C9 /* DawnAlarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 477C79AE1ADB34DB009363C9 /* DawnAlarm.m */; };
+		477C79B21ADB34DB009363C9 /* DawnUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 477C79B01ADB34DB009363C9 /* DawnUser.m */; };
 		477F84F21AD21CC000B3F9C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F84F11AD21CC000B3F9C0 /* main.m */; };
 		477F84F51AD21CC000B3F9C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F84F41AD21CC000B3F9C0 /* AppDelegate.m */; };
 		477F84F81AD21CC000B3F9C0 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F84F71AD21CC000B3F9C0 /* FirstViewController.m */; };
@@ -29,6 +31,10 @@
 
 /* Begin PBXFileReference section */
 		477C79891AD749DF009363C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		477C79AD1ADB34DB009363C9 /* DawnAlarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DawnAlarm.h; sourceTree = "<group>"; };
+		477C79AE1ADB34DB009363C9 /* DawnAlarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DawnAlarm.m; sourceTree = "<group>"; };
+		477C79AF1ADB34DB009363C9 /* DawnUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DawnUser.h; sourceTree = "<group>"; };
+		477C79B01ADB34DB009363C9 /* DawnUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DawnUser.m; sourceTree = "<group>"; };
 		477F84EC1AD21CC000B3F9C0 /* Dawn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dawn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		477F84F01AD21CC000B3F9C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		477F84F11AD21CC000B3F9C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -84,6 +90,10 @@
 		477F84EE1AD21CC000B3F9C0 /* Dawn */ = {
 			isa = PBXGroup;
 			children = (
+				477C79AD1ADB34DB009363C9 /* DawnAlarm.h */,
+				477C79AE1ADB34DB009363C9 /* DawnAlarm.m */,
+				477C79AF1ADB34DB009363C9 /* DawnUser.h */,
+				477C79B01ADB34DB009363C9 /* DawnUser.m */,
 				477C79891AD749DF009363C9 /* AppDelegate.h */,
 				477F84F41AD21CC000B3F9C0 /* AppDelegate.m */,
 				477F84F61AD21CC000B3F9C0 /* FirstViewController.h */,
@@ -225,7 +235,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				477C79B21ADB34DB009363C9 /* DawnUser.m in Sources */,
 				477F84FB1AD21CC000B3F9C0 /* SecondViewController.m in Sources */,
+				477C79B11ADB34DB009363C9 /* DawnAlarm.m in Sources */,
 				477F84F51AD21CC000B3F9C0 /* AppDelegate.m in Sources */,
 				477F84F81AD21CC000B3F9C0 /* FirstViewController.m in Sources */,
 				477F84F21AD21CC000B3F9C0 /* main.m in Sources */,

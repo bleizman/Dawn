@@ -1,0 +1,50 @@
+//
+//  DawnAlarm.m
+//
+//  Created by DawnTeam on 4/12/15.
+//  Copyright (c) 2015 Dawnteam. All rights reserved.
+//
+//  A DawnAlarm has properties name, alarmtime, firstNote, preferences, and NextAlarm
+
+
+#import "DawnAlarm.h"
+
+@implementation DawnAlarm
+
+// initialize without any knowledge of alarm
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self = [self initWithName:@"Default Alarm" andDate:[NSDate date]];
+    }
+    return self;
+}
+
+// initialize with name and Date known
+- (id)initWithName:(NSString*) name andDate:(NSDate*) date
+{
+    self = [super init];
+    if (self) {
+        _name = name;
+        _alarmTime = date;
+        _preferences = @"NONE";
+        _firstNote = @"";
+    }
+    return self;
+}
+
+// Change the Note
+- (void) changeNote:(NSString*) Note
+{
+    _firstNote = Note;
+}
+
+// Set the value of the nextAlarm
+- (void) setNextAlarm:(DawnAlarm*) NewNextAlarm
+{
+    _nextAlarm = NewNextAlarm;
+}
+
+
+@end
