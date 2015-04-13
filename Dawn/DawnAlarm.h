@@ -15,7 +15,7 @@
 @property NSDate *alarmTime;
 @property NSString *firstNote;
 @property NSString *preferences;
-@property DawnAlarm *nextAlarm;
+@property (nonatomic) DawnAlarm *nextAlarm;
 
 - (id)initWithName:(NSString*) name andDate:(NSDate*) date;
 
