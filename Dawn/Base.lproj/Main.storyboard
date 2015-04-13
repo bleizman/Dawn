@@ -31,6 +31,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="449977745.93096101">
                                     <!--2015-04-06 01:49:05 +0000-->
                                 </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="449834401">
+                                    <!--2015-04-04 10:00:01 +0000-->
+                                </date>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarm Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Owt-n5-iWE">
                                 <rect key="frame" x="58" y="83" width="92" height="21"/>
@@ -38,7 +41,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nqy-Cc-t7M">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Alarm Label " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nqy-Cc-t7M">
                                 <rect key="frame" x="58" y="112" width="375" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -124,7 +127,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="liH-yN-tVh" firstAttribute="top" secondItem="PnE-R8-RHt" secondAttribute="bottom" constant="70" id="3Oe-LN-esL"/>
+                            <constraint firstItem="liH-yN-tVh" firstAttribute="top" secondItem="PnE-R8-RHt" secondAttribute="bottom" constant="21" id="3Oe-LN-esL"/>
                             <constraint firstItem="h64-5Q-RkW" firstAttribute="centerX" secondItem="Th9-lv-spN" secondAttribute="centerX" id="8pu-tR-wUs"/>
                             <constraint firstItem="h64-5Q-RkW" firstAttribute="centerX" secondItem="PnE-R8-RHt" secondAttribute="centerX" id="HDx-6T-FcE"/>
                             <constraint firstItem="h64-5Q-RkW" firstAttribute="top" secondItem="R4u-L1-Fb4" secondAttribute="bottom" constant="33" id="K3N-Xn-ySm"/>
@@ -188,9 +191,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1lt-4C-2Vu">
-                                <rect key="frame" x="337" y="128" width="51" height="31"/>
-                            </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aG5-Np-kku">
                                 <rect key="frame" x="337" y="201" width="51" height="31"/>
                             </switch>
@@ -215,6 +215,9 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1lt-4C-2Vu">
+                                <rect key="frame" x="337" y="128" width="51" height="31"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
