@@ -4,7 +4,7 @@
 //  Created by DawnTeam on 4/12/15.
 //  Copyright (c) 2015 Dawnteam. All rights reserved.
 //
-//  A DawnAlarm has properties name, alarmtime, firstNote, preferences, and NextAlarm
+//  A DawnAlarm has properties name, alarmtime, firstNote, preferences
 
 
 #import "DawnAlarm.h"
@@ -39,12 +39,5 @@
 {
     _firstNote = Note;
 }
-
-// Set the value of the nextAlarm
-- (void) setNextAlarm:(DawnAlarm*) NewNextAlarm
-{
-    _nextAlarm = NewNextAlarm;
-}
-
 
 @end

@@ -14,8 +14,9 @@
 @property NSString *name;
 @property int userNumber;
 @property NSString *preferences;
-@property (nonatomic) DawnAlarm *firstAlarm;
 
 - (void) addAlarm:(DawnAlarm*) newAlarm;
+
+- (void) deleteAlarm:(DawnAlarm*) deleteAlarm;
 
 @end

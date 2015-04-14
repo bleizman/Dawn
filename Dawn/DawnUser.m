@@ -34,10 +34,18 @@
 // Add a new Dawn alarm to the User's linked list of alarms
 - (void) addAlarm:(DawnAlarm*) newAlarm
 {
-    DawnAlarm *oldfirst = [self firstAlarm];
-    _firstAlarm = newAlarm;
-    [newAlarm setNextAlarm: oldfirst];
+    // code here to add an alarm to the pq
+    int i = 4;
+    i++;
 }
+
+- (void) deleteAlarm:(DawnAlarm*) deleteAlarm
+{
+    // code here to delete alarm from the pq
+    int i = 4;
+    i++;
+}
+
 
 
 @end
