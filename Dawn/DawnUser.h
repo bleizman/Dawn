@@ -9,14 +9,20 @@
 #import <Foundation/Foundation.h>
 #import "DawnAlarm.h"
 
-@interface DawnUser : NSObject
+@interface DawnUser : NSObject <NSCoding>
 
 @property NSString *name;
 @property int userNumber;
 @property NSString *preferences;
+@property NSMutableSet *myAlarms;
 
+// Initialize User with a Name
+- (id)initWithName:(NSString*) name;
+
+// Add a new Dawn alarm to the User's linked list of alarms
 - (void) addAlarm:(DawnAlarm*) newAlarm;
 
+// Delete an Alarm from the set
 - (void) deleteAlarm:(DawnAlarm*) deleteAlarm;
 
 @end
