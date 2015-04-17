@@ -11,12 +11,11 @@
 		477C79B21ADB34DB009363C9 /* DawnUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 477C79B01ADB34DB009363C9 /* DawnUser.m */; };
 		477F84F21AD21CC000B3F9C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F84F11AD21CC000B3F9C0 /* main.m */; };
 		477F84F51AD21CC000B3F9C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F84F41AD21CC000B3F9C0 /* AppDelegate.m */; };
-		477F84F81AD21CC000B3F9C0 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F84F71AD21CC000B3F9C0 /* FirstViewController.m */; };
-		477F84FB1AD21CC000B3F9C0 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F84FA1AD21CC000B3F9C0 /* SecondViewController.m */; };
 		477F84FE1AD21CC000B3F9C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 477F84FC1AD21CC000B3F9C0 /* Main.storyboard */; };
 		477F85001AD21CC000B3F9C0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 477F84FF1AD21CC000B3F9C0 /* Images.xcassets */; };
 		477F85031AD21CC000B3F9C0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 477F85011AD21CC000B3F9C0 /* LaunchScreen.xib */; };
 		477F850F1AD21CC000B3F9C0 /* DawnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F850E1AD21CC000B3F9C0 /* DawnTests.m */; };
+		95AC72991ADCAF8400639561 /* AdvancedSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC72981ADCAF8400639561 /* AdvancedSettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,16 +38,14 @@
 		477F84F01AD21CC000B3F9C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		477F84F11AD21CC000B3F9C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		477F84F41AD21CC000B3F9C0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		477F84F61AD21CC000B3F9C0 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		477F84F71AD21CC000B3F9C0 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		477F84F91AD21CC000B3F9C0 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		477F84FA1AD21CC000B3F9C0 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		477F84FD1AD21CC000B3F9C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		477F84FF1AD21CC000B3F9C0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		477F85021AD21CC000B3F9C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		477F85081AD21CC000B3F9C0 /* DawnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DawnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		477F850D1AD21CC000B3F9C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		477F850E1AD21CC000B3F9C0 /* DawnTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DawnTests.m; sourceTree = "<group>"; };
+		95AC72971ADCAF8400639561 /* AdvancedSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvancedSettingsViewController.h; sourceTree = "<group>"; };
+		95AC72981ADCAF8400639561 /* AdvancedSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvancedSettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,14 +93,12 @@
 				477C79B01ADB34DB009363C9 /* DawnUser.m */,
 				477C79891AD749DF009363C9 /* AppDelegate.h */,
 				477F84F41AD21CC000B3F9C0 /* AppDelegate.m */,
-				477F84F61AD21CC000B3F9C0 /* FirstViewController.h */,
-				477F84F71AD21CC000B3F9C0 /* FirstViewController.m */,
-				477F84F91AD21CC000B3F9C0 /* SecondViewController.h */,
-				477F84FA1AD21CC000B3F9C0 /* SecondViewController.m */,
 				477F84FC1AD21CC000B3F9C0 /* Main.storyboard */,
 				477F84FF1AD21CC000B3F9C0 /* Images.xcassets */,
 				477F85011AD21CC000B3F9C0 /* LaunchScreen.xib */,
 				477F84EF1AD21CC000B3F9C0 /* Supporting Files */,
+				95AC72971ADCAF8400639561 /* AdvancedSettingsViewController.h */,
+				95AC72981ADCAF8400639561 /* AdvancedSettingsViewController.m */,
 			);
 			path = Dawn;
 			sourceTree = "<group>";
@@ -236,10 +231,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				477C79B21ADB34DB009363C9 /* DawnUser.m in Sources */,
-				477F84FB1AD21CC000B3F9C0 /* SecondViewController.m in Sources */,
+				95AC72991ADCAF8400639561 /* AdvancedSettingsViewController.m in Sources */,
 				477C79B11ADB34DB009363C9 /* DawnAlarm.m in Sources */,
 				477F84F51AD21CC000B3F9C0 /* AppDelegate.m in Sources */,
-				477F84F81AD21CC000B3F9C0 /* FirstViewController.m in Sources */,
 				477F84F21AD21CC000B3F9C0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

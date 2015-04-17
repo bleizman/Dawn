@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface AdvancedViewController : UIViewController
 
+- (IBAction)unwindToList:(UIStoryboardSegue *)segue;
 
 @end
 
