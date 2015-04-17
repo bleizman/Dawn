@@ -7,6 +7,7 @@
 //
 
 #import "MyAlarmsTableViewController.h"
+#import "DawnAlarm.h"
 
 @interface MyAlarmsTableViewController ()
 
@@ -14,8 +15,21 @@
 
 @implementation MyAlarmsTableViewController
 
+- (void)loadInitialData {
+    DawnAlarm *alarm1 = [[DawnAlarm alloc] init];
+    alarm1.name = @"Test Alarm";
+    [self.myAlarms addObject:alarm1];
+    DawnAlarm *alarm2 = [[DawnAlarm alloc] init];
+    alarm2.name = @"Test Alarm 2: This is Working!";
+    [self.myAlarms addObject:alarm2];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.myAlarms = [[NSMutableArray alloc] init];
+    
+    [self loadInitialData];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -34,24 +48,26 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 //warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     //warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.myAlarms count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath];
+                             
+                             
+   DawnAlarm *alarmobj = [self.myAlarms objectAtIndex:indexPath.row];
+   cell.textLabel.text = alarmobj.name;
     return cell;
 }
-*/
+
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -59,7 +75,8 @@
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
+ */
+
 
 /*
 // Override to support editing the table view.
@@ -71,7 +88,8 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+ */
+
 
 /*
 // Override to support rearranging the table view.
@@ -85,7 +103,8 @@
     // Return NO if you do not want the item to be re-orderable.
     return YES;
 }
-*/
+ */
+
 
 /*
 #pragma mark - Navigation

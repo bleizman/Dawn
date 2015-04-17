@@ -89,12 +89,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="798" y="-1092"/>
+            <point key="canvasLocation" x="746" y="-840"/>
         </scene>
         <!--Advanced Settings View Controller-->
         <scene sceneID="5io-Bz-ePa">
             <objects>
-                <viewController id="5IU-op-eln" userLabel="Advanced Settings View Controller" customClass="AdvancedSettings1ViewController" sceneMemberID="viewController">
+                <viewController id="5IU-op-eln" userLabel="Advanced Settings View Controller" customClass="AdvancedSettings1ViewController" propertyAccessControl="all" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9wT-p5-Kek"/>
                         <viewControllerLayoutGuide type="bottom" id="AFl-L2-mhk"/>
@@ -234,41 +234,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="chT-dT-s7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="H6w-hg-jQq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1578" y="-812"/>
+            <point key="canvasLocation" x="1638" y="-772"/>
         </scene>
-        <!--My Alarms View Controller-->
-        <scene sceneID="wg7-f3-ORb">
+        <!--My Alarms Table View Controller-->
+        <scene sceneID="PVK-Ik-F9s">
             <objects>
-                <viewController id="8rJ-Kc-sve" userLabel="My Alarms View Controller" customClass="MyAlarmsTableViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
-                        <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                <tableViewController id="cPG-Vj-JiV" customClass="MyAlarmsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="nXv-99-vY9">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JRD-xa-ghe">
-                                <rect key="frame" x="0.0" y="49" width="600" height="510"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="510" id="ZDX-tx-HT0"/>
-                                </constraints>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="JRD-xa-ghe" secondAttribute="bottom" constant="41" id="0Fp-5L-j73"/>
-                            <constraint firstAttribute="trailing" secondItem="JRD-xa-ghe" secondAttribute="trailing" id="Shs-QX-uLk"/>
-                            <constraint firstItem="JRD-xa-ghe" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="m00-tf-8Ge"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="My Alarms" id="aZH-Te-mdE"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListPrototypeCell" id="NHa-0f-tFp">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NHa-0f-tFp" id="nOZ-iu-bbS">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cPG-Vj-JiV" id="cVu-OO-bsc"/>
+                            <outlet property="delegate" destination="cPG-Vj-JiV" id="g3a-o2-LME"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="cQ4-Yv-W6P"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HCM-0a-01Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1746" y="-16"/>
+            <point key="canvasLocation" x="1646" y="0.0"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="WdI-Ch-P39">
@@ -325,7 +318,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GO7-ux-gXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="784" y="841"/>
+            <point key="canvasLocation" x="746" y="857"/>
         </scene>
         <!--Login Page Controller-->
         <scene sceneID="PqW-DM-hj5">
@@ -381,13 +374,13 @@
                     </tabBar>
                     <connections>
                         <segue destination="4n5-QN-IGS" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="0IM-mg-aMn" kind="relationship" relationship="viewControllers" id="U7r-ct-01S"/>
-                        <segue destination="vqx-we-Prm" kind="relationship" relationship="viewControllers" id="3bw-So-dbT"/>
+                        <segue destination="0IM-mg-aMn" kind="relationship" relationship="viewControllers" id="wp2-KX-8dh"/>
+                        <segue destination="vqx-we-Prm" kind="relationship" relationship="viewControllers" id="5mh-lW-wxc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-280" y="0.0"/>
+            <point key="canvasLocation" x="-264" y="0.0"/>
         </scene>
         <!--Settings Navigation Controller-->
         <scene sceneID="cEp-ap-K24">
@@ -406,7 +399,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z8Y-CC-Uku" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-28" y="841"/>
+            <point key="canvasLocation" x="-264" y="857"/>
         </scene>
         <!--My Alarms Navigation Controller-->
         <scene sceneID="Dck-go-hbF">
@@ -420,12 +413,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="RdO-zp-Rvj"/>
+                        <segue destination="cPG-Vj-JiV" kind="relationship" relationship="rootViewController" id="mkg-6o-V7p"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Isc-BQ-Nj2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="934" y="-16"/>
+            <point key="canvasLocation" x="746" y="0.0"/>
         </scene>
         <!--New Alarm Navigation Controller-->
         <scene sceneID="vM6-8k-cS9">
@@ -444,7 +437,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UZm-5R-emB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-14" y="-1092"/>
+            <point key="canvasLocation" x="-264" y="-840"/>
         </scene>
     </scenes>
     <resources>

@@ -24,7 +24,7 @@
     //Test Interaction with Parse database
     PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
     testObject[@"foo"] = @"THIS WORKS!";
-    [testObject saveInBackground];
+    //[testObject saveInBackground];
     
     //Test Interaction with FB login
     FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
@@ -36,6 +36,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 /*
 #pragma mark - Navigation
