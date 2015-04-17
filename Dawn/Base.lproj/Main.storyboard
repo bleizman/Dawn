@@ -346,7 +346,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0K-9g-1sD">
-                                <rect key="frame" x="260" y="285" width="80" height="30"/>
+                                <rect key="frame" x="265" y="414" width="80" height="30"/>
                                 <state key="normal" title="Enter Dawn">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -359,8 +359,8 @@
                         <constraints>
                             <constraint firstItem="h8U-Gq-5sm" firstAttribute="top" secondItem="xGM-Wb-5bT" secondAttribute="bottom" constant="141" id="MEg-T9-Wbo"/>
                             <constraint firstItem="h8U-Gq-5sm" firstAttribute="centerX" secondItem="ubX-th-QM4" secondAttribute="centerX" id="Mqc-vL-kou"/>
-                            <constraint firstItem="P0K-9g-1sD" firstAttribute="centerY" secondItem="ubX-th-QM4" secondAttribute="centerY" id="nF8-ju-nHh"/>
-                            <constraint firstItem="h8U-Gq-5sm" firstAttribute="centerX" secondItem="P0K-9g-1sD" secondAttribute="centerX" id="rq8-HY-aBG"/>
+                            <constraint firstItem="P0K-9g-1sD" firstAttribute="centerY" secondItem="ubX-th-QM4" secondAttribute="centerY" constant="129" id="nF8-ju-nHh"/>
+                            <constraint firstItem="h8U-Gq-5sm" firstAttribute="centerX" secondItem="P0K-9g-1sD" secondAttribute="centerX" constant="-5" id="rq8-HY-aBG"/>
                         </constraints>
                     </view>
                 </viewController>
