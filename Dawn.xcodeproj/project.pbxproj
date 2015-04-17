@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		044EAA831ADCC231008AC28E /* DawnPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EAA821ADCC231008AC28E /* DawnPreferences.m */; };
 		477C79B11ADB34DB009363C9 /* DawnAlarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 477C79AE1ADB34DB009363C9 /* DawnAlarm.m */; };
 		477C79B21ADB34DB009363C9 /* DawnUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 477C79B01ADB34DB009363C9 /* DawnUser.m */; };
 		477F84F21AD21CC000B3F9C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F84F11AD21CC000B3F9C0 /* main.m */; };
@@ -31,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		044EAA811ADCC231008AC28E /* DawnPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DawnPreferences.h; sourceTree = "<group>"; };
+		044EAA821ADCC231008AC28E /* DawnPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DawnPreferences.m; sourceTree = "<group>"; };
 		477C79891AD749DF009363C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		477C79AD1ADB34DB009363C9 /* DawnAlarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DawnAlarm.h; sourceTree = "<group>"; };
 		477C79AE1ADB34DB009363C9 /* DawnAlarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DawnAlarm.m; sourceTree = "<group>"; };
@@ -244,6 +247,7 @@
 				95F710C01AE09A840045B4C2 /* NewAlarmViewController.m in Sources */,
 				95AC72991ADCAF8400639561 /* CreatedAlarmViewController.m in Sources */,
 				477C79B11ADB34DB009363C9 /* DawnAlarm.m in Sources */,
+				044EAA831ADCC231008AC28E /* DawnPreferences.m in Sources */,
 				477F84F51AD21CC000B3F9C0 /* AppDelegate.m in Sources */,
 				95F710C31AE09DEE0045B4C2 /* AdvancedSettings1ViewController.m in Sources */,
 				477F84F21AD21CC000B3F9C0 /* main.m in Sources */,
