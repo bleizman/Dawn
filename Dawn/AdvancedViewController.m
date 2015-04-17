@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Dawnteam. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "AdvancedViewController.h"
 
-@interface SecondViewController ()
+@interface AdvancedViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation AdvancedViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,6 +22,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)unwindToList:(UIStoryboardSegue *)segue {
+    
 }
 
 @end
