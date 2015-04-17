@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--New-->
+        <!--New Alarm View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" userLabel="New Alarm View Controller" customClass="NewAlarmViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -26,7 +26,7 @@
                                     <!--2015-04-04 10:00:01 +0000-->
                                 </date>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarm Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Owt-n5-iWE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Alarm Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Owt-n5-iWE">
                                 <rect key="frame" x="58" y="83" width="92" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -51,6 +51,9 @@
                                 <state key="normal" title="Create Alarm!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="duq-uj-rWe" kind="presentation" id="C5f-E9-FdR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNa-rs-mlU">
                                 <rect key="frame" x="235" y="425" width="130" height="30"/>
@@ -58,7 +61,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ZBu-bJ-MgZ" kind="presentation" id="Jeh-T8-SCp"/>
+                                    <segue destination="5IU-op-eln" kind="presentation" id="sc1-Gc-xUM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -79,46 +82,140 @@
                             <constraint firstItem="0bC-vm-szE" firstAttribute="centerX" secondItem="HPA-eJ-c0l" secondAttribute="centerX" id="zcV-Jk-vvP"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="New" image="first" id="acW-dT-cKf"/>
+                    <navigationItem key="navigationItem" title="New Alarm" id="Gvr-9O-g1V"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="566" y="-1192"/>
+            <point key="canvasLocation" x="798" y="-1092"/>
         </scene>
-        <!--Advanced Controller-->
-        <scene sceneID="8fr-7N-8yw">
+        <!--Advanced Settings View Controller-->
+        <scene sceneID="5io-Bz-ePa">
             <objects>
-                <viewController id="ZBu-bJ-MgZ" userLabel="Advanced Controller" sceneMemberID="viewController">
+                <viewController id="5IU-op-eln" userLabel="Advanced Settings View Controller" customClass="AdvancedSettings1ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="R4u-L1-Fb4"/>
-                        <viewControllerLayoutGuide type="bottom" id="liH-yN-tVh"/>
+                        <viewControllerLayoutGuide type="top" id="9wT-p5-Kek"/>
+                        <viewControllerLayoutGuide type="bottom" id="AFl-L2-mhk"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Th9-lv-spN">
+                    <view key="view" contentMode="scaleToFill" id="uR5-Ko-J43">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Advanced Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h64-5Q-RkW">
-                                <rect key="frame" x="228" y="53" width="145" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Advanced Alarm will go here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKm-is-ZJz">
+                                <rect key="frame" x="114" y="171" width="343" height="166"/>
+                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="27"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zuw-Pt-tbK">
+                                <rect key="frame" x="262" y="497" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="PCo-vS-tjz" kind="unwind" unwindAction="unwindToNewAlarm:" id="IxI-RG-dka"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="h64-5Q-RkW" firstAttribute="centerX" secondItem="Th9-lv-spN" secondAttribute="centerX" id="8pu-tR-wUs"/>
-                            <constraint firstItem="h64-5Q-RkW" firstAttribute="top" secondItem="R4u-L1-Fb4" secondAttribute="bottom" constant="33" id="K3N-Xn-ySm"/>
+                            <constraint firstItem="AKm-is-ZJz" firstAttribute="centerX" secondItem="Zuw-Pt-tbK" secondAttribute="centerX" id="lzP-pN-Ikd"/>
                         </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g2y-EJ-t88" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C8C-eY-nbX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="PCo-vS-tjz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-868" y="-972"/>
+            <point key="canvasLocation" x="1578" y="-1530"/>
         </scene>
-        <!--My Alarms-->
+        <!--Alarm Created View Controller-->
+        <scene sceneID="l1p-nr-W9V">
+            <objects>
+                <viewController id="duq-uj-rWe" userLabel="Alarm Created View Controller" customClass="CreatedAlarmViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JIF-HF-SPd"/>
+                        <viewControllerLayoutGuide type="bottom" id="JfH-Wg-G7a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rqN-PL-sOi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcr-SJ-sFy">
+                                <rect key="frame" x="104" y="56" width="393" height="89"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="You did it!!">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="41" name="ComicSansMS"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWa-FO-frR">
+                                <rect key="frame" x="104" y="153" width="393" height="89"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="You set an alarm for:">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="41" name="ComicSansMS"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEo-Fd-Ntp" userLabel="THIS TIME">
+                                <rect key="frame" x="104" y="321" width="393" height="89"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="THIS TIME!">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="61" name="ComicSansMS"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Ox-ja-tGz">
+                                <rect key="frame" x="277" y="448" width="46" height="30"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Done">
+                                            <attributes>
+                                                <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <segue destination="H6w-hg-jQq" kind="unwind" unwindAction="unwindToNewAlarm:" id="TrM-0z-BTC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sWa-FO-frR" firstAttribute="centerX" secondItem="fcr-SJ-sFy" secondAttribute="centerX" id="9H9-NK-uPG"/>
+                            <constraint firstItem="sWa-FO-frR" firstAttribute="top" secondItem="fcr-SJ-sFy" secondAttribute="bottom" id="9pW-ac-mBs"/>
+                            <constraint firstAttribute="centerX" secondItem="8Ox-ja-tGz" secondAttribute="centerX" id="JG6-Ma-JqO"/>
+                            <constraint firstAttribute="centerX" secondItem="fcr-SJ-sFy" secondAttribute="centerX" id="MxB-eh-tpU"/>
+                            <constraint firstAttribute="centerX" secondItem="sWa-FO-frR" secondAttribute="centerX" id="WKk-9o-cEy"/>
+                            <constraint firstItem="sWa-FO-frR" firstAttribute="centerX" secondItem="cEo-Fd-Ntp" secondAttribute="centerX" id="WkG-E7-HeP"/>
+                            <constraint firstAttribute="centerX" secondItem="cEo-Fd-Ntp" secondAttribute="centerX" id="oyG-rI-m7Q"/>
+                            <constraint firstItem="fcr-SJ-sFy" firstAttribute="top" secondItem="JIF-HF-SPd" secondAttribute="bottom" constant="36" id="tai-Ie-XqL"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="chT-dT-s7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="H6w-hg-jQq" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1578" y="-812"/>
+        </scene>
+        <!--My Alarms View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" userLabel="My Alarms View Controller" customClass="SecondViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -142,18 +239,17 @@
                             <constraint firstItem="JRD-xa-ghe" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="m00-tf-8Ge"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Alarms" image="second" selectedImage="second" id="6gX-dg-Gc1"/>
                     <navigationItem key="navigationItem" title="My Alarms" id="aZH-Te-mdE"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="910" y="12"/>
+            <point key="canvasLocation" x="1746" y="-16"/>
         </scene>
-        <!--Settings-->
+        <!--Settings View Controller-->
         <scene sceneID="WdI-Ch-P39">
             <objects>
-                <viewController id="lRV-1X-dtS" sceneMemberID="viewController">
+                <viewController id="lRV-1X-dtS" userLabel="Settings View Controller" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eiY-VZ-Vne"/>
                         <viewControllerLayoutGuide type="bottom" id="L8V-cT-p9b"/>
@@ -162,22 +258,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aG5-Np-kku">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aG5-Np-kku">
                                 <rect key="frame" x="337" y="201" width="51" height="31"/>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News Headlines" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSo-JR-h56">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="News Headlines" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSo-JR-h56">
                                 <rect key="frame" x="140" y="133" width="124" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sports Headlines" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpq-Mb-FkY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sports Headlines" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpq-Mb-FkY">
                                 <rect key="frame" x="140" y="206" width="132" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dawn Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDW-Hf-Hxs">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Dawn Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDW-Hf-Hxs">
                                 <rect key="frame" x="241" y="55" width="118" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="118" id="6ar-Cl-o2O"/>
@@ -186,7 +282,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1lt-4C-2Vu">
+                            <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1lt-4C-2Vu">
                                 <rect key="frame" x="337" y="128" width="51" height="31"/>
                             </switch>
                         </subviews>
@@ -205,11 +301,11 @@
                             <constraint firstItem="aG5-Np-kku" firstAttribute="leading" secondItem="Rpq-Mb-FkY" secondAttribute="trailing" constant="65" id="zf0-cT-geO"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="0uk-ST-MZ4"/>
+                    <navigationItem key="navigationItem" title="Settings" id="mWn-Wt-HFU" userLabel="Settings"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GO7-ux-gXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="1269"/>
+            <point key="canvasLocation" x="784" y="841"/>
         </scene>
         <!--Login Page Controller-->
         <scene sceneID="PqW-DM-hj5">
@@ -252,10 +348,10 @@
             </objects>
             <point key="canvasLocation" x="-724" y="0.0"/>
         </scene>
-        <!--Quick Alarm-->
+        <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" userLabel="Tab Bar Controller" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Quick Alarm" id="RR4-Xv-v71"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
@@ -264,14 +360,71 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="lRV-1X-dtS" kind="relationship" relationship="viewControllers" id="U7r-ct-01S"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="3bw-So-dbT"/>
+                        <segue destination="4n5-QN-IGS" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="0IM-mg-aMn" kind="relationship" relationship="viewControllers" id="U7r-ct-01S"/>
+                        <segue destination="vqx-we-Prm" kind="relationship" relationship="viewControllers" id="3bw-So-dbT"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-28" y="0.0"/>
+        </scene>
+        <!--Settings Navigation Controller-->
+        <scene sceneID="cEp-ap-K24">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0IM-mg-aMn" userLabel="Settings Navigation Controller" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" id="0uk-ST-MZ4"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="stU-eu-fe4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lRV-1X-dtS" kind="relationship" relationship="rootViewController" id="AH4-vC-TNy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z8Y-CC-Uku" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-28" y="841"/>
+        </scene>
+        <!--My Alarms Navigation Controller-->
+        <scene sceneID="Dck-go-hbF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vqx-we-Prm" userLabel="My Alarms Navigation Controller" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Alarms" image="second" selectedImage="second" id="6gX-dg-Gc1"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oKk-Tg-jPh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="RdO-zp-Rvj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Isc-BQ-Nj2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="934" y="-16"/>
+        </scene>
+        <!--New Alarm Navigation Controller-->
+        <scene sceneID="vM6-8k-cS9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4n5-QN-IGS" userLabel="New Alarm Navigation Controller" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="New" image="first" id="acW-dT-cKf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g9v-wV-eCn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="GGs-WJ-XIM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UZm-5R-emB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-14" y="-1092"/>
         </scene>
     </scenes>
     <resources>

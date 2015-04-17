@@ -15,7 +15,9 @@
 		477F85001AD21CC000B3F9C0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 477F84FF1AD21CC000B3F9C0 /* Images.xcassets */; };
 		477F85031AD21CC000B3F9C0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 477F85011AD21CC000B3F9C0 /* LaunchScreen.xib */; };
 		477F850F1AD21CC000B3F9C0 /* DawnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F850E1AD21CC000B3F9C0 /* DawnTests.m */; };
-		95AC72991ADCAF8400639561 /* AdvancedSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC72981ADCAF8400639561 /* AdvancedSettingsViewController.m */; };
+		95AC72991ADCAF8400639561 /* CreatedAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC72981ADCAF8400639561 /* CreatedAlarmViewController.m */; };
+		95F710C01AE09A840045B4C2 /* NewAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F710BF1AE09A840045B4C2 /* NewAlarmViewController.m */; };
+		95F710C31AE09DEE0045B4C2 /* AdvancedSettings1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F710C21AE09DEE0045B4C2 /* AdvancedSettings1ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +46,12 @@
 		477F85081AD21CC000B3F9C0 /* DawnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DawnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		477F850D1AD21CC000B3F9C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		477F850E1AD21CC000B3F9C0 /* DawnTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DawnTests.m; sourceTree = "<group>"; };
-		95AC72971ADCAF8400639561 /* AdvancedSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvancedSettingsViewController.h; sourceTree = "<group>"; };
-		95AC72981ADCAF8400639561 /* AdvancedSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvancedSettingsViewController.m; sourceTree = "<group>"; };
+		95AC72971ADCAF8400639561 /* CreatedAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatedAlarmViewController.h; sourceTree = "<group>"; };
+		95AC72981ADCAF8400639561 /* CreatedAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatedAlarmViewController.m; sourceTree = "<group>"; };
+		95F710BE1AE09A840045B4C2 /* NewAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAlarmViewController.h; sourceTree = "<group>"; };
+		95F710BF1AE09A840045B4C2 /* NewAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAlarmViewController.m; sourceTree = "<group>"; };
+		95F710C11AE09DEE0045B4C2 /* AdvancedSettings1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvancedSettings1ViewController.h; sourceTree = "<group>"; };
+		95F710C21AE09DEE0045B4C2 /* AdvancedSettings1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvancedSettings1ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,11 +100,15 @@
 				477C79891AD749DF009363C9 /* AppDelegate.h */,
 				477F84F41AD21CC000B3F9C0 /* AppDelegate.m */,
 				477F84FC1AD21CC000B3F9C0 /* Main.storyboard */,
+				95F710C11AE09DEE0045B4C2 /* AdvancedSettings1ViewController.h */,
+				95F710C21AE09DEE0045B4C2 /* AdvancedSettings1ViewController.m */,
 				477F84FF1AD21CC000B3F9C0 /* Images.xcassets */,
 				477F85011AD21CC000B3F9C0 /* LaunchScreen.xib */,
 				477F84EF1AD21CC000B3F9C0 /* Supporting Files */,
-				95AC72971ADCAF8400639561 /* AdvancedSettingsViewController.h */,
-				95AC72981ADCAF8400639561 /* AdvancedSettingsViewController.m */,
+				95F710BE1AE09A840045B4C2 /* NewAlarmViewController.h */,
+				95F710BF1AE09A840045B4C2 /* NewAlarmViewController.m */,
+				95AC72971ADCAF8400639561 /* CreatedAlarmViewController.h */,
+				95AC72981ADCAF8400639561 /* CreatedAlarmViewController.m */,
 			);
 			path = Dawn;
 			sourceTree = "<group>";
@@ -231,9 +241,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				477C79B21ADB34DB009363C9 /* DawnUser.m in Sources */,
-				95AC72991ADCAF8400639561 /* AdvancedSettingsViewController.m in Sources */,
+				95F710C01AE09A840045B4C2 /* NewAlarmViewController.m in Sources */,
+				95AC72991ADCAF8400639561 /* CreatedAlarmViewController.m in Sources */,
 				477C79B11ADB34DB009363C9 /* DawnAlarm.m in Sources */,
 				477F84F51AD21CC000B3F9C0 /* AppDelegate.m in Sources */,
+				95F710C31AE09DEE0045B4C2 /* AdvancedSettings1ViewController.m in Sources */,
 				477F84F21AD21CC000B3F9C0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
