@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6kb-sl-ymL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6kb-sl-ymL">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -27,19 +27,10 @@
                                 </date>
                             </datePicker>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Alarm Label " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nqy-Cc-t7M">
-                                <rect key="frame" x="58" y="128" width="375" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="CyQ-og-qL1"/>
-                                </constraints>
+                                <rect key="frame" x="58" y="128" width="485" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Date And Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbj-IN-6Sg">
-                                <rect key="frame" x="58" y="190" width="178" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bC-vm-szE">
                                 <rect key="frame" x="248" y="495" width="104" height="30"/>
                                 <constraints>
@@ -61,8 +52,14 @@
                                     <segue destination="5IU-op-eln" kind="presentation" id="sc1-Gc-xUM"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarm Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Owt-n5-iWE">
-                                <rect key="frame" x="58" y="108" width="92" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Alarm Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Owt-n5-iWE">
+                                <rect key="frame" x="254" y="99" width="92" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Date And Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbj-IN-6Sg">
+                                <rect key="frame" x="211" y="190" width="178" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -70,18 +67,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Owt-n5-iWE" firstAttribute="leading" secondItem="Nqy-Cc-t7M" secondAttribute="leading" id="2dU-EO-yAg"/>
                             <constraint firstItem="HPA-eJ-c0l" firstAttribute="top" secondItem="fbj-IN-6Sg" secondAttribute="bottom" constant="8" symbolic="YES" id="3dL-84-vIf"/>
                             <constraint firstItem="Owt-n5-iWE" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="44" id="5oi-CA-rb7"/>
                             <constraint firstItem="NNa-rs-mlU" firstAttribute="centerX" secondItem="0bC-vm-szE" secondAttribute="centerX" id="6IS-e4-YSe"/>
+                            <constraint firstItem="HPA-eJ-c0l" firstAttribute="width" secondItem="Nqy-Cc-t7M" secondAttribute="width" id="9X8-bl-TqH"/>
                             <constraint firstItem="HPA-eJ-c0l" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="42" id="HHe-Dw-O8w"/>
+                            <constraint firstAttribute="centerX" secondItem="fbj-IN-6Sg" secondAttribute="centerX" id="OEd-st-c18"/>
                             <constraint firstItem="fbj-IN-6Sg" firstAttribute="top" secondItem="Nqy-Cc-t7M" secondAttribute="bottom" constant="32" id="Tg2-Wp-Apd"/>
+                            <constraint firstAttribute="centerX" secondItem="Owt-n5-iWE" secondAttribute="centerX" id="UCJ-4C-Y1W"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="0bC-vm-szE" secondAttribute="bottom" constant="26" id="X0p-Km-URB"/>
                             <constraint firstItem="Nqy-Cc-t7M" firstAttribute="leading" secondItem="HPA-eJ-c0l" secondAttribute="leading" id="cGM-UO-RZY"/>
                             <constraint firstItem="HPA-eJ-c0l" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="eGo-5k-ddM"/>
-                            <constraint firstItem="Nqy-Cc-t7M" firstAttribute="leading" secondItem="fbj-IN-6Sg" secondAttribute="leading" id="f9n-d2-MzW"/>
                             <constraint firstItem="HPA-eJ-c0l" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="gYO-0E-d0F"/>
                             <constraint firstItem="0bC-vm-szE" firstAttribute="top" secondItem="NNa-rs-mlU" secondAttribute="bottom" constant="40" id="uqb-5f-L8L"/>
+                            <constraint firstItem="Nqy-Cc-t7M" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="42" id="wHz-Uz-D0u"/>
                             <constraint firstItem="0bC-vm-szE" firstAttribute="centerX" secondItem="HPA-eJ-c0l" secondAttribute="centerX" id="zcV-Jk-vvP"/>
                         </constraints>
                     </view>
@@ -239,7 +238,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="chT-dT-s7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="H6w-hg-jQq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1638" y="-772"/>
+            <point key="canvasLocation" x="1598" y="-784"/>
         </scene>
         <!--My Alarms Table View Controller-->
         <scene sceneID="PVK-Ik-F9s">
@@ -438,8 +437,9 @@
         <scene sceneID="Dck-go-hbF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vqx-we-Prm" userLabel="My Alarms Navigation Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Alarms" image="second" selectedImage="second" id="6gX-dg-Gc1"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="3W8-Pw-hga"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oKk-Tg-jPh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -475,7 +475,6 @@
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
     </resources>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
