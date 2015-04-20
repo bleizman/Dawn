@@ -11,8 +11,6 @@
 
 @interface MyAlarmsTableViewController ()
 
-@property NSMutableArray *myAlarms;
-
 @end
 
 @implementation MyAlarmsTableViewController
@@ -61,12 +59,14 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReusableAlarmCell" forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath];
+                             
+                             
+   DawnAlarm *alarmobj = [self.myAlarms objectAtIndex:indexPath.row];
+   cell.textLabel.text = alarmobj.name;
     return cell;
 }
+
 
 
 /*

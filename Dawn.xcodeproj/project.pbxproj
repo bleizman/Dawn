@@ -182,6 +182,8 @@
 				477C79AE1ADB34DB009363C9 /* DawnAlarm.m */,
 				477C79AF1ADB34DB009363C9 /* DawnUser.h */,
 				477C79B01ADB34DB009363C9 /* DawnUser.m */,
+				95F710D01AE0A3AF0045B4C2 /* DawnPreferences.h */,
+				95F710D11AE0A3AF0045B4C2 /* DawnPreferences.m */,
 				477C79891AD749DF009363C9 /* AppDelegate.h */,
 				477F84F41AD21CC000B3F9C0 /* AppDelegate.m */,
 				95F710C71AE0A0D90045B4C2 /* MyAlarmsTableViewController.h */,
@@ -190,8 +192,6 @@
 				95F710C51AE0A0A90045B4C2 /* SettingsViewController.m */,
 				95F710C11AE09DEE0045B4C2 /* AdvancedSettings1ViewController.h */,
 				95F710C21AE09DEE0045B4C2 /* AdvancedSettings1ViewController.m */,
-				95F710D01AE0A3AF0045B4C2 /* DawnPreferences.h */,
-				95F710D11AE0A3AF0045B4C2 /* DawnPreferences.m */,
 				477F84FF1AD21CC000B3F9C0 /* Images.xcassets */,
 				477F85011AD21CC000B3F9C0 /* LaunchScreen.xib */,
 				477F84EF1AD21CC000B3F9C0 /* Supporting Files */,
@@ -505,6 +505,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -521,6 +522,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
