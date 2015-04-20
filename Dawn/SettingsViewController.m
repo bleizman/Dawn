@@ -7,6 +7,7 @@
 //
 
 #import "SettingsViewController.h"
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface SettingsViewController ()
 
@@ -16,7 +17,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    // Initialize fb button
+    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+    [self.view addSubview:loginButton];
 }
 
 - (void)didReceiveMemoryWarning {

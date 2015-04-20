@@ -9,6 +9,9 @@
 #import "NewAlarmViewController.h"
 
 @interface NewAlarmViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *makeAlarmLabel;
+@property (weak, nonatomic) IBOutlet UIDatePicker *makeAlarmDate;
+@property (weak, nonatomic) IBOutlet UIButton *createNewAlarm;
 
 @end
 
