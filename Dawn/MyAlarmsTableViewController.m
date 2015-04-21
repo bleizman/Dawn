@@ -8,6 +8,7 @@
 
 #import "MyAlarmsTableViewController.h"
 #import "DawnAlarm.h"
+#import "DawnUser.h"
 
 @interface MyAlarmsTableViewController ()
 
@@ -15,25 +16,14 @@
 
 @implementation MyAlarmsTableViewController
 
-- (void)loadInitialData {
-    DawnAlarm *alarm1 = [[DawnAlarm alloc] init];
-    alarm1.name = @"Test Alarm";
-    [self.myAlarms addObject:alarm1];
-    DawnAlarm *alarm2 = [[DawnAlarm alloc] init];
-    alarm2.name = @"Test Alarm 2: This is Working!";
-    [self.myAlarms addObject:alarm2];
-    DawnAlarm *alarm3 = [[DawnAlarm alloc] init];
-    alarm3.name = @"I added another one to the list look!";
-    
-    // myAlarms = currentUser.myAlarms;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.myAlarms = [[NSMutableArray alloc] init];
     
-    [self loadInitialData];
+    self.myAlarms = currentUser.myAlarms;
+    
+    //[self loadInitialData];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

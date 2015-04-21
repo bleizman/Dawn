@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "DawnUser.h"
+
+DawnUser *currentUser;
 
 @interface LoginViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
+@property NSMutableArray *myAlarms;
 
 @end

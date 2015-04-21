@@ -11,7 +11,6 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <ParseUI/ParseUI.h>
-#import <ParseCrashReporting/ParseCrashReporting.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 
 @interface LoginViewController ()
@@ -20,8 +19,25 @@
 
 @implementation LoginViewController
 
+- (void)loadInitialData {
+    
+    //add three alarms to test system
+    DawnAlarm *alarm1 = [[DawnAlarm alloc] init];
+    alarm1.name = @"Test Alarm";
+    [self.myAlarms addObject:alarm1];
+    
+    DawnAlarm *alarm2 = [[DawnAlarm alloc] init];
+    alarm2.name = @"Test Alarm 2: This is Working!";
+    [self.myAlarms addObject:alarm2];
+    
+    DawnAlarm *alarm3 = [[DawnAlarm alloc] init];
+    alarm3.name = @"I added another one to the list look!";
+    [self.myAlarms addObject:alarm3];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
     if ([FBSDKAccessToken currentAccessToken]) {
         //code here
@@ -39,6 +55,22 @@
     FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
     [self.view addSubview:loginButton];
     
+    
+    // Test out a User
+    currentUser = [[DawnUser alloc] init];
+    
+    DawnAlarm *alarm1 = [[DawnAlarm alloc] init];
+    alarm1.name = @"Test Alarm";
+    
+    DawnAlarm *alarm2 = [[DawnAlarm alloc] init];
+    alarm2.name = @"Test Alarm 2: This is Working!";
+    
+    DawnAlarm *alarm3 = [[DawnAlarm alloc] init];
+    alarm3.name = @"The User works!";
+    
+    [currentUser addAlarm:alarm1];
+    [currentUser addAlarm:alarm2];
+    [currentUser addAlarm:alarm3];
 }
 
 - (void)didReceiveMemoryWarning {

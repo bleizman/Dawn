@@ -17,7 +17,7 @@
 @property NSMutableArray *myAlarms;
 
 // Initialize User with a Name
-- (id)initWithName:(NSString*) name;
+- (id)initWithName:(NSString*) name andEmail: (NSString*) email;
 
 // Add a new Dawn alarm to the User's linked list of alarms
 - (void) addAlarm:(DawnAlarm*) newAlarm;

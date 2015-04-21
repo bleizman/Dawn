@@ -8,6 +8,10 @@
 
 #import "NewAlarmViewController.h"
 
+#import "DawnUser.h"
+
+extern DawnUser *currentUser;
+
 @interface NewAlarmViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *makeAlarmLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *makeAlarmDate;

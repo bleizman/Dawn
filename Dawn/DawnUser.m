@@ -34,7 +34,7 @@
 {
     self = [super init];
     if (self) {
-        self = [self initWithName:@"Jack O'Brien"];
+        self = [self initWithName:@"Jack O'Brien" andEmail:@"fenwayob@gmail.com"];
     }
     return self;
     
@@ -42,12 +42,12 @@
 
 
 // Initialize User with a Name
-- (id)initWithName:(NSString*) name
+- (id)initWithName:(NSString*) name andEmail: (NSString*) email;
 {
     self = [super init];
     if (self) {
         _name = name;
-        _userEmail = @"fenwayob@gmail.com";
+        _userEmail = email;
         _preferences = @"NO PREFERENCES";
         _myAlarms = [[NSMutableArray alloc] init];
     }
