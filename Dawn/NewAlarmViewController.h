@@ -14,7 +14,9 @@ extern DawnUser *currentUser;
 extern UITableView *alarmTable;
 
 @interface NewAlarmViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UITextField *alarmLabel;
+@property (weak, nonatomic) IBOutlet UIDatePicker *alarmDatePicker;
+@property (weak, nonatomic) IBOutlet UIButton *createNewAlarm;
 - (IBAction)unwindToNewAlarm:(UIStoryboardSegue *)segue;
 
 @end

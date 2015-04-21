@@ -7,6 +7,7 @@
 //
 
 #import "CreatedAlarmViewController.h"
+#import "NewAlarmViewController.h"
 
 @interface CreatedAlarmViewController ()
 
@@ -26,6 +27,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    NewAlarmViewController *to = [segue destinationViewController];
+    to.alarmLabel.text = @"";
+    [to.alarmDatePicker setDate:[NSDate date] animated:YES];
     
     return;
 }

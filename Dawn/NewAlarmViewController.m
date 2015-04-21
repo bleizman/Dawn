@@ -13,10 +13,8 @@
 extern DawnUser *currentUser;
 
 @interface NewAlarmViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *alarmLabel;
-@property (weak, nonatomic) IBOutlet UIDatePicker *alarmDatePicker;
-@property (weak, nonatomic) IBOutlet UIButton *createNewAlarm;
 
+@property int defaultNumber;
 
 @end
 
@@ -25,6 +23,8 @@ extern DawnUser *currentUser;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _defaultNumber = 1;
+    NSLog(@"Default number is %d", _defaultNumber);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,19 +43,23 @@ extern DawnUser *currentUser;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    if (sender == self.createNewAlarm) {
+    if (sender == _createNewAlarm) {
         
         NSLog(@"Should be adding a new alarm here!");
         NSDate *selected = [_alarmDatePicker date];
         NSLog(@"The date is %@", selected);
         NSString *name = [_alarmLabel text];
+        if ([name isEqualToString:@""]) {
+            name = [NSString stringWithFormat: @"Default Alarm %d", _defaultNumber];
+            _defaultNumber++;
+        }
         NSLog(@"The name is %@", name);
         
         DawnAlarm *newAlarm =[[DawnAlarm alloc] init];
         newAlarm = [newAlarm initWithName:name andDate:selected];
         [currentUser.myAlarms addObject:newAlarm];
         
-        [alarmTable reloadData];
+        [alarmTable reloadData];        
         
     }
 }
