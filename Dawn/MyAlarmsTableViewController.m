@@ -12,6 +12,8 @@
 
 @interface MyAlarmsTableViewController ()
 
+@property (strong, nonatomic) IBOutlet UITableView *alarmsTable;
+
 @end
 
 @implementation MyAlarmsTableViewController
@@ -22,6 +24,8 @@
     self.myAlarms = [[NSMutableArray alloc] init];
     
     self.myAlarms = currentUser.myAlarms;
+    
+    alarmTable = _alarmsTable; //sets the global var to the viewTable
     
     //[self loadInitialData];
     
@@ -100,14 +104,13 @@
  */
 
 
-/*
-#pragma mark - Navigation
+/*#pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-}
-*/
+
+} */
 
 @end

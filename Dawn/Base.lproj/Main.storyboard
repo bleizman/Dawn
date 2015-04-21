@@ -241,7 +241,7 @@
             </objects>
             <point key="canvasLocation" x="1598" y="-784"/>
         </scene>
-        <!--My Alarms Table View Controller-->
+        <!--My Alarms-->
         <scene sceneID="PVK-Ik-F9s">
             <objects>
                 <tableViewController id="cPG-Vj-JiV" customClass="MyAlarmsTableViewController" sceneMemberID="viewController">
@@ -262,7 +262,10 @@
                             <outlet property="delegate" destination="cPG-Vj-JiV" id="g3a-o2-LME"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="cQ4-Yv-W6P"/>
+                    <navigationItem key="navigationItem" title="My Alarms" id="cQ4-Yv-W6P"/>
+                    <connections>
+                        <outlet property="alarmsTable" destination="nXv-99-vY9" id="tnI-qM-SoP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HCM-0a-01Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,6 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DawnUser.h"
+#import "MyAlarmsTableViewController.h"
+
+extern DawnUser *currentUser;
+extern UITableView *alarmTable;
 
 @interface NewAlarmViewController : UIViewController
 

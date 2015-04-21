@@ -7,7 +7,7 @@
 //
 
 #import "NewAlarmViewController.h"
-
+#import "MyAlarmsTableViewController.h"
 #import "DawnUser.h"
 
 extern DawnUser *currentUser;
@@ -43,12 +43,19 @@ extern DawnUser *currentUser;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    if (sender == _createNewAlarm) {
+    if (sender == self.createNewAlarm) {
         
+        NSLog(@"Should be adding a new alarm here!");
         NSDate *selected = [_alarmDatePicker date];
+        NSLog(@"The date is %@", selected);
         NSString *name = [_alarmLabel text];
+        NSLog(@"The name is %@", name);
+        
         DawnAlarm *newAlarm =[[DawnAlarm alloc] init];
         newAlarm = [newAlarm initWithName:name andDate:selected];
+        [currentUser.myAlarms addObject:newAlarm];
+        
+        [alarmTable reloadData];
         
     }
 }

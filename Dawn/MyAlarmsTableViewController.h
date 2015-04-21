@@ -10,6 +10,7 @@
 #import "DawnUser.h"
 
 extern DawnUser *currentUser;
+UITableView *alarmTable;
 
 @interface MyAlarmsTableViewController : UITableViewController
 
