@@ -18,7 +18,8 @@
 @property BOOL *newson;
 @property NSSet *newssites;
 
-- (id)initWithName:(NSString*) name;
+@property BOOL *sports;
 
+- (id)initWithName:(NSString*) name;
 
 @end

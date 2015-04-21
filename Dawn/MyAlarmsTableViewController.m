@@ -24,6 +24,8 @@
     [self.myAlarms addObject:alarm2];
     DawnAlarm *alarm3 = [[DawnAlarm alloc] init];
     alarm3.name = @"I added another one to the list look!";
+    
+    // myAlarms = currentUser.myAlarms;
 }
 
 - (void)viewDidLoad {

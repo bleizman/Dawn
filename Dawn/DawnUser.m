@@ -15,7 +15,7 @@
     [aCoder encodeObject:self.name forKey:@"uName"];
     [aCoder encodeObject:self.preferences forKey:@"uPreferences"];
     [aCoder encodeObject:self.myAlarms forKey:@"uAlarms"];
-    [aCoder encodeInteger:self.userNumber forKey:@"uNumber"];
+    [aCoder encodeObject:self.userEmail forKey:@"uEmail"];
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder
@@ -25,7 +25,7 @@
         _name = [aDecoder decodeObjectForKey:@"uName"];
         _preferences = [aDecoder decodeObjectForKey:@"uPreferences"];
         _myAlarms = [aDecoder decodeObjectForKey:@"uAlarms"];
-        _userNumber = (int)[aDecoder decodeIntegerForKey:@"uNumber"];
+        _userEmail = [aDecoder decodeObjectForKey:@"uEmail"];
     }
     return self;
 }
@@ -47,9 +47,9 @@
     self = [super init];
     if (self) {
         _name = name;
-        _userNumber = 101;
+        _userEmail = @"fenwayob@gmail.com";
         _preferences = @"NO PREFERENCES";
-        _myAlarms = [[NSMutableSet alloc] init];
+        _myAlarms = [[NSMutableArray alloc] init];
     }
     return self;
 }

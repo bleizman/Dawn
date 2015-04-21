@@ -23,6 +23,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    if ([FBSDKAccessToken currentAccessToken]) {
+        //code here
+        //[self performSegueWithIdentifier:@"MyAlarmsTableViewController" sender:self];
+        NSLog(@"Print facebook name and info");
+    }
     
     //Test Interaction with Parse database
     PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];

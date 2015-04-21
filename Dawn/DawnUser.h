@@ -12,9 +12,9 @@
 @interface DawnUser : NSObject <NSCoding>
 
 @property NSString *name;
-@property int userNumber;
+@property NSString *userEmail;
 @property NSString *preferences;
-@property NSMutableSet *myAlarms;
+@property NSMutableArray *myAlarms;
 
 // Initialize User with a Name
 - (id)initWithName:(NSString*) name;
