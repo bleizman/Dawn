@@ -14,6 +14,4 @@ DawnUser *currentUser;
 
 @interface LoginViewController : UIViewController
 
-@property NSMutableArray *myAlarms;
-
 @end

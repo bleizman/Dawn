@@ -19,10 +19,10 @@
 // Initialize User with a Name
 - (id)initWithName:(NSString*) name andEmail: (NSString*) email;
 
-// Add a new Dawn alarm to the User's linked list of alarms
+// Add a new Dawn alarm to the User's alarms
 - (void) addAlarm:(DawnAlarm*) newAlarm;
 
-// Delete an Alarm from the set
+// Delete an Alarm from the array
 - (void) deleteAlarm:(DawnAlarm*) deleteAlarm;
 
 @end

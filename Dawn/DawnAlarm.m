@@ -28,16 +28,10 @@
     if (self) {
         _name = name;
         _alarmTime = date;
-        _preferences = @"NONE";
-        _firstNote = @"";
+        _preferences = nil;
+        _Notes = @"";
     }
     return self;
-}
-
-// Change the Note
-- (void) changeNote:(NSString*) Note
-{
-    _firstNote = Note;
 }
 
 @end

@@ -194,11 +194,11 @@
 				95F710C21AE09DEE0045B4C2 /* AdvancedSettings1ViewController.m */,
 				477F84FF1AD21CC000B3F9C0 /* Images.xcassets */,
 				477F85011AD21CC000B3F9C0 /* LaunchScreen.xib */,
-				477F84EF1AD21CC000B3F9C0 /* Supporting Files */,
 				95F710BE1AE09A840045B4C2 /* NewAlarmViewController.h */,
 				95F710BF1AE09A840045B4C2 /* NewAlarmViewController.m */,
 				95AC72971ADCAF8400639561 /* CreatedAlarmViewController.h */,
 				95AC72981ADCAF8400639561 /* CreatedAlarmViewController.m */,
+				477F84EF1AD21CC000B3F9C0 /* Supporting Files */,
 			);
 			path = Dawn;
 			sourceTree = "<group>";
@@ -504,8 +504,6 @@
 		477F85131AD21CC000B3F9C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -521,8 +519,6 @@
 		477F85141AD21CC000B3F9C0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
