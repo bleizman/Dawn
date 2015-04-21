@@ -30,6 +30,7 @@
     return self;
 }
 
+// simple initialization
 - (id)init
 {
     self = [super init];
@@ -54,14 +55,13 @@
     return self;
 }
 
-// Add a new Dawn alarm to the User's linked list of alarms
+// Add a new Dawn alarm to the User's alarms
 - (void) addAlarm:(DawnAlarm*) newAlarm
 {
-    // code here to add an alarm to the set
     [_myAlarms addObject: newAlarm];
 }
 
-// Delete an Alarm from the set
+// Delete an Alarm from the array
 - (void) deleteAlarm:(DawnAlarm*) deleteThisAlarm
 {
     // code here to delete alarm from the set

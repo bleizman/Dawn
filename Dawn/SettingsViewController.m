@@ -20,8 +20,8 @@
     [super viewDidLoad];
     
     // Initialize fb button
-    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    [self.view addSubview:loginButton];
+    //FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+    //[self.view addSubview:loginButton];
     
     
 }

@@ -8,16 +8,15 @@
 //  A DawnAlarm has properties name, alarmtime, firstNote, preferences
 
 #import <Foundation/Foundation.h>
+#import "DawnPreferences.h"
 
 @interface DawnAlarm : NSObject
 
 @property NSString *name;
 @property NSDate *alarmTime;
-@property NSString *firstNote;
-@property NSString *preferences;
+@property NSString *Notes;
+@property DawnPreferences *preferences;
 
 - (id)initWithName:(NSString*) name andDate:(NSDate*) date;
-
-- (void) changeNote:(NSString*) Note;
 
 @end

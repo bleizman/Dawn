@@ -19,15 +19,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // [Optional] Power your app with Local Datastore. For more info, go to
-    // https://parse.com/docs/ios_guide#localdatastore/iOS
+    // enables easy local datastore
     [Parse enableLocalDatastore];
     
-    // Initialize Parse.
+    // Initialize Parse with our specific database
     [Parse setApplicationId:@"6UGj805WGY30A3VO32OieUY1XyP7JvMBhrR5hajm"
                   clientKey:@"CNwJsnl5xu5eDHOy6S0lZ9HPy3hqRQRKFo9R5Hmq"];
     
-    // Override point for customization after application launch.
+    // Pre-load work for FB login
     [FBSDKLoginButton class];
     [FBSDKProfile enableUpdatesOnAccessTokenChange:YES];
     
@@ -51,6 +50,8 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    // Necissary for FB interface
     [FBSDKAppEvents activateApp];
 }
 

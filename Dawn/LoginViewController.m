@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "MyAlarmsTableViewController.h"
 #import <Parse/Parse.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
@@ -16,6 +17,7 @@
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 
 @interface LoginViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *EnterDawn;
 
 @end
 
@@ -24,20 +26,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Do any additional setup after loading the view.
+    // Initialize fb button - UI is implemented on storyboard
     
-    //Test Interaction with Parse database
-    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    testObject[@"foo"] = @"THIS WORKS!";
-    //[testObject saveInBackground];
-    
-    
-    // Initialize fb button
-    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    [self.view addSubview:loginButton];
-    
-    
-    // Test out a User
+    // Test out a DawnUser (This is a global that can be accessed throughout program
     currentUser = [[DawnUser alloc] init];
     
     DawnAlarm *alarm1 = [[DawnAlarm alloc] init];
@@ -53,12 +44,23 @@
     [currentUser addAlarm:alarm2];
     [currentUser addAlarm:alarm3];
     
+    NSLog(@"User initialized!");
     
+    //test if user is signed in
     if ([FBSDKAccessToken currentAccessToken]) {
-        //code here
-        //code here to skip to next page
+        
+        //Test Parse Local Datastore
+        PFObject *PDawnUser = [PFObject objectWithClassName:@"DawnUser"];
+        PDawnUser[@"username"] = [FBSDKProfile currentProfile].userID;
+        [PDawnUser pinInBackground];
+        
+        //Test interaction with Facebook
         NSLog(@"User's Name is %@", [FBSDKProfile currentProfile].name);
+        NSLog(@"User's ID is %@", [FBSDKProfile currentProfile].userID);
         currentUser.name = [FBSDKProfile currentProfile].name;
+        
+        //Leave controller if signed in
+        [self performSegueWithIdentifier:@"EnterDawn" sender:self];
     }
 }
 
@@ -67,6 +69,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
+// Possibly useful code for later... -Jack
 /*
 - (void)_loginWithFacebook {
     // Set permissions required from the facebook user account
