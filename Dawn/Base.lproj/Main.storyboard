@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6kb-sl-ymL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6kb-sl-ymL">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -52,7 +52,7 @@
                                     <segue destination="5IU-op-eln" kind="presentation" id="sc1-Gc-xUM"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Alarm Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Owt-n5-iWE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarm Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Owt-n5-iWE">
                                 <rect key="frame" x="254" y="99" width="92" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -68,7 +68,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="HPA-eJ-c0l" firstAttribute="top" secondItem="fbj-IN-6Sg" secondAttribute="bottom" constant="8" symbolic="YES" id="3dL-84-vIf"/>
-                            <constraint firstItem="Owt-n5-iWE" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="44" id="5oi-CA-rb7"/>
+                            <constraint firstItem="Owt-n5-iWE" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="35" id="5oi-CA-rb7"/>
                             <constraint firstItem="NNa-rs-mlU" firstAttribute="centerX" secondItem="0bC-vm-szE" secondAttribute="centerX" id="6IS-e4-YSe"/>
                             <constraint firstItem="HPA-eJ-c0l" firstAttribute="width" secondItem="Nqy-Cc-t7M" secondAttribute="width" id="9X8-bl-TqH"/>
                             <constraint firstItem="HPA-eJ-c0l" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="42" id="HHe-Dw-O8w"/>
@@ -304,26 +304,26 @@
                                 <rect key="frame" x="276" y="209" width="51" height="31"/>
                             </switch>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8BQ-Zd-Gsm" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="164" y="395" width="272" height="67"/>
+                                <rect key="frame" x="98" y="393" width="404" height="67"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="L8V-cT-p9b" firstAttribute="top" secondItem="8BQ-Zd-Gsm" secondAttribute="bottom" constant="89" id="17R-ZY-eLi"/>
                             <constraint firstItem="UDW-Hf-Hxs" firstAttribute="top" secondItem="eiY-VZ-Vne" secondAttribute="bottom" constant="40" id="3rS-nj-nzX"/>
                             <constraint firstItem="L8V-cT-p9b" firstAttribute="top" secondItem="aG5-Np-kku" secondAttribute="bottom" constant="210" id="4Ig-Tp-8mf"/>
-                            <constraint firstItem="8BQ-Zd-Gsm" firstAttribute="centerX" secondItem="aG5-Np-kku" secondAttribute="centerX" id="Gc9-96-BiY"/>
                             <constraint firstItem="aG5-Np-kku" firstAttribute="centerX" secondItem="UDW-Hf-Hxs" secondAttribute="centerX" id="RLR-ae-Q78"/>
+                            <constraint firstItem="L8V-cT-p9b" firstAttribute="top" secondItem="8BQ-Zd-Gsm" secondAttribute="bottom" constant="91" id="RRd-5a-zhC"/>
                             <constraint firstItem="Rpq-Mb-FkY" firstAttribute="top" secondItem="9wy-KM-I4O" secondAttribute="bottom" constant="41" id="YsZ-Jw-eqZ"/>
-                            <constraint firstItem="8BQ-Zd-Gsm" firstAttribute="top" secondItem="aG5-Np-kku" secondAttribute="bottom" constant="54" id="Zat-HV-hKZ"/>
-                            <constraint firstItem="8BQ-Zd-Gsm" firstAttribute="leading" secondItem="5rr-t0-2go" secondAttribute="leading" constant="164" id="a8I-Dv-vbY"/>
                             <constraint firstItem="aG5-Np-kku" firstAttribute="centerX" secondItem="Rpq-Mb-FkY" secondAttribute="centerX" id="aq6-s7-nhb"/>
                             <constraint firstItem="aG5-Np-kku" firstAttribute="centerX" secondItem="5rr-t0-2go" secondAttribute="centerX" id="bOa-X5-eIL"/>
                             <constraint firstItem="aG5-Np-kku" firstAttribute="top" secondItem="Rpq-Mb-FkY" secondAttribute="bottom" constant="8" symbolic="YES" id="etT-dv-Noa"/>
                             <constraint firstItem="9wy-KM-I4O" firstAttribute="top" secondItem="gSo-JR-h56" secondAttribute="bottom" constant="8" symbolic="YES" id="gmd-ti-rpa"/>
                             <constraint firstItem="aG5-Np-kku" firstAttribute="centerX" secondItem="gSo-JR-h56" secondAttribute="centerX" id="keC-NG-t5F"/>
                             <constraint firstItem="9wy-KM-I4O" firstAttribute="leading" secondItem="aG5-Np-kku" secondAttribute="leading" id="lA5-IK-YDm"/>
+                            <constraint firstItem="8BQ-Zd-Gsm" firstAttribute="top" secondItem="aG5-Np-kku" secondAttribute="bottom" constant="52" id="nrM-qf-p5P"/>
+                            <constraint firstItem="8BQ-Zd-Gsm" firstAttribute="centerX" secondItem="aG5-Np-kku" secondAttribute="centerX" id="nsT-zf-CZj"/>
+                            <constraint firstItem="8BQ-Zd-Gsm" firstAttribute="leading" secondItem="5rr-t0-2go" secondAttribute="leadingMargin" constant="82" id="uFT-eX-GWI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="mWn-Wt-HFU" userLabel="Settings"/>
