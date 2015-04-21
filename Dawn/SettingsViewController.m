@@ -15,12 +15,15 @@
 
 @implementation SettingsViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     // Initialize fb button
     FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
     [self.view addSubview:loginButton];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

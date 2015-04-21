@@ -10,6 +10,8 @@
 #import <Parse/Parse.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
+#import <FBSDKCoreKit/FBSDKProfile.h>
 #import <ParseUI/ParseUI.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 
@@ -19,31 +21,10 @@
 
 @implementation LoginViewController
 
-- (void)loadInitialData {
-    
-    //add three alarms to test system
-    DawnAlarm *alarm1 = [[DawnAlarm alloc] init];
-    alarm1.name = @"Test Alarm";
-    [self.myAlarms addObject:alarm1];
-    
-    DawnAlarm *alarm2 = [[DawnAlarm alloc] init];
-    alarm2.name = @"Test Alarm 2: This is Working!";
-    [self.myAlarms addObject:alarm2];
-    
-    DawnAlarm *alarm3 = [[DawnAlarm alloc] init];
-    alarm3.name = @"I added another one to the list look!";
-    [self.myAlarms addObject:alarm3];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
-    if ([FBSDKAccessToken currentAccessToken]) {
-        //code here
-        //[self performSegueWithIdentifier:@"MyAlarmsTableViewController" sender:self];
-        NSLog(@"Print facebook name and info");
-    }
     
     //Test Interaction with Parse database
     PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
@@ -71,6 +52,14 @@
     [currentUser addAlarm:alarm1];
     [currentUser addAlarm:alarm2];
     [currentUser addAlarm:alarm3];
+    
+    
+    if ([FBSDKAccessToken currentAccessToken]) {
+        //code here
+        //code here to skip to next page
+        NSLog(@"User's Name is %@", [FBSDKProfile currentProfile].name);
+        currentUser.name = [FBSDKProfile currentProfile].name;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

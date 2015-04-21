@@ -34,7 +34,7 @@
 {
     self = [super init];
     if (self) {
-        self = [self initWithName:@"Jack O'Brien" andEmail:@"fenwayob@gmail.com"];
+        self = [self initWithName:@"Johnny Football" andEmail:@"lol@lol.com"];
     }
     return self;
     
