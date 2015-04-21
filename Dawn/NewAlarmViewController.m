@@ -13,9 +13,10 @@
 extern DawnUser *currentUser;
 
 @interface NewAlarmViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *makeAlarmLabel;
-@property (weak, nonatomic) IBOutlet UIDatePicker *makeAlarmDate;
+@property (weak, nonatomic) IBOutlet UITextField *alarmLabel;
+@property (weak, nonatomic) IBOutlet UIDatePicker *alarmDatePicker;
 @property (weak, nonatomic) IBOutlet UIButton *createNewAlarm;
+
 
 @end
 
@@ -35,14 +36,21 @@ extern DawnUser *currentUser;
     
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if (sender == _createNewAlarm) {
+        
+        NSDate *selected = [_alarmDatePicker date];
+        NSString *name = [_alarmLabel text];
+        DawnAlarm *newAlarm =[[DawnAlarm alloc] init];
+        newAlarm = [newAlarm initWithName:name andDate:selected];
+        
+    }
 }
-*/
 
 @end
