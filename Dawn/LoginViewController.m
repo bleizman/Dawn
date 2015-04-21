@@ -51,7 +51,7 @@
         
         //Test Parse Local Datastore
         PFObject *PDawnUser = [PFObject objectWithClassName:@"DawnUser"];
-        PDawnUser[@"username"] = [FBSDKProfile currentProfile].userID;
+        PDawnUser[@"userID"] = [FBSDKProfile currentProfile].userID;
         [PDawnUser pinInBackground];
         
         //Test interaction with Facebook
