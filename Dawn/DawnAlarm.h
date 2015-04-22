@@ -16,6 +16,8 @@
 @property NSDate *alarmTime;
 @property NSString *Notes;
 @property DawnPreferences *preferences;
+@property BOOL isOn;
+@property BOOL isNew;
 
 - (id)initWithName:(NSString*) name andDate:(NSDate*) date;
 

@@ -30,6 +30,8 @@
         _alarmTime = date;
         _preferences = nil;
         _Notes = @"";
+        _isOn = true;
+        _isNew = true;
     }
     return self;
 }

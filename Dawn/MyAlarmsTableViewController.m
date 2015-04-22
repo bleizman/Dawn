@@ -25,8 +25,6 @@
     
     self.myAlarms = currentUser.myAlarms;
     
-    alarmTable = _alarmsTable; //sets the global var to the viewTable
-    
     //[self loadInitialData];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -57,15 +55,39 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath];
-                             
-                             
-   DawnAlarm *alarmobj = [self.myAlarms objectAtIndex:indexPath.row];
-   cell.textLabel.text = alarmobj.name;
+    
+    alarmTable = tableView;
+    
+    DawnAlarm *alarmobj = [self.myAlarms objectAtIndex:indexPath.row];
+    
+    if (!alarmobj.isNew)
+        return cell;
+    
+    cell.textLabel.text = alarmobj.name;
+    
+    UISwitch *mySwitch = [[UISwitch alloc] init];
+    mySwitch.tag = indexPath.row;
+    if (alarmobj.isOn)
+        [mySwitch setOn:true];
+    cell.accessoryView = mySwitch;
+    
+    [mySwitch addTarget:self action:@selector(alarmSwitchChanged:) forControlEvents:UIControlEventValueChanged];
+    
+    alarmobj.isNew = false;
     return cell;
 }
 
-
+- (void) alarmSwitchChanged:(id)sender {
+    UISwitch *oldSwitch = sender;
+    DawnAlarm *alarm = [self.myAlarms objectAtIndex:oldSwitch.tag];
+    if (alarm.isOn)
+        alarm.isOn = false;
+    else alarm.isOn = true;
+    NSLog( @"Alarm being printed is of the name %@", alarm.name);
+    NSLog( @"The switch is now %@", alarm.isOn ? @"ON" : @"OFF" );
+}
 
 /*
 // Override to support conditional editing of the table view.

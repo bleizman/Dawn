@@ -59,7 +59,10 @@ extern DawnUser *currentUser;
         newAlarm = [newAlarm initWithName:name andDate:selected];
         [currentUser.myAlarms addObject:newAlarm];
         
-        [alarmTable reloadData];        
+        [alarmTable reloadData];
+        
+        _alarmLabel.text = @"";
+        [_alarmDatePicker setDate:[NSDate date] animated:YES];
         
     }
 }
