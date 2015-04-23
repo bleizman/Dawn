@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6kb-sl-ymL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6kb-sl-ymL">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -337,19 +339,30 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9wy-KM-I4O">
                                 <rect key="frame" x="276" y="209" width="51" height="31"/>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3f-Qv-4TK">
+                                <rect key="frame" x="214" y="436" width="173" height="30"/>
+                                <state key="normal" title="Peek GoodMorning Page">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="6eA-Z0-w0c" kind="show" id="SJk-JX-4hV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="UDW-Hf-Hxs" firstAttribute="top" secondItem="eiY-VZ-Vne" secondAttribute="bottom" constant="40" id="3rS-nj-nzX"/>
-                            <constraint firstItem="L8V-cT-p9b" firstAttribute="top" secondItem="aG5-Np-kku" secondAttribute="bottom" constant="210" id="4Ig-Tp-8mf"/>
-                            <constraint firstItem="aG5-Np-kku" firstAttribute="centerX" secondItem="UDW-Hf-Hxs" secondAttribute="centerX" id="RLR-ae-Q78"/>
+                            <constraint firstItem="f3f-Qv-4TK" firstAttribute="top" secondItem="aG5-Np-kku" secondAttribute="bottom" constant="95" id="0Xx-od-sfl"/>
+                            <constraint firstItem="UDW-Hf-Hxs" firstAttribute="centerX" secondItem="gSo-JR-h56" secondAttribute="centerX" id="7h6-wC-VLE"/>
+                            <constraint firstAttribute="bottom" secondItem="aG5-Np-kku" secondAttribute="bottom" constant="259" id="9vM-8H-yDz"/>
+                            <constraint firstItem="gSo-JR-h56" firstAttribute="top" secondItem="UDW-Hf-Hxs" secondAttribute="bottom" constant="55" id="Bt8-jh-CTE"/>
+                            <constraint firstItem="aG5-Np-kku" firstAttribute="leading" secondItem="9wy-KM-I4O" secondAttribute="leading" id="GFy-xQ-AnC"/>
+                            <constraint firstItem="aG5-Np-kku" firstAttribute="top" secondItem="Rpq-Mb-FkY" secondAttribute="bottom" constant="8" symbolic="YES" id="Hfo-CX-ahc"/>
+                            <constraint firstItem="aG5-Np-kku" firstAttribute="centerX" secondItem="f3f-Qv-4TK" secondAttribute="centerX" id="JF7-ue-jNj"/>
+                            <constraint firstItem="aG5-Np-kku" firstAttribute="centerX" secondItem="Rpq-Mb-FkY" secondAttribute="centerX" id="KUt-ed-cPc"/>
                             <constraint firstItem="Rpq-Mb-FkY" firstAttribute="top" secondItem="9wy-KM-I4O" secondAttribute="bottom" constant="41" id="YsZ-Jw-eqZ"/>
-                            <constraint firstItem="aG5-Np-kku" firstAttribute="centerX" secondItem="Rpq-Mb-FkY" secondAttribute="centerX" id="aq6-s7-nhb"/>
-                            <constraint firstItem="aG5-Np-kku" firstAttribute="centerX" secondItem="5rr-t0-2go" secondAttribute="centerX" id="bOa-X5-eIL"/>
-                            <constraint firstItem="aG5-Np-kku" firstAttribute="top" secondItem="Rpq-Mb-FkY" secondAttribute="bottom" constant="8" symbolic="YES" id="etT-dv-Noa"/>
+                            <constraint firstItem="aG5-Np-kku" firstAttribute="centerX" secondItem="5rr-t0-2go" secondAttribute="centerX" id="gc9-Ne-6mF"/>
                             <constraint firstItem="9wy-KM-I4O" firstAttribute="top" secondItem="gSo-JR-h56" secondAttribute="bottom" constant="8" symbolic="YES" id="gmd-ti-rpa"/>
-                            <constraint firstItem="aG5-Np-kku" firstAttribute="centerX" secondItem="gSo-JR-h56" secondAttribute="centerX" id="keC-NG-t5F"/>
-                            <constraint firstItem="9wy-KM-I4O" firstAttribute="leading" secondItem="aG5-Np-kku" secondAttribute="leading" id="lA5-IK-YDm"/>
+                            <constraint firstItem="aG5-Np-kku" firstAttribute="centerX" secondItem="gSo-JR-h56" secondAttribute="centerX" id="vdb-nW-E98"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="mWn-Wt-HFU" userLabel="Settings"/>
@@ -415,12 +428,81 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="EnterDawn" destination="P0K-9g-1sD" id="4on-gt-gI9"/>
+                        <outlet property="EnterDawn" destination="P0K-9g-1sD" id="b5t-jg-0Ny"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Of0-sV-ZdO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1097" y="0.0"/>
+        </scene>
+        <!--Good Morning View Controller-->
+        <scene sceneID="zM2-mh-q0A">
+            <objects>
+                <viewController id="6eA-Z0-w0c" customClass="GoodMorningViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Ye-ft-5ML"/>
+                        <viewControllerLayoutGuide type="bottom" id="aXn-rM-v2u"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ga4-eo-U7k">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the Good Morning Screen!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jA9-Bs-s4g">
+                                <rect key="frame" x="149" y="74" width="303" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="303" id="1WG-um-ByW"/>
+                                    <constraint firstAttribute="height" constant="71" id="8eo-Ei-0yP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When the alarm goes off, load this screen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSO-GZ-5jP">
+                                <rect key="frame" x="163" y="127" width="274" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="274" id="bJv-qM-LTc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Display the text here MyNotes: Weather: News: Sports:  Go start the day!" translatesAutoresizingMaskIntoConstraints="NO" id="6dK-BC-iFg">
+                                <rect key="frame" x="149" y="182" width="288" height="259"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="259" id="zSm-Oo-R37"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bS-jU-YKC">
+                                <rect key="frame" x="243" y="516" width="114" height="30"/>
+                                <state key="normal" title="Back to Settings">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="lRV-1X-dtS" kind="show" id="K3N-TV-lOo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6dK-BC-iFg" firstAttribute="top" secondItem="Ga4-eo-U7k" secondAttribute="top" constant="182" id="1p4-ad-xPe"/>
+                            <constraint firstItem="aXn-rM-v2u" firstAttribute="top" secondItem="6bS-jU-YKC" secondAttribute="bottom" constant="5" id="HWB-rs-tLW"/>
+                            <constraint firstItem="jA9-Bs-s4g" firstAttribute="top" secondItem="2Ye-ft-5ML" secondAttribute="bottom" constant="10" id="RXs-1l-BcI"/>
+                            <constraint firstItem="jA9-Bs-s4g" firstAttribute="centerX" secondItem="Ga4-eo-U7k" secondAttribute="centerX" id="Wqd-4d-lwt"/>
+                            <constraint firstItem="6dK-BC-iFg" firstAttribute="top" secondItem="eSO-GZ-5jP" secondAttribute="bottom" constant="34" id="hIv-St-4Xq"/>
+                            <constraint firstItem="eSO-GZ-5jP" firstAttribute="firstBaseline" secondItem="jA9-Bs-s4g" secondAttribute="baseline" id="iVi-jW-qID"/>
+                            <constraint firstItem="eSO-GZ-5jP" firstAttribute="centerX" secondItem="jA9-Bs-s4g" secondAttribute="centerX" id="kex-0R-mFA"/>
+                            <constraint firstItem="6bS-jU-YKC" firstAttribute="centerX" secondItem="eSO-GZ-5jP" secondAttribute="centerX" id="puH-OO-Red"/>
+                            <constraint firstItem="6dK-BC-iFg" firstAttribute="leading" secondItem="jA9-Bs-s4g" secondAttribute="leading" id="sqe-p7-6Iz"/>
+                            <constraint firstItem="6dK-BC-iFg" firstAttribute="trailing" secondItem="eSO-GZ-5jP" secondAttribute="trailing" id="tjA-uM-rhF"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bf0-vM-7vc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1097" y="869"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -447,7 +529,7 @@
         <scene sceneID="cEp-ap-K24">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0IM-mg-aMn" userLabel="Settings Navigation Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="0uk-ST-MZ4"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="spanner-7.png" id="0uk-ST-MZ4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="stU-eu-fe4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -466,7 +548,7 @@
         <scene sceneID="Dck-go-hbF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vqx-we-Prm" userLabel="My Alarms Navigation Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Alarms" id="3W8-Pw-hga"/>
+                    <tabBarItem key="tabBarItem" title="My Alarms" image="clock-alarm-7.png" id="3W8-Pw-hga"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oKk-Tg-jPh">
@@ -486,7 +568,7 @@
         <scene sceneID="vM6-8k-cS9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4n5-QN-IGS" userLabel="New Alarm Navigation Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="New Alarm" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="New Alarm" image="plus-simple-7.png" selectedImage="first" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="g9v-wV-eCn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -503,7 +585,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="clock-alarm-7.png" width="30" height="30"/>
         <image name="first" width="30" height="30"/>
+        <image name="plus-simple-7.png" width="30" height="30"/>
+        <image name="spanner-7.png" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="K3N-TV-lOo"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

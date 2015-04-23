@@ -35,10 +35,10 @@
     alarm1.name = @"Test Alarm";
     
     DawnAlarm *alarm2 = [[DawnAlarm alloc] init];
-    alarm2.name = @"Test Alarm 2: This is Working!";
+    alarm2.name = @"Test Alarm 2";
     
     DawnAlarm *alarm3 = [[DawnAlarm alloc] init];
-    alarm3.name = @"The User works!";
+    alarm3.name = @"The User class works!";
     
     [currentUser addAlarm:alarm1];
     [currentUser addAlarm:alarm2];
@@ -60,7 +60,7 @@
         currentUser.name = [FBSDKProfile currentProfile].name;
         
         //Leave controller if signed in
-        [self performSegueWithIdentifier:@"EnterDawn" sender:self];
+        [self.EnterDawn sendActionsForControlEvents:UIControlEventTouchDown];
     }
 }
 
