@@ -17,11 +17,22 @@
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 
 @interface LoginViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *WelcomeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *EnterDawn;
 
 @end
 
 @implementation LoginViewController
+
+- (void)loadView {
+    [super loadView];
+    if ([FBSDKAccessToken currentAccessToken]) {
+        
+        NSString *welcome = @"Welcome back to Dawn, ";
+        welcome = [welcome stringByAppendingString:[FBSDKProfile currentProfile].firstName];
+        self.WelcomeLabel.text = welcome;
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

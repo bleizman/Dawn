@@ -2,8 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6kb-sl-ymL">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -383,10 +381,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Dawn!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8U-Gq-5sm">
-                                <rect key="frame" x="153" y="108" width="294" height="67"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Dawn!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8U-Gq-5sm">
+                                <rect key="frame" x="153" y="108" width="294" height="166"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="67" id="PGd-5n-JMN"/>
+                                    <constraint firstAttribute="height" constant="166" id="PGd-5n-JMN"/>
                                     <constraint firstAttribute="width" constant="294" id="Yie-am-9Oh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
@@ -412,6 +410,11 @@
                                 <rect key="frame" x="175" y="362" width="251" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bp-hi-br1">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -429,6 +432,7 @@
                     </view>
                     <connections>
                         <outlet property="EnterDawn" destination="P0K-9g-1sD" id="b5t-jg-0Ny"/>
+                        <outlet property="WelcomeLabel" destination="h8U-Gq-5sm" id="PzW-pS-YfT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Of0-sV-ZdO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -448,35 +452,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the Good Morning Screen!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jA9-Bs-s4g">
-                                <rect key="frame" x="149" y="74" width="303" height="71"/>
+                                <rect key="frame" x="149" y="35" width="303" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="303" id="1WG-um-ByW"/>
-                                    <constraint firstAttribute="height" constant="71" id="8eo-Ei-0yP"/>
+                                    <constraint firstAttribute="height" constant="32" id="8eo-Ei-0yP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When the alarm goes off, load this screen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSO-GZ-5jP">
-                                <rect key="frame" x="163" y="127" width="274" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="274" id="bJv-qM-LTc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Display the text here MyNotes: Weather: News: Sports:  Go start the day!" translatesAutoresizingMaskIntoConstraints="NO" id="6dK-BC-iFg">
-                                <rect key="frame" x="149" y="182" width="288" height="259"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="259" id="zSm-Oo-R37"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bS-jU-YKC">
-                                <rect key="frame" x="243" y="516" width="114" height="30"/>
+                                <rect key="frame" x="243" y="536" width="114" height="30"/>
                                 <state key="normal" title="Back to Settings">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -484,21 +470,31 @@
                                     <segue destination="lRV-1X-dtS" kind="show" id="K3N-TV-lOo"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" text="Display the text here MyNotes: Weather: News: Sports:  Go start the day!" translatesAutoresizingMaskIntoConstraints="NO" id="6dK-BC-iFg">
+                                <rect key="frame" x="149" y="114" width="288" height="394"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="2D0-zY-tj9"/>
+                                    <constraint firstAttribute="height" constant="394" id="zSm-Oo-R37"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6dK-BC-iFg" firstAttribute="top" secondItem="Ga4-eo-U7k" secondAttribute="top" constant="182" id="1p4-ad-xPe"/>
-                            <constraint firstItem="aXn-rM-v2u" firstAttribute="top" secondItem="6bS-jU-YKC" secondAttribute="bottom" constant="5" id="HWB-rs-tLW"/>
-                            <constraint firstItem="jA9-Bs-s4g" firstAttribute="top" secondItem="2Ye-ft-5ML" secondAttribute="bottom" constant="10" id="RXs-1l-BcI"/>
+                            <constraint firstItem="6dK-BC-iFg" firstAttribute="top" secondItem="Ga4-eo-U7k" secondAttribute="top" constant="114" id="1p4-ad-xPe"/>
+                            <constraint firstItem="aXn-rM-v2u" firstAttribute="top" secondItem="6bS-jU-YKC" secondAttribute="bottom" constant="34" id="HWB-rs-tLW"/>
+                            <constraint firstItem="6bS-jU-YKC" firstAttribute="centerX" secondItem="jA9-Bs-s4g" secondAttribute="centerX" id="JJe-CK-wzS"/>
+                            <constraint firstItem="jA9-Bs-s4g" firstAttribute="top" secondItem="2Ye-ft-5ML" secondAttribute="bottom" constant="15" id="RXs-1l-BcI"/>
                             <constraint firstItem="jA9-Bs-s4g" firstAttribute="centerX" secondItem="Ga4-eo-U7k" secondAttribute="centerX" id="Wqd-4d-lwt"/>
-                            <constraint firstItem="6dK-BC-iFg" firstAttribute="top" secondItem="eSO-GZ-5jP" secondAttribute="bottom" constant="34" id="hIv-St-4Xq"/>
-                            <constraint firstItem="eSO-GZ-5jP" firstAttribute="firstBaseline" secondItem="jA9-Bs-s4g" secondAttribute="baseline" id="iVi-jW-qID"/>
-                            <constraint firstItem="eSO-GZ-5jP" firstAttribute="centerX" secondItem="jA9-Bs-s4g" secondAttribute="centerX" id="kex-0R-mFA"/>
-                            <constraint firstItem="6bS-jU-YKC" firstAttribute="centerX" secondItem="eSO-GZ-5jP" secondAttribute="centerX" id="puH-OO-Red"/>
                             <constraint firstItem="6dK-BC-iFg" firstAttribute="leading" secondItem="jA9-Bs-s4g" secondAttribute="leading" id="sqe-p7-6Iz"/>
-                            <constraint firstItem="6dK-BC-iFg" firstAttribute="trailing" secondItem="eSO-GZ-5jP" secondAttribute="trailing" id="tjA-uM-rhF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="GoodMorningText" destination="6dK-BC-iFg" id="Juk-oP-o0h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bf0-vM-7vc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

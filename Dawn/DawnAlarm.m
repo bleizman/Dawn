@@ -29,7 +29,7 @@
         _name = name;
         _alarmTime = date;
         _preferences = nil;
-        _Notes = @"";
+        _notes = @"";
         _isOn = true;
         _isNew = true;
     }

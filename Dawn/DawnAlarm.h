@@ -14,7 +14,7 @@
 
 @property NSString *name;
 @property NSDate *alarmTime;
-@property NSString *Notes;
+@property NSString *notes;
 @property DawnPreferences *preferences;
 @property BOOL isOn;
 @property BOOL isNew;

@@ -13,7 +13,7 @@
 
 @property NSString *name;
 @property NSString *userEmail;
-@property NSString *preferences;
+@property DawnPreferences *preferences;
 @property NSMutableArray *myAlarms;
 
 // Initialize User with a Name
