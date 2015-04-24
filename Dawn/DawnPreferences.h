@@ -11,15 +11,14 @@
 @interface DawnPreferences : NSObject
 
 @property NSString *name;
-
-@property BOOL *weatheron;
-@property NSInteger *zipcode;
-
-@property BOOL *newson;
+@property BOOL *weather;
+@property BOOL *nyTimesNews;
+@property BOOL *redditNews;
+@property BOOL *sportsNews;
+@property BOOL *scores;
 @property NSSet *newssites;
 
-@property BOOL *sportson;
-
 - (id)initWithName:(NSString*) name;
+- (DawnPreferences*)setDefault: (DawnPreferences*) prefs;
 
 @end

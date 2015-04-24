@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6kb-sl-ymL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6kb-sl-ymL">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -206,8 +206,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Ox-ja-tGz">
                                 <rect key="frame" x="277" y="448" width="46" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="HoJ-ay-JPd"/>
-                                    <constraint firstAttribute="width" constant="46" id="ITw-hW-SXK"/>
+                                    <constraint firstAttribute="width" constant="46" id="YfZ-N1-3a4"/>
+                                    <constraint firstAttribute="height" constant="30" id="vwz-He-T6h"/>
                                 </constraints>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
@@ -252,18 +252,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cEo-Fd-Ntp" firstAttribute="leading" secondItem="sWa-FO-frR" secondAttribute="leading" id="51I-tK-sfD"/>
+                            <constraint firstItem="8Ox-ja-tGz" firstAttribute="top" secondItem="cEo-Fd-Ntp" secondAttribute="bottom" constant="78" id="7FB-lA-Srn"/>
                             <constraint firstItem="fcr-SJ-sFy" firstAttribute="trailing" secondItem="sWa-FO-frR" secondAttribute="trailing" id="AT6-qv-eUU"/>
-                            <constraint firstItem="JfH-Wg-G7a" firstAttribute="top" secondItem="8Ox-ja-tGz" secondAttribute="bottom" constant="122" id="C0u-uf-7R7"/>
                             <constraint firstItem="sWa-FO-frR" firstAttribute="top" secondItem="fcr-SJ-sFy" secondAttribute="bottom" constant="44" id="Duj-0A-oEs"/>
-                            <constraint firstItem="8Ox-ja-tGz" firstAttribute="centerX" secondItem="sWa-FO-frR" secondAttribute="centerX" id="FFb-L1-Pee"/>
+                            <constraint firstItem="8Ox-ja-tGz" firstAttribute="centerX" secondItem="cEo-Fd-Ntp" secondAttribute="centerX" id="FUm-cr-tdk"/>
                             <constraint firstItem="fcr-SJ-sFy" firstAttribute="top" secondItem="JIF-HF-SPd" secondAttribute="bottom" id="KFC-jj-ZKw"/>
-                            <constraint firstItem="8Ox-ja-tGz" firstAttribute="top" secondItem="cEo-Fd-Ntp" secondAttribute="bottom" constant="78" id="SVo-E2-USL"/>
                             <constraint firstItem="sWa-FO-frR" firstAttribute="leading" secondItem="rqN-PL-sOi" secondAttribute="leadingMargin" constant="88" id="UeW-bV-BYi"/>
-                            <constraint firstItem="8Ox-ja-tGz" firstAttribute="centerX" secondItem="rqN-PL-sOi" secondAttribute="centerX" id="Xd6-8t-T8Q"/>
                             <constraint firstItem="cEo-Fd-Ntp" firstAttribute="trailing" secondItem="sWa-FO-frR" secondAttribute="trailing" id="a0S-RF-2wv"/>
                             <constraint firstItem="sWa-FO-frR" firstAttribute="top" secondItem="rqN-PL-sOi" secondAttribute="top" constant="153" id="fjh-Ev-ye3"/>
+                            <constraint firstItem="JfH-Wg-G7a" firstAttribute="top" secondItem="8Ox-ja-tGz" secondAttribute="bottom" constant="122" id="gsa-pJ-s2P"/>
                             <constraint firstItem="fcr-SJ-sFy" firstAttribute="leading" secondItem="sWa-FO-frR" secondAttribute="leading" id="rPP-zD-pyN"/>
                             <constraint firstItem="cEo-Fd-Ntp" firstAttribute="top" secondItem="sWa-FO-frR" secondAttribute="bottom" constant="39" id="uob-FL-rZh"/>
+                            <constraint firstItem="8Ox-ja-tGz" firstAttribute="centerX" secondItem="rqN-PL-sOi" secondAttribute="centerX" id="vQg-vY-BzP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wqW-fI-4CV"/>
@@ -447,7 +447,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the Good Morning Screen!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jA9-Bs-s4g">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This is the Good Morning Screen!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jA9-Bs-s4g">
                                 <rect key="frame" x="149" y="74" width="303" height="71"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="303" id="1WG-um-ByW"/>
@@ -457,7 +457,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When the alarm goes off, load this screen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSO-GZ-5jP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="When the alarm goes off, load this screen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSO-GZ-5jP">
                                 <rect key="frame" x="163" y="127" width="274" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="274" id="bJv-qM-LTc"/>
@@ -475,7 +475,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bS-jU-YKC">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bS-jU-YKC">
                                 <rect key="frame" x="243" y="516" width="114" height="30"/>
                                 <state key="normal" title="Back to Settings">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -568,7 +568,7 @@
         <scene sceneID="vM6-8k-cS9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4n5-QN-IGS" userLabel="New Alarm Navigation Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="New Alarm" image="plus-simple-7.png" selectedImage="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="New Alarm" image="plus-simple-7.png" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="g9v-wV-eCn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -586,12 +586,11 @@
     </scenes>
     <resources>
         <image name="clock-alarm-7.png" width="30" height="30"/>
-        <image name="first" width="30" height="30"/>
         <image name="plus-simple-7.png" width="30" height="30"/>
         <image name="spanner-7.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="K3N-TV-lOo"/>
+        <segue reference="AH4-vC-TNy"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

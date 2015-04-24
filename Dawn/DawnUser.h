@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "DawnAlarm.h"
+#import "DawnPreferences.h"
 
 @interface DawnUser : NSObject <NSCoding>
 
 @property NSString *name;
 @property NSString *userEmail;
-@property NSString *preferences;
+@property DawnPreferences *preferences;
 @property NSMutableArray *myAlarms;
 
 // Initialize User with a Name
