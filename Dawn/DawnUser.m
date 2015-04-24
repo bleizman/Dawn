@@ -49,7 +49,7 @@
     if (self) {
         _name = name;
         _userEmail = email;
-        _preferences = @"NO PREFERENCES";
+        _preferences = [[DawnPreferences alloc] init];
         _myAlarms = [[NSMutableArray alloc] init];
     }
     return self;
