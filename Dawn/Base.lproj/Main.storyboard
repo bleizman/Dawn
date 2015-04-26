@@ -235,38 +235,35 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEo-Fd-Ntp" userLabel="THIS TIME">
-                                <rect key="frame" x="104" y="281" width="393" height="89"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="THIS TIME!">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="61" name="ComicSansMS"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZhO-uE-9si">
+                                <rect key="frame" x="179" y="236" width="243" height="185"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="144"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cEo-Fd-Ntp" firstAttribute="leading" secondItem="sWa-FO-frR" secondAttribute="leading" id="51I-tK-sfD"/>
-                            <constraint firstItem="8Ox-ja-tGz" firstAttribute="top" secondItem="cEo-Fd-Ntp" secondAttribute="bottom" constant="78" id="7FB-lA-Srn"/>
                             <constraint firstItem="fcr-SJ-sFy" firstAttribute="trailing" secondItem="sWa-FO-frR" secondAttribute="trailing" id="AT6-qv-eUU"/>
                             <constraint firstItem="sWa-FO-frR" firstAttribute="top" secondItem="fcr-SJ-sFy" secondAttribute="bottom" constant="44" id="Duj-0A-oEs"/>
-                            <constraint firstItem="8Ox-ja-tGz" firstAttribute="centerX" secondItem="cEo-Fd-Ntp" secondAttribute="centerX" id="FUm-cr-tdk"/>
+                            <constraint firstAttribute="centerX" secondItem="sWa-FO-frR" secondAttribute="centerX" id="IRN-AC-3Fm"/>
                             <constraint firstItem="fcr-SJ-sFy" firstAttribute="top" secondItem="JIF-HF-SPd" secondAttribute="bottom" id="KFC-jj-ZKw"/>
                             <constraint firstItem="sWa-FO-frR" firstAttribute="leading" secondItem="rqN-PL-sOi" secondAttribute="leadingMargin" constant="88" id="UeW-bV-BYi"/>
-                            <constraint firstItem="cEo-Fd-Ntp" firstAttribute="trailing" secondItem="sWa-FO-frR" secondAttribute="trailing" id="a0S-RF-2wv"/>
                             <constraint firstItem="sWa-FO-frR" firstAttribute="top" secondItem="rqN-PL-sOi" secondAttribute="top" constant="153" id="fjh-Ev-ye3"/>
+                            <constraint firstItem="8Ox-ja-tGz" firstAttribute="top" secondItem="ZhO-uE-9si" secondAttribute="bottom" constant="27" id="gmd-3o-GnW"/>
                             <constraint firstItem="JfH-Wg-G7a" firstAttribute="top" secondItem="8Ox-ja-tGz" secondAttribute="bottom" constant="122" id="gsa-pJ-s2P"/>
+                            <constraint firstAttribute="centerX" secondItem="8Ox-ja-tGz" secondAttribute="centerX" id="jyj-up-EWa"/>
                             <constraint firstItem="fcr-SJ-sFy" firstAttribute="leading" secondItem="sWa-FO-frR" secondAttribute="leading" id="rPP-zD-pyN"/>
-                            <constraint firstItem="cEo-Fd-Ntp" firstAttribute="top" secondItem="sWa-FO-frR" secondAttribute="bottom" constant="39" id="uob-FL-rZh"/>
+                            <constraint firstAttribute="centerX" secondItem="fcr-SJ-sFy" secondAttribute="centerX" id="vQ8-vm-LMH"/>
                             <constraint firstItem="8Ox-ja-tGz" firstAttribute="centerX" secondItem="rqN-PL-sOi" secondAttribute="centerX" id="vQg-vY-BzP"/>
+                            <constraint firstAttribute="centerX" secondItem="ZhO-uE-9si" secondAttribute="centerX" id="vvq-QU-LUN"/>
+                            <constraint firstAttribute="centerX" secondItem="ZhO-uE-9si" secondAttribute="centerX" id="yIg-JU-A5d"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wqW-fI-4CV"/>
+                    <connections>
+                        <outlet property="alarmText" destination="ZhO-uE-9si" id="g45-jr-Q89"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="chT-dT-s7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="H6w-hg-jQq" userLabel="Exit" sceneMemberID="exit"/>
@@ -447,7 +444,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the Good Morning Screen!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jA9-Bs-s4g">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This is the Good Morning Screen!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jA9-Bs-s4g">
                                 <rect key="frame" x="149" y="74" width="303" height="71"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="303" id="1WG-um-ByW"/>
@@ -457,7 +454,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When the alarm goes off, load this screen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSO-GZ-5jP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="When the alarm goes off, load this screen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSO-GZ-5jP">
                                 <rect key="frame" x="163" y="127" width="274" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="274" id="bJv-qM-LTc"/>
@@ -466,7 +463,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6dK-BC-iFg">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dK-BC-iFg">
                                 <rect key="frame" x="149" y="182" width="288" height="259"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -476,7 +473,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bS-jU-YKC">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bS-jU-YKC">
                                 <rect key="frame" x="243" y="516" width="114" height="30"/>
                                 <state key="normal" title="Back to Settings">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -591,7 +588,7 @@
         <image name="spanner-7.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AH4-vC-TNy"/>
+        <segue reference="K3N-TV-lOo"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

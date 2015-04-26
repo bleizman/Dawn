@@ -9,7 +9,10 @@
 #import "CreatedAlarmViewController.h"
 #import "NewAlarmViewController.h"
 
+static NSString* date;
+
 @interface CreatedAlarmViewController ()
+@property (weak, nonatomic) IBOutlet UITextView *alarmText;
 
 @end
 
@@ -18,7 +21,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
+    self.alarmText.text = [date description];
+    self.alarmText.textAlignment = NSTextAlignmentCenter;
+    
 }
+
++ (void)setText:(DawnAlarm*) newAlarm {
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.timeStyle = NSDateFormatterShortStyle;
+    dateFormatter.dateStyle =NSDateFormatterMediumStyle;
+    
+    date = [dateFormatter stringFromDate:newAlarm.alarmTime];
+    
+    NSLog(@"Should be printing the date %@ here", [date description]);
+    
+}
+
 
 
 #pragma mark - Navigation

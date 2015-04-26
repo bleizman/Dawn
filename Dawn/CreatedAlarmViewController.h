@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DawnAlarm.h"
 
 @interface CreatedAlarmViewController : UIViewController
+
++(void)setText:(DawnAlarm*) newAlarm;
 
 @end

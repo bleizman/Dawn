@@ -9,6 +9,7 @@
 #import "NewAlarmViewController.h"
 #import "MyAlarmsTableViewController.h"
 #import "DawnUser.h"
+#import "CreatedAlarmViewController.h"
 
 extern DawnUser *currentUser;
 
@@ -58,12 +59,10 @@ extern DawnUser *currentUser;
         DawnAlarm *newAlarm =[[DawnAlarm alloc] init];
         newAlarm = [newAlarm initWithName:name andDate:selected];
         [currentUser.myAlarms addObject:newAlarm];
+        [CreatedAlarmViewController setText:newAlarm];
         
         [alarmTable reloadData];
-        
-        _alarmLabel.text = @"";
-        [_alarmDatePicker setDate:[NSDate date] animated:YES];
-        
+                
     }
 }
 
