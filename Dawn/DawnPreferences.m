@@ -10,8 +10,34 @@
 
 @implementation DawnPreferences
 
-- (id)initWithName:(NSString*) name{
-    return NULL;
+- (id)init{
+    self = [super init];
+    if (self) {
+        self = [self initWithName:@"default"];
+    }
+    return self;
 }
+
+
+- (id)initWithName:(NSString*) name{
+    self = [super init];
+    if (self) {
+    _name = name;
+    _weather = YES;
+    _nyTimesNews = YES;
+    _redditNews = YES;
+    _sportsNews = YES;
+    _scores = YES;
+    }
+    return self;
+}
+
+
+- (DawnPreferences*)setDefault: (DawnPreferences*) prefs {
+
+    prefs.weather = YES;
+    return prefs;
+}
+
 
 @end

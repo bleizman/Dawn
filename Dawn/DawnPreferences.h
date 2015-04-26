@@ -11,11 +11,11 @@
 @interface DawnPreferences : NSObject
 
 @property NSString *name;
-@property BOOL *weather;
-@property BOOL *nyTimesNews;
-@property BOOL *redditNews;
-@property BOOL *sportsNews;
-@property BOOL *scores;
+@property BOOL weather;
+@property BOOL nyTimesNews;
+@property BOOL redditNews;
+@property BOOL sportsNews;
+@property BOOL scores;
 @property NSSet *newssites;
 
 - (id)initWithName:(NSString*) name;

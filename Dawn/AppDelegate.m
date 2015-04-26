@@ -8,8 +8,9 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 
 @interface AppDelegate ()
 
@@ -25,6 +26,7 @@
     // Initialize Parse with our specific database
     [Parse setApplicationId:@"6UGj805WGY30A3VO32OieUY1XyP7JvMBhrR5hajm"
                   clientKey:@"CNwJsnl5xu5eDHOy6S0lZ9HPy3hqRQRKFo9R5Hmq"];
+    //[PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:launchOptions];
     
     // Pre-load work for FB login
     [FBSDKLoginButton class];
@@ -64,6 +66,7 @@
     //SAVE USER ALARMS HERE
 }
 
+//Facebook handler
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication

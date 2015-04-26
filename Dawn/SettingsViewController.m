@@ -10,10 +10,23 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface SettingsViewController ()
+@property (weak, nonatomic) IBOutlet UISwitch *NewsSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *SportsSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *RedditSwitch;
 
 @end
 
 @implementation SettingsViewController
+
+- (void)loadView {
+    [super loadView];
+    
+    DawnPreferences *mypreferences = currentUser.preferences;
+    
+    self.NewsSwitch.on = mypreferences.nyTimesNews;
+    self.SportsSwitch.on = mypreferences.sportsNews;
+    self.RedditSwitch.on = mypreferences.redditNews;
+}
 
 
 - (void)viewDidLoad {
@@ -30,6 +43,20 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+/*
+- (void) prefSwitchChanged:(id)sender {
+    UISwitch *oldSwitch = sender;
+    DawnPreferences *mypreferences = currentUser.preferences;
+
+    if (mypreferences.sportsnews.on)
+        alarm.isOn = false;
+    else alarm.isOn = true;
+    NSLog( @"Alarm being printed is of the name %@", alarm.name);
+    NSLog( @"The switch is now %@", alarm.isOn ? @"ON" : @"OFF" );
+}
+ */
 
 /*
 #pragma mark - Navigation

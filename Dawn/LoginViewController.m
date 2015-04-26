@@ -31,6 +31,31 @@
         NSString *welcome = @"Welcome back to Dawn, ";
         welcome = [welcome stringByAppendingString:[FBSDKProfile currentProfile].firstName];
         self.WelcomeLabel.text = welcome;
+        self.WelcomeLabel.adjustsFontSizeToFitWidth = YES;
+        //test if user is signed in
+            
+        //Test Parse Local Datastore
+        PFObject *PDawnUser = [PFObject objectWithClassName:@"DawnUser"];
+        PDawnUser[@"userID"] = [FBSDKProfile currentProfile].userID;
+        [PDawnUser pinInBackground];
+            
+        //Test interaction with Facebook
+        NSLog(@"User's Name is %@", [FBSDKProfile currentProfile].name);
+        NSLog(@"User's ID is %@", [FBSDKProfile currentProfile].userID);
+        currentUser.name = [FBSDKProfile currentProfile].name;
+        
+        //[self _loginWithFacebook];
+        
+        //Leave controller if signed in
+        [self.EnterDawn sendActionsForControlEvents:UIControlEventTouchDown];
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    if ([FBSDKAccessToken currentAccessToken]) {
+        //MyAlarmsTableViewController *controller = [[MyAlarmsTableViewController alloc] init];
+        //[self presentViewController:controller animated:YES];
+        
     }
 }
 
@@ -57,22 +82,6 @@
     
     NSLog(@"User initialized!");
     
-    //test if user is signed in
-    if ([FBSDKAccessToken currentAccessToken]) {
-        
-        //Test Parse Local Datastore
-        PFObject *PDawnUser = [PFObject objectWithClassName:@"DawnUser"];
-        PDawnUser[@"userID"] = [FBSDKProfile currentProfile].userID;
-        [PDawnUser pinInBackground];
-        
-        //Test interaction with Facebook
-        NSLog(@"User's Name is %@", [FBSDKProfile currentProfile].name);
-        NSLog(@"User's ID is %@", [FBSDKProfile currentProfile].userID);
-        currentUser.name = [FBSDKProfile currentProfile].name;
-        
-        //Leave controller if signed in
-        [self.EnterDawn sendActionsForControlEvents:UIControlEventTouchDown];
-    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -81,12 +90,11 @@
 }
 
 
-
-// Possibly useful code for later... -Jack
 /*
+// Method
 - (void)_loginWithFacebook {
-    // Set permissions required from the facebook user account
-    NSArray *permissions = @[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location"];
+
+    NSArray *permissions = @[ @"user_about_me"];
     
     // Login PFUser using Facebook
     [PFFacebookUtils logInInBackgroundWithReadPermissions:permissions block:^(PFUser *user, NSError *error) {
