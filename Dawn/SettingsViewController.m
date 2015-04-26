@@ -7,36 +7,16 @@
 //
 
 #import "SettingsViewController.h"
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface SettingsViewController ()
-@property (weak, nonatomic) IBOutlet UISwitch *NewsSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *SportsSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *RedditSwitch;
 
 @end
 
 @implementation SettingsViewController
 
-- (void)loadView {
-    [super loadView];
-    
-    DawnPreferences *mypreferences = currentUser.preferences;
-    
-    self.NewsSwitch.on = mypreferences.nyTimesNews;
-    self.SportsSwitch.on = mypreferences.sportsNews;
-    self.RedditSwitch.on = mypreferences.redditNews;
-}
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Initialize fb button
-    //FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    //[self.view addSubview:loginButton];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
