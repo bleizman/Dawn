@@ -87,8 +87,13 @@ didReceiveLocalNotification:(UILocalNotification *)notification
     //need to cancel the local notification that was sent
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"MyAlertView"
                                                         message:notification.alertBody
-                                                       delegate:self cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
+                                                       delegate:self cancelButtonTitle:@"Snooze"
+                                              otherButtonTitles:@"Morning Report", nil];
+    
+    //[[UIApplication sharedApplication]cancelAllLocalNotifications];
+    application.applicationIconBadgeNumber = notification.applicationIconBadgeNumber -1;
+    
+    notification.soundName = UILocalNotificationDefaultSoundName;
     [alertView show];
 }
 

@@ -15,7 +15,6 @@ extern DawnUser *currentUser;
 
 @interface NewAlarmViewController ()
 
-@property int defaultNumber;
 @property int badgeCount;
 
 @end
@@ -25,8 +24,8 @@ extern DawnUser *currentUser;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _defaultNumber = 1;
-    NSLog(@"Default number is %d", _defaultNumber);
+    _badgeCount = 0;
+    NSLog(@"Default number is %d", currentUser.defaultNumber);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,8 +51,8 @@ extern DawnUser *currentUser;
         NSLog(@"The date is %@", selected);
         NSString *name = [_alarmLabel text];
         if ([name isEqualToString:@""]) {
-            name = [NSString stringWithFormat: @"Default Alarm %d", _defaultNumber];
-            _defaultNumber++;
+            name = [NSString stringWithFormat: @"Default Alarm %d", currentUser.defaultNumber];
+            currentUser.defaultNumber++;
         }
         NSLog(@"The name is %@", name);
         
@@ -85,19 +84,19 @@ extern DawnUser *currentUser;
     localNotification.alertBody = alertText;
     localNotification.alertAction = alertAction;
     
-    if(soundfileName == nil)
-    {
+    /*if(soundfileName == nil)
+    {*/
         localNotification.soundName = UILocalNotificationDefaultSoundName;
-    }
+    /*}
     else
     {
         localNotification.soundName = soundfileName;
-    }
+    }*/ //just commented out for testing;
     
     localNotification.alertLaunchImage = launchImage;
     
-    //self.badgeCount ++;
-    //localNotification.applicationIconBadgeNumber = self.badgeCount;
+    self.badgeCount ++;
+    localNotification.applicationIconBadgeNumber = self.badgeCount;
     localNotification.userInfo = userInfo;
     
     // Schedule it with the app

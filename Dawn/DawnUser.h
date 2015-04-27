@@ -16,6 +16,7 @@
 @property NSString *userEmail;
 @property DawnPreferences *preferences;
 @property NSMutableArray *myAlarms;
+@property int defaultNumber;
 
 // Initialize User with a Name
 - (id)initWithName:(NSString*) name andEmail: (NSString*) email;

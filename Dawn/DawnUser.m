@@ -28,6 +28,7 @@
         _preferences = [aDecoder decodeObjectForKey:@"uPreferences"];
         _myAlarms = [aDecoder decodeObjectForKey:@"uAlarms"];
         _userEmail = [aDecoder decodeObjectForKey:@"uEmail"];
+        _defaultNumber = 1;
     }
     return self;
 }
@@ -53,6 +54,7 @@
         _userEmail = email;
         _preferences = [[DawnPreferences alloc] init];
         _myAlarms = [[NSMutableArray alloc] init];
+        _defaultNumber = 1;
     }
     return self;
 }
