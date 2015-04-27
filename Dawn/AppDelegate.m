@@ -18,8 +18,9 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    archivepath = getPropertyListPath();
+    
     // enables easy local datastore
     [Parse enableLocalDatastore];
     
@@ -44,9 +45,7 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    
-    
-    //THIS IS WHERE WE IMPLEMENT ALARM ^ BACKGROUND EXECUTION
+    [NSKeyedArchiver archiveRootObject:currentUser toFile:archivepath];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -63,7 +62,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     
-    //SAVE USER ALARMS HERE
+    [NSKeyedArchiver archiveRootObject:currentUser toFile:archivepath];
 }
 
 //Facebook handler
@@ -75,6 +74,14 @@
                                                           openURL:url
                                                 sourceApplication:sourceApplication
                                                        annotation:annotation];
+}
+
+//Used for archiving
+NSString* getPropertyListPath() {
+    // use the Documents directory (preferred URL method)
+    NSURL *documentDir = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+    NSURL *plist = [documentDir URLByAppendingPathComponent:@"user.plist"];
+    return plist.path;
 }
 
 @end
