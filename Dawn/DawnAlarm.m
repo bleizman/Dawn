@@ -28,12 +28,34 @@
     if (self) {
         _name = name;
         _alarmTime = date;
-        _preferences = nil;
         _notes = @"";
         _isOn = true;
         _isNew = true;
     }
     return self;
 }
+
+-(void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.name forKey:@"aName"];
+    [aCoder encodeObject:self.alarmTime forKey:@"aTime"];
+    [aCoder encodeObject:self.notes forKey:@"aNotes"];
+    [aCoder encodeBool:self.isOn forKey: @"aisOn"];
+    [aCoder encodeBool:self.isNew forKey: @"aisNew"];
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self) {
+        _name = [aDecoder decodeObjectForKey:@"aName"];
+        _alarmTime = [aDecoder decodeObjectForKey:@"aTime"];
+        _notes = [aDecoder decodeObjectForKey:@"aNotes"];
+        _isOn = [aDecoder decodeBoolForKey:@"aisOn"];
+        _isNew = [aDecoder decodeBoolForKey:@"aisNew"];
+    }
+    return self;
+}
+
 
 @end
