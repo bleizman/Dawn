@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DawnUser.h"
+
+extern DawnUser *currentUser;
 
 @interface SettingsViewController : UIViewController
 

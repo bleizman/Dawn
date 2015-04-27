@@ -11,6 +11,7 @@
 #import "DawnUser.h"
 
 DawnUser *currentUser;
+extern NSString *archivepath;
 
 @interface LoginViewController : UIViewController
 

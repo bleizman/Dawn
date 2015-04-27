@@ -8,15 +8,15 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //ask to send notifications
@@ -28,6 +28,7 @@
     // Initialize Parse with our specific database
     [Parse setApplicationId:@"6UGj805WGY30A3VO32OieUY1XyP7JvMBhrR5hajm"
                   clientKey:@"CNwJsnl5xu5eDHOy6S0lZ9HPy3hqRQRKFo9R5Hmq"];
+    //[PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:launchOptions];
     
     // Pre-load work for FB login
     [FBSDKLoginButton class];
@@ -45,9 +46,7 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    
-    
-    //THIS IS WHERE WE IMPLEMENT ALARM ^ BACKGROUND EXECUTION
+    [NSKeyedArchiver archiveRootObject:currentUser toFile:archivepath];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -64,9 +63,10 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     
-    //SAVE USER ALARMS HERE
+    [NSKeyedArchiver archiveRootObject:currentUser toFile:archivepath];
 }
 
+//Facebook handler
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication

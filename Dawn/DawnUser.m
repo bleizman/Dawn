@@ -10,6 +10,8 @@
 
 @implementation DawnUser
 
+
+// attempting to save app data locally
 -(void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:self.name forKey:@"uName"];
@@ -35,7 +37,7 @@
 {
     self = [super init];
     if (self) {
-        self = [self initWithName:@"Johnny Football" andEmail:@"lol@lol.com"];
+        self = [self initWithName:nil andEmail:@"lol@lol.com"];
     }
     return self;
     

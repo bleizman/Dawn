@@ -7,9 +7,12 @@
 //
 
 #import "SettingsViewController.h"
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface SettingsViewController ()
+@property (weak, nonatomic) IBOutlet UISwitch *SportsSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *NewYorkTimesSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *RedditSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *WeatherSwitch;
 
 @end
 
@@ -18,18 +21,78 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Initialize fb button
-    //FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    //[self.view addSubview:loginButton];
-    
-    
+    self.SportsSwitch.on = currentUser.preferences.sportsNews;
+    self.NewYorkTimesSwitch.on = currentUser.preferences.nyTimesNews;
+    self.RedditSwitch.on = currentUser.preferences.redditNews;
+    self.WeatherSwitch.on = currentUser.preferences.weather;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)SwitchSports:(id)sender {
+    UISwitch *sportsSwitch = (UISwitch *)sender;
+    if([sportsSwitch isOn])
+    {
+        currentUser.preferences.sportsNews = YES;
+    }
+    else
+    {
+        currentUser.preferences.sportsNews = NO;
+    }
+}
+
+- (IBAction)SwitchNewYorkTimes:(id)sender {
+    UISwitch *newYorkTimesSwitch = (UISwitch *)sender;
+    if([newYorkTimesSwitch isOn])
+    {
+        currentUser.preferences.nyTimesNews = YES;
+    }
+    else
+    {
+        currentUser.preferences.nyTimesNews = NO;
+    }
+}
+
+- (IBAction)SwitchReddit:(id)sender {
+    UISwitch *redditSwitch = (UISwitch *)sender;
+    if([redditSwitch isOn])
+    {
+        currentUser.preferences.redditNews = YES;
+    }
+    else
+    {
+        currentUser.preferences.redditNews = NO;
+    }
+}
+
+- (IBAction)SwitchWeather:(id)sender {
+    UISwitch *weatherSwitch = (UISwitch *)sender;
+    if([weatherSwitch isOn])
+    {
+        currentUser.preferences.weather = YES;
+    }
+    else
+    {
+        currentUser.preferences.weather = NO;
+    }
+}
+
+
+/*
+- (void) prefSwitchChanged:(id)sender {
+    UISwitch *oldSwitch = sender;
+    DawnPreferences *mypreferences = currentUser.preferences;
+
+    if (mypreferences.sportsnews.on)
+        alarm.isOn = false;
+    else alarm.isOn = true;
+    NSLog( @"Alarm being printed is of the name %@", alarm.name);
+    NSLog( @"The switch is now %@", alarm.isOn ? @"ON" : @"OFF" );
+}
+ */
 
 /*
 #pragma mark - Navigation

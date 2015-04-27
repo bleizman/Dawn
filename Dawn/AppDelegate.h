@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DawnUser.h"
+
+extern DawnUser *currentUser;
+NSString *archivepath;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
