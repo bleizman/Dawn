@@ -60,8 +60,8 @@
     
     DawnAlarm *alarmobj = [self.myAlarms objectAtIndex:indexPath.row];
     
-    if (!alarmobj.isNew)
-        return cell;
+    /*if (!alarmobj.isNew) //don't need this
+        return cell;*/
     
     cell.textLabel.text = alarmobj.name;
     

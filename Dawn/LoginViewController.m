@@ -35,6 +35,7 @@
         //load user
         currentUser = [NSKeyedUnarchiver unarchiveObjectWithFile:archivepath];
         NSMutableArray *alarms = currentUser.myAlarms;
+        //this is printing/saving the alarms correctly
         for (DawnAlarm *a in alarms) {
             NSLog(@"%@", a.name);
         }
