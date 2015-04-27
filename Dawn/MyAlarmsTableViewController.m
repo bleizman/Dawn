@@ -24,7 +24,7 @@
     self.myAlarms = [[NSMutableArray alloc] init];
     
     self.myAlarms = currentUser.myAlarms;
-        
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     

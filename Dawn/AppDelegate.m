@@ -19,6 +19,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    archivepath = getPropertyListPath();
     //ask to send notifications
     [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     
@@ -85,6 +86,14 @@ didReceiveLocalNotification:(UILocalNotification *)notification
                                                        delegate:self cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
     [alertView show];
+}
+
+//Used for archiving
+NSString* getPropertyListPath() {
+    // use the Documents directory (preferred URL method)
+    NSURL *documentDir = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+    NSURL *plist = [documentDir URLByAppendingPathComponent:@"user.plist"];
+    return plist.path;
 }
 
 @end
