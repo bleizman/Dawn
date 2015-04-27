@@ -44,8 +44,6 @@
         NSLog(@"User's ID is %@", [FBSDKProfile currentProfile].userID);
         currentUser.name = [FBSDKProfile currentProfile].name;
         
-        //[self _loginWithFacebook];
-        
         //Leave controller if signed in
         [self.EnterDawn sendActionsForControlEvents:UIControlEventTouchDown];
     }
@@ -88,26 +86,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-/*
-// Method
-- (void)_loginWithFacebook {
-
-    NSArray *permissions = @[ @"user_about_me"];
-    
-    // Login PFUser using Facebook
-    [PFFacebookUtils logInInBackgroundWithReadPermissions:permissions block:^(PFUser *user, NSError *error) {
-        if (!user) {
-            NSLog(@"Uh oh. The user cancelled the Facebook login.");
-        } else if (user.isNew) {
-            NSLog(@"User signed up and logged in through Facebook!");
-        } else {
-            NSLog(@"User logged in through Facebook!");
-        }
-    }];
-}
- */
 
 
 /*

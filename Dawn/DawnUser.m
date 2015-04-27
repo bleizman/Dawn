@@ -10,6 +10,8 @@
 
 @implementation DawnUser
 
+
+// attempting to save app data locally - http://www.raywenderlich.com/1914/nscoding-tutorial-for-ios-how-to-save-your-app-data
 -(void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:self.name forKey:@"uName"];

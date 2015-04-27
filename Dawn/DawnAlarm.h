@@ -10,12 +10,11 @@
 #import <Foundation/Foundation.h>
 #import "DawnPreferences.h"
 
-@interface DawnAlarm : NSObject
+@interface DawnAlarm : NSObject <NSCoding>
 
 @property NSString *name;
 @property NSDate *alarmTime;
 @property NSString *notes;
-@property DawnPreferences *preferences;
 @property BOOL isOn;
 @property BOOL isNew;
 

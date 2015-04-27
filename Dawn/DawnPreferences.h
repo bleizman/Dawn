@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DawnPreferences : NSObject
+@interface DawnPreferences : NSObject <NSCoding>
 
 @property NSString *name;
 @property BOOL weather;
@@ -16,7 +16,7 @@
 @property BOOL redditNews;
 @property BOOL sportsNews;
 @property BOOL scores;
-@property NSSet *newssites;
+//@property NSSet *newssites;
 
 - (id)initWithName:(NSString*) name;
 - (DawnPreferences*)setDefault: (DawnPreferences*) prefs;
