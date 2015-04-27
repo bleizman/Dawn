@@ -131,13 +131,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snooze" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zuY-TR-zdV">
                                 <rect key="frame" x="271" y="155" width="58" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GoodMorning Reminders" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nq-Vj-fhg">
                                 <rect key="frame" x="203" y="251" width="194" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4x-Xp-NyU" userLabel="AlarmNotesTextBox">
@@ -331,16 +331,94 @@
                                     <segue destination="6eA-Z0-w0c" kind="show" id="SJk-JX-4hV"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZn-tS-zpL">
+                                <rect key="frame" x="463" y="330" width="30" height="30"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0cl-IG-Vff">
+                                <rect key="frame" x="356" y="194" width="51" height="31"/>
+                                <connections>
+                                    <action selector="SwitchSports:" destination="lRV-1X-dtS" eventType="valueChanged" id="nni-fV-IbC"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hBs-ue-cu7">
+                                <rect key="frame" x="356" y="266" width="51" height="31"/>
+                                <connections>
+                                    <action selector="SwitchNewYorkTimes:" destination="lRV-1X-dtS" eventType="valueChanged" id="mBZ-iK-gSz"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6j6-84-zpp">
+                                <rect key="frame" x="356" y="388" width="51" height="31"/>
+                                <connections>
+                                    <action selector="SwitchWeather:" destination="lRV-1X-dtS" eventType="valueChanged" id="MMV-0I-fae"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sports" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddc-8Z-N90">
+                                <rect key="frame" x="189" y="199" width="51" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York Times" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrq-0S-U10">
+                                <rect key="frame" x="189" y="271" width="124" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuG-eq-RCM">
+                                <rect key="frame" x="189" y="398" width="64" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reddit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xI-aL-HEw">
+                                <rect key="frame" x="189" y="334" width="51" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JYy-Jg-0nx">
+                                <rect key="frame" x="356" y="329" width="51" height="31"/>
+                                <connections>
+                                    <action selector="SwitchReddit:" destination="lRV-1X-dtS" eventType="valueChanged" id="5OO-Mb-Rk1"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="JYy-Jg-0nx" firstAttribute="leading" secondItem="hBs-ue-cu7" secondAttribute="leading" id="0Ki-zY-0yQ"/>
+                            <constraint firstItem="1xI-aL-HEw" firstAttribute="leading" secondItem="nrq-0S-U10" secondAttribute="leading" id="0yM-Ww-Pfv"/>
                             <constraint firstItem="UDW-Hf-Hxs" firstAttribute="centerX" secondItem="5rr-t0-2go" secondAttribute="centerX" id="33z-VM-89Q"/>
                             <constraint firstItem="UDW-Hf-Hxs" firstAttribute="top" secondItem="eiY-VZ-Vne" secondAttribute="bottom" constant="84" id="6CH-a4-nZg"/>
+                            <constraint firstItem="1xI-aL-HEw" firstAttribute="leading" secondItem="NuG-eq-RCM" secondAttribute="leading" id="78V-xv-4Op"/>
+                            <constraint firstItem="nrq-0S-U10" firstAttribute="centerY" secondItem="hBs-ue-cu7" secondAttribute="centerY" id="9Tv-iH-A0W"/>
                             <constraint firstItem="L8V-cT-p9b" firstAttribute="top" secondItem="f3f-Qv-4TK" secondAttribute="bottom" constant="87" id="9ds-4E-ncC"/>
+                            <constraint firstItem="ddc-8Z-N90" firstAttribute="centerY" secondItem="0cl-IG-Vff" secondAttribute="centerY" id="AXw-O6-98R"/>
+                            <constraint firstItem="hBs-ue-cu7" firstAttribute="leading" secondItem="nrq-0S-U10" secondAttribute="trailing" constant="43" id="Jsv-AY-jps"/>
+                            <constraint firstItem="f3f-Qv-4TK" firstAttribute="top" secondItem="NuG-eq-RCM" secondAttribute="bottom" constant="64" id="KB1-Yi-iRF"/>
+                            <constraint firstItem="JYy-Jg-0nx" firstAttribute="centerY" secondItem="1xI-aL-HEw" secondAttribute="centerY" id="S9n-hP-ovn"/>
+                            <constraint firstItem="6j6-84-zpp" firstAttribute="top" secondItem="JYy-Jg-0nx" secondAttribute="bottom" constant="28" id="Xby-PD-cya"/>
+                            <constraint firstItem="hBs-ue-cu7" firstAttribute="leading" secondItem="0cl-IG-Vff" secondAttribute="leading" id="bez-Ty-Yvj"/>
+                            <constraint firstItem="nrq-0S-U10" firstAttribute="leading" secondItem="ddc-8Z-N90" secondAttribute="leading" id="c06-24-LiY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PZn-tS-zpL" secondAttribute="trailing" constant="91" id="ey3-kS-g9n"/>
+                            <constraint firstItem="6j6-84-zpp" firstAttribute="leading" secondItem="JYy-Jg-0nx" secondAttribute="leading" id="fb8-y3-Gc4"/>
                             <constraint firstItem="UDW-Hf-Hxs" firstAttribute="centerX" secondItem="f3f-Qv-4TK" secondAttribute="centerX" id="iro-a4-JDw"/>
+                            <constraint firstItem="NuG-eq-RCM" firstAttribute="bottom" secondItem="6j6-84-zpp" secondAttribute="bottom" id="ita-gi-Xdo"/>
+                            <constraint firstItem="ddc-8Z-N90" firstAttribute="leading" secondItem="UDW-Hf-Hxs" secondAttribute="leading" id="mUu-XF-HR5"/>
+                            <constraint firstItem="JYy-Jg-0nx" firstAttribute="top" secondItem="hBs-ue-cu7" secondAttribute="bottom" constant="32" id="mVm-PU-gyN"/>
+                            <constraint firstItem="PZn-tS-zpL" firstAttribute="bottom" secondItem="JYy-Jg-0nx" secondAttribute="bottom" id="sfr-vY-pnG"/>
+                            <constraint firstItem="hBs-ue-cu7" firstAttribute="top" secondItem="0cl-IG-Vff" secondAttribute="bottom" constant="41" id="vhl-il-OGt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="mWn-Wt-HFU" userLabel="Settings"/>
+                    <connections>
+                        <outlet property="NewYorkTimesSwitch" destination="hBs-ue-cu7" id="tuW-Z4-CXO"/>
+                        <outlet property="RedditSwitch" destination="JYy-Jg-0nx" id="RGk-2g-972"/>
+                        <outlet property="SportsSwitch" destination="0cl-IG-Vff" id="7lX-Vz-Ypn"/>
+                        <outlet property="WeatherSwitch" destination="6j6-84-zpp" id="VIa-dx-qpR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GO7-ux-gXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -380,7 +458,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please sign in through Facebook" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMA-MO-OTw">
                                 <rect key="frame" x="175" y="289" width="251" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XW6-as-1JL" customClass="FBSDKLoginButton">
@@ -430,7 +508,7 @@
                                     <constraint firstAttribute="height" constant="44" id="8eo-Ei-0yP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Display the text here                                " selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dK-BC-iFg">
