@@ -16,6 +16,7 @@ extern DawnUser *currentUser;
 @interface NewAlarmViewController ()
 
 @property int defaultNumber;
+@property int badgeCount;
 
 @end
 
@@ -62,8 +63,46 @@ extern DawnUser *currentUser;
         [CreatedAlarmViewController setText:newAlarm];
         
         [alarmTable reloadData];
-                
+        
+        //create a notification for that alarm
+        [self scheduleNotificationOn:selected text:@"Gooooooood Morning!!!" action:@"Morning Report" sound:nil launchImage:nil andInfo:nil];
+        
     }
+}
+
+- (void) scheduleNotificationOn:(NSDate*) fireDate
+                           text:(NSString*) alertText
+                         action:(NSString*) alertAction
+                          sound:(NSString*) soundfileName
+                    launchImage:(NSString*) launchImage
+                        andInfo:(NSDictionary*) userInfo
+
+{
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = fireDate;
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    
+    localNotification.alertBody = alertText;
+    localNotification.alertAction = alertAction;
+    
+    if(soundfileName == nil)
+    {
+        localNotification.soundName = UILocalNotificationDefaultSoundName;
+    }
+    else
+    {
+        localNotification.soundName = soundfileName;
+    }
+    
+    localNotification.alertLaunchImage = launchImage;
+    
+    //self.badgeCount ++;
+    //localNotification.applicationIconBadgeNumber = self.badgeCount;
+    localNotification.userInfo = userInfo;
+    
+    // Schedule it with the app
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    //[localNotification release];
 }
 
 @end

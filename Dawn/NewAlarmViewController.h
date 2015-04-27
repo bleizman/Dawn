@@ -18,5 +18,11 @@ extern UITableView *alarmTable;
 @property (weak, nonatomic) IBOutlet UIDatePicker *alarmDatePicker;
 @property (weak, nonatomic) IBOutlet UIButton *createNewAlarm;
 - (IBAction)unwindToNewAlarm:(UIStoryboardSegue *)segue;
+- (void) scheduleNotificationOn:(NSDate*) fireDate
+                           text:(NSString*) alertText
+                         action:(NSString*) alertAction
+                          sound:(NSString*) soundfileName
+                    launchImage:(NSString*) launchImage
+                        andInfo:(NSDictionary*) userInfo;
 
 @end
