@@ -48,8 +48,8 @@ extern DawnUser *currentUser;
     if (sender == _createNewAlarm) {
         
         NSLog(@"Should be adding a new alarm here!");
-        NSDate *selected = [_alarmDatePicker date];
-        NSLog(@"The date is %@", selected);
+        NSDate *selectedDate = [_alarmDatePicker date];
+        NSLog(@"The date is %@", selectedDate);
         NSString *name = [_alarmLabel text];
         if ([name isEqualToString:@""]) {
             name = [NSString stringWithFormat: @"Default Alarm %d", currentUser.defaultNumber];
@@ -58,14 +58,17 @@ extern DawnUser *currentUser;
         NSLog(@"The name is %@", name);
         
         DawnAlarm *newAlarm =[[DawnAlarm alloc] init];
-        newAlarm = [newAlarm initWithName:name andDate:selected];
+        newAlarm = [newAlarm initWithName:name andDate:selectedDate];
         [currentUser.myAlarms addObject:newAlarm];
         [CreatedAlarmViewController setText:newAlarm];
         
         [alarmTable reloadData];
+        //NSDictionary *dict = [NSDictionary dictionaryWithObject:newAlarm forKey:@"alarm"];
+        
+        NSString* actionText = @"Morning Report";
         
         //create a notification for that alarm
-        [self scheduleNotificationOn:selected text:@"Good morning from out of app!!!" action:@"Morning Report" sound:nil launchImage:nil andInfo:nil];
+        [self scheduleNotificationOn:selectedDate text:name action:actionText sound:nil launchImage:nil andInfo:nil];
         
     }
 }

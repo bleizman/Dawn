@@ -31,12 +31,13 @@
     UILocalNotification *notif =
     [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     
+    // Override point for customization after application launch.
     if (notif) {
-        DawnAlarm *alarm = [notif.userInfo objectForKey:@"Alarm"];
+        //DawnAlarm *alarm = [notif.userInfo objectForKey:@"Alarm"];
         //Use the alarm to take you to the preferences page
         [self.window.rootViewController presentViewController:_goodMornVC animated:FALSE completion:nil];
         
-        application.applicationIconBadgeNumber = notif.applicationIconBadgeNumber-1;
+        application.applicationIconBadgeNumber = 0; // To decrease by 1 -> notif.applicationIconBadgeNumber-1;
     }
     
     [_window addSubview:_goodMornVC.view];
@@ -84,6 +85,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    application.applicationIconBadgeNumber = 0;
     
     // Necissary for FB interface
     [FBSDKAppEvents activateApp];
@@ -109,17 +111,18 @@
 - (void)application:(UIApplication *)application
 didReceiveLocalNotification:(UILocalNotification *)notification
 {
-    //need to cancel the local notification that was sent
-    NSLog(@"Getting an alert while in the app");
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"In app alert!!!!!"
-                                                        message:notification.alertBody
-                                                       delegate:self cancelButtonTitle:@"Snooze"
-                                              otherButtonTitles:@"Morning Report", nil];
-    
-    [[UIApplication sharedApplication]cancelAllLocalNotifications];
-    application.applicationIconBadgeNumber = notification.applicationIconBadgeNumber -1;
-    
-    [alertView show];
+    UIApplicationState state = [application applicationState];
+    if (state == UIApplicationStateActive) {
+        //need to cancel the local notification that was sent
+        NSLog(@"Getting an alert while in the app");
+        //[[UIApplication sharedApplication]cancelAllLocalNotifications];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:notification.alertBody
+                                                            message:@"This is an in app alert"
+                                                           delegate:self cancelButtonTitle:@"Snooze"
+                                                  otherButtonTitles:@"Morning Report", nil];
+        
+        [alertView show];
+    }
 }
 
 //Used for archiving
