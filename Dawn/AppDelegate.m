@@ -11,10 +11,13 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+#import "DawnAlarm.h"
+#import "GoodMorningViewController.h"
 
 @interface AppDelegate ()
 
 @property BOOL isBackground;
+@property GoodMorningViewController* goodMornVC;
 
 @end
 
@@ -23,8 +26,30 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     archivepath = getPropertyListPath();
     
+    //if opening from a notification, go to correct page
+    NSLog(@"Getting an alert while not in the app");
+    UILocalNotification *notif =
+    [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    
+    if (notif) {
+        DawnAlarm *alarm = [notif.userInfo objectForKey:@"Alarm"];
+        //Use the alarm to take you to the preferences page
+        [self.window.rootViewController presentViewController:_goodMornVC animated:FALSE completion:nil];
+        
+        application.applicationIconBadgeNumber = notif.applicationIconBadgeNumber-1;
+    }
+    
+    [_window addSubview:_goodMornVC.view];
+    [_window makeKeyAndVisible];
+    
     //ask to send notifications
-    [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+    UIUserNotificationType types = UIUserNotificationTypeBadge |
+    UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+    
+    UIUserNotificationSettings *mySettings =
+    [UIUserNotificationSettings settingsForTypes:types categories:nil];
+    
+    [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
     
     // enables easy local datastore
     [Parse enableLocalDatastore];
@@ -85,15 +110,15 @@
 didReceiveLocalNotification:(UILocalNotification *)notification
 {
     //need to cancel the local notification that was sent
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"MyAlertView"
+    NSLog(@"Getting an alert while in the app");
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"In app alert!!!!!"
                                                         message:notification.alertBody
                                                        delegate:self cancelButtonTitle:@"Snooze"
                                               otherButtonTitles:@"Morning Report", nil];
     
-    //[[UIApplication sharedApplication]cancelAllLocalNotifications];
+    [[UIApplication sharedApplication]cancelAllLocalNotifications];
     application.applicationIconBadgeNumber = notification.applicationIconBadgeNumber -1;
     
-    notification.soundName = UILocalNotificationDefaultSoundName;
     [alertView show];
 }
 

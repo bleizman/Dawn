@@ -64,7 +64,7 @@ extern DawnUser *currentUser;
         [alarmTable reloadData];
         
         //create a notification for that alarm
-        [self scheduleNotificationOn:selected text:@"Gooooooood Morning!!!" action:@"Morning Report" sound:nil launchImage:nil andInfo:nil];
+        [self scheduleNotificationOn:selected text:@"Good morning from out of app!!!" action:@"Morning Report" sound:nil launchImage:nil andInfo:nil];
         
     }
 }

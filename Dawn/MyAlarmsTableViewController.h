@@ -14,6 +14,6 @@ UITableView *alarmTable;
 
 @interface MyAlarmsTableViewController : UITableViewController
 
-@property NSMutableArray *myAlarms;
+//@property NSMutableArray *myAlarms;
 
 @end
