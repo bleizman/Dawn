@@ -14,7 +14,6 @@
 @interface MyAlarmsTableViewController ()
 
 @property (strong, nonatomic) IBOutlet UITableView *alarmsTable;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
 
 @end
 
@@ -121,17 +120,25 @@
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
     [super setEditing:editing animated:animated];
     [alarmTable setEditing:editing animated:YES];
-    if (editing) {
-        _editButton.enabled = NO;
-    } else {
-        _editButton.enabled = YES;
-    }
 }
 
 // Shows the table in editing mode
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
     //AppDelegate *controller = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     return UITableViewCellEditingStyleDelete;
+}
+
+// States that the table can be reordered
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    return YES;
+}
+
+// Implements the reordering
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+    DawnAlarm *alarm = [currentUser.myAlarms objectAtIndex:sourceIndexPath.row];
+    [currentUser.myAlarms removeObjectAtIndex:sourceIndexPath.row];
+    [currentUser.myAlarms insertObject:alarm atIndex:destinationIndexPath.row];
 }
 
 

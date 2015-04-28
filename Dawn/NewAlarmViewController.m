@@ -26,6 +26,7 @@ extern DawnUser *currentUser;
     // Do any additional setup after loading the view.
     _badgeCount = 0;
     NSLog(@"Default number is %d", currentUser.defaultNumber);
+
 }
 
 - (void)didReceiveMemoryWarning {

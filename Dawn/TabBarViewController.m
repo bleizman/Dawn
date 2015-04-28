@@ -7,6 +7,7 @@
 //
 
 #import "TabBarViewController.h"
+#import "MyAlarmsTableViewController.h"
 
 @interface TabBarViewController ()
 
@@ -17,11 +18,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.delegate = self;
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController
+ didSelectViewController:(UIViewController *)viewController {
+    
+    NSLog(@"Is changing tabs");
+    //Hard wired to the middle button- if not middle button, needs to change
+    if (tabBarController.selectedIndex == 1) {
+        
+        
+        [viewController setEditing:false];
+        
+        NSLog(@"Yes it's the right class");
+    }
 }
 
 /*
