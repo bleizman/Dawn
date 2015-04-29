@@ -34,14 +34,15 @@
     // Override point for customization after application launch.
     if (notif) {
         //DawnAlarm *alarm = [notif.userInfo objectForKey:@"Alarm"];
-        //Use the alarm to take you to the preferences page
-        [self.window.rootViewController presentViewController:_goodMornVC animated:FALSE completion:nil];
+        
+        //Use the alarm to take you to the Good Morning page
+        /*[self.window.rootViewController presentViewController:_goodMornVC animated:FALSE completion:nil];*/
         
         application.applicationIconBadgeNumber = 0; // To decrease by 1 -> notif.applicationIconBadgeNumber-1;
     }
     
-    [_window addSubview:_goodMornVC.view];
-    [_window makeKeyAndVisible];
+    /*[_window addSubview:_goodMornVC.view];
+    [_window makeKeyAndVisible];*/
     
     //ask to send notifications
     UIUserNotificationType types = UIUserNotificationTypeBadge |
@@ -63,6 +64,9 @@
     // Pre-load work for FB login
     [FBSDKLoginButton class];
     [FBSDKProfile enableUpdatesOnAccessTokenChange:YES];
+    
+    // set the goodMornVC
+    _goodMornVC = GoodMorningViewController.self;
     
     return [[FBSDKApplicationDelegate sharedInstance] application:application
                                     didFinishLaunchingWithOptions:launchOptions];
@@ -123,6 +127,9 @@ didReceiveLocalNotification:(UILocalNotification *)notification
         
         [alertView show];
     }
+    //show the good morning page
+    /*[self.window.rootViewController presentViewController:_goodMornVC animated:FALSE completion:nil];*/
+    
 }
 
 //Used for archiving

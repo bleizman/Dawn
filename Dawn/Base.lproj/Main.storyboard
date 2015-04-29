@@ -543,13 +543,14 @@
                             <constraint firstItem="6dK-BC-iFg" firstAttribute="leading" secondItem="jA9-Bs-s4g" secondAttribute="leading" id="huh-gg-ER2"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="KGh-fv-lLQ"/>
                     <connections>
                         <outlet property="GoodMorningText" destination="6dK-BC-iFg" id="GUT-Mu-mbW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bf0-vM-7vc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1097" y="869"/>
+            <point key="canvasLocation" x="-1002" y="1911"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
