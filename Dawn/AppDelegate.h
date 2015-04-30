@@ -10,6 +10,7 @@
 #import "DawnUser.h"
 
 extern DawnUser *currentUser;
+extern UITableView *alarmTable;
 NSString *archivepath;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>

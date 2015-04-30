@@ -67,6 +67,9 @@ extern DawnUser *currentUser;
         
         NSString* actionText = @"Morning Report";
         
+        //create an NSDictionary that contains the alarmobj
+        /*NSDictionary *alarmDict = [NSDictionary dictionaryWithObjectsAndKeys:newAlarm, @"alarmObj", nil];*/
+        
         //create a notification for that alarm
         [self scheduleNotificationOn:selectedDate text:name action:actionText sound:nil launchImage:nil andInfo:nil];
         

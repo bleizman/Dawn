@@ -46,11 +46,11 @@
     [query getObjectInBackgroundWithId:@"L4rZ5s286Y" block:^(PFObject *headline, NSError *error) {
         // Do something with the returned PFObject in the headline variable.
         
-        NSString *myheadline = headline[@"text"];
+        /*NSString *myheadline = headline[@"text"];
         
         [builderText appendString:myheadline];
 
-        NSLog(@"%@", headline[@"Text"]);
+        NSLog(@"%@", headline[@"Text"]);*/
     }];
     
     [builderText appendString:@"\n\nYour dawn has come, start the day!"];

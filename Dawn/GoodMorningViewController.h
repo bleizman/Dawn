@@ -12,4 +12,6 @@
 
 @interface GoodMorningViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *back;
+
 @end

@@ -10,6 +10,7 @@
 #import "DawnAlarm.h"
 #import "DawnUser.h"
 #import "AppDelegate.h"
+#import "GoodMorningViewController.h"
 
 @interface MyAlarmsTableViewController ()
 

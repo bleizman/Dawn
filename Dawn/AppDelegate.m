@@ -66,8 +66,6 @@
     [FBSDKLoginButton class];
     [FBSDKProfile enableUpdatesOnAccessTokenChange:YES];
     
-    // set the goodMornVC
-    //_goodMornVC = GoodMorningViewController.self;
     
     return [[FBSDKApplicationDelegate sharedInstance] application:application
                                     didFinishLaunchingWithOptions:launchOptions];
@@ -112,7 +110,44 @@
                                                        annotation:annotation];
 }
 
-//handle pushing an alert if in the background
+- (void)dismissModalViewController {
+    
+    UIViewController *topRootViewController = self.window.rootViewController;
+    while (topRootViewController.presentedViewController) {
+        
+        topRootViewController = topRootViewController.presentedViewController;
+    }
+    [topRootViewController dismissModalViewControllerAnimated:YES];
+    //ignore the deprecated warning, we're just going with it
+}
+
+- (void)alertView:(UIAlertView *)alertView
+clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex == 1) {
+        //get navigation controller
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        GoodMorningViewController *goodMornVC = [storyboard instantiateViewControllerWithIdentifier:@"goodMorning"];
+        UIViewController *topRootViewController = self.window.rootViewController;
+        while (topRootViewController.presentedViewController) {
+            
+            topRootViewController = topRootViewController.presentedViewController;
+        }
+//        [self.window makeKeyAndVisible];
+        [topRootViewController presentViewController:goodMornVC animated:YES completion:^{
+            
+            [goodMornVC.back addTarget:self action:@selector(dismissModalViewController) forControlEvents:UIControlEventTouchUpInside];
+        }];
+//        [self.window.rootViewController performSegueWithIdentifier:@"goodMorningSegue" sender:self.window.rootViewController];
+        
+        
+    }
+    else {
+        //snooze
+    }
+}
+
+//handle pushing an alert if in the foreground
 - (void)application:(UIApplication *)application
 didReceiveLocalNotification:(UILocalNotification *)notification
 {
@@ -130,8 +165,31 @@ didReceiveLocalNotification:(UILocalNotification *)notification
         [application cancelAllLocalNotifications];
         application.applicationIconBadgeNumber = 0;
     }
+    //delete the alarm
+    DawnAlarm *alarm = [notification.userInfo objectForKey:@"alarmObj"];
+    [currentUser deleteAlarm:alarm];
+    [alarmTable reloadData];
+    
+    //[currentUser deleteAlarm:alarmobj];
+    
+    
     //show the good morning page
-    /*[self.window.rootViewController presentViewController:_goodMornVC animated:FALSE completion:nil];*/
+    
+    // create a GoodMorningViewConroller instance that is built using preferences
+     // that were passed through in the alarm
+    //GoodMorningViewController* goodMornVC = [[GoodMorningViewController alloc] init];
+    //[self.window.rootViewController.view addSubview:goodMornVC.view];
+    //[self.window.rootViewController presentViewController:goodMornVC animated:FALSE completion:nil];
+    //[_window addSubview:goodMornVC.view];
+    //[_window makeKeyAndVisible];
+    
+    /* Shit that you've been trying...
+     
+     GoodMorningViewController* goodMornVC = [[GoodMorningViewController alloc] init];
+     //[self.window.rootViewController.view addSubview:goodMornVC.view];
+     //[self presentViewController:goodMornVC animated:FALSE completion:nil];
+     [self performSegueWithIdentifier:@"modal" sender:self]; // you can specify either the button or `self` for the `sender
+     */
     
 }
 

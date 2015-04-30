@@ -16,6 +16,10 @@
 @property BOOL redditNews;
 @property BOOL sportsNews;
 @property BOOL scores;
+
+@property int maxSnooze;
+@property int snoozeMins;
+
 //@property NSSet *newssites;
 
 - (id)initWithName:(NSString*) name;
