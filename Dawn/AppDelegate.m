@@ -17,7 +17,6 @@
 @interface AppDelegate ()
 
 @property BOOL isBackground;
-@property GoodMorningViewController* goodMornVC;
 
 @end
 
@@ -35,10 +34,12 @@
     if (notif) {
         //DawnAlarm *alarm = [notif.userInfo objectForKey:@"Alarm"];
         
+        application.applicationIconBadgeNumber = 0; // To decrease by 1 -> notif.applicationIconBadgeNumber-1;
+        
+        //[application cancelAllLocalNotifications];
+        
         //Use the alarm to take you to the Good Morning page
         /*[self.window.rootViewController presentViewController:_goodMornVC animated:FALSE completion:nil];*/
-        
-        application.applicationIconBadgeNumber = 0; // To decrease by 1 -> notif.applicationIconBadgeNumber-1;
     }
     
     /*[_window addSubview:_goodMornVC.view];
@@ -66,7 +67,7 @@
     [FBSDKProfile enableUpdatesOnAccessTokenChange:YES];
     
     // set the goodMornVC
-    _goodMornVC = GoodMorningViewController.self;
+    //_goodMornVC = GoodMorningViewController.self;
     
     return [[FBSDKApplicationDelegate sharedInstance] application:application
                                     didFinishLaunchingWithOptions:launchOptions];
@@ -126,6 +127,8 @@ didReceiveLocalNotification:(UILocalNotification *)notification
                                                   otherButtonTitles:@"Morning Report", nil];
         
         [alertView show];
+        [application cancelAllLocalNotifications];
+        application.applicationIconBadgeNumber = 0;
     }
     //show the good morning page
     /*[self.window.rootViewController presentViewController:_goodMornVC animated:FALSE completion:nil];*/

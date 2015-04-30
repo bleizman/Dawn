@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DawnUser.h"
-
-extern DawnUser *currentUser;
+#import "AppDelegate.h"
 
 @interface GoodMorningViewController : UIViewController
 

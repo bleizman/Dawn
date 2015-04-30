@@ -61,6 +61,7 @@
 - (void)loadView {
     [super loadView];
     self.GoodMorningText.text = [self goodMorningTextBuilder];
+    
 }
 
 - (void)viewDidLoad {

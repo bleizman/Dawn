@@ -88,21 +88,19 @@ extern DawnUser *currentUser;
     localNotification.alertBody = alertText;
     localNotification.alertAction = alertAction;
     
-    /*if(soundfileName == nil)
-    {*/
-        localNotification.soundName = UILocalNotificationDefaultSoundName;
-    /*}
+    if(soundfileName == nil)
+        localNotification.soundName =UILocalNotificationDefaultSoundName;
     else
     {
         localNotification.soundName = soundfileName;
-    }*/ //just commented out for testing;
+    }
     
     localNotification.alertLaunchImage = launchImage;
     
     self.badgeCount ++;
     localNotification.applicationIconBadgeNumber = self.badgeCount;
     localNotification.userInfo = userInfo;
-    
+        
     // Schedule it with the app
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     //[localNotification release];
