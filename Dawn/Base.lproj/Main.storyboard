@@ -337,7 +337,7 @@
                                 </state>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0cl-IG-Vff">
-                                <rect key="frame" x="356" y="194" width="51" height="31"/>
+                                <rect key="frame" x="356" y="194" width="51" height="32"/>
                                 <connections>
                                     <action selector="SwitchSports:" destination="lRV-1X-dtS" eventType="valueChanged" id="nni-fV-IbC"/>
                                 </connections>
@@ -405,7 +405,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HPs-h2-wwj">
-                                <rect key="frame" x="150" y="117" width="300" height="60"/>
+                                <rect key="frame" x="150" y="117" width="300" height="59"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="noV-iG-XfA">
@@ -437,7 +437,7 @@
                             <constraint firstItem="cmi-me-vLw" firstAttribute="top" secondItem="nrq-0S-U10" secondAttribute="bottom" constant="14" id="dwX-Vg-gXN"/>
                             <constraint firstAttribute="bottom" secondItem="iyR-Qy-YHF" secondAttribute="bottom" constant="173" id="eGq-LP-n9x"/>
                             <constraint firstItem="nrq-0S-U10" firstAttribute="leading" secondItem="iyR-Qy-YHF" secondAttribute="trailing" constant="32" id="f2H-8S-jDe"/>
-                            <constraint firstItem="ddc-8Z-N90" firstAttribute="top" secondItem="HPs-h2-wwj" secondAttribute="bottom" constant="22" id="fbR-zy-1QA"/>
+                            <constraint firstItem="ddc-8Z-N90" firstAttribute="top" secondItem="HPs-h2-wwj" secondAttribute="bottom" constant="23" id="fbR-zy-1QA"/>
                             <constraint firstItem="JYy-Jg-0nx" firstAttribute="top" secondItem="cmi-me-vLw" secondAttribute="bottom" constant="9" id="fec-aU-dRb"/>
                             <constraint firstAttribute="centerX" secondItem="f3f-Qv-4TK" secondAttribute="centerX" id="fee-cW-ePV"/>
                             <constraint firstItem="HPs-h2-wwj" firstAttribute="leading" secondItem="ddc-8Z-N90" secondAttribute="trailing" constant="-90" id="gLG-Hj-sCT"/>
@@ -452,7 +452,7 @@
                             <constraint firstItem="iyR-Qy-YHF" firstAttribute="width" secondItem="bLB-YQ-m2F" secondAttribute="width" id="nd7-ge-EDo"/>
                             <constraint firstItem="bLB-YQ-m2F" firstAttribute="leading" secondItem="JYy-Jg-0nx" secondAttribute="trailing" constant="38" id="r6b-lG-pyP"/>
                             <constraint firstItem="XMS-6L-DkS" firstAttribute="height" secondItem="cmi-me-vLw" secondAttribute="height" id="rdy-18-FQ0"/>
-                            <constraint firstAttribute="centerY" secondItem="cmi-me-vLw" secondAttribute="centerY" id="sHy-AU-g7F"/>
+                            <constraint firstAttribute="centerY" secondItem="cmi-me-vLw" secondAttribute="centerY" constant="-10" id="sHy-AU-g7F"/>
                             <constraint firstItem="NuG-eq-RCM" firstAttribute="leading" secondItem="iyR-Qy-YHF" secondAttribute="trailing" constant="32" id="vyV-2H-nR8"/>
                             <constraint firstItem="XMS-6L-DkS" firstAttribute="top" secondItem="JYy-Jg-0nx" secondAttribute="bottom" constant="9" id="wEP-4P-ZaX"/>
                             <constraint firstItem="bLB-YQ-m2F" firstAttribute="leading" secondItem="0cl-IG-Vff" secondAttribute="trailing" constant="38" id="xFn-GZ-p8d"/>
