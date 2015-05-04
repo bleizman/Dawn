@@ -67,11 +67,20 @@ extern DawnUser *currentUser;
         
         NSString* actionText = @"Morning Report";
         
+        //create data from alarm object
+        NSMutableData *data = [NSMutableData new];
+        NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+        [newAlarm encodeWithCoder:archiver];
+        [archiver finishEncoding];
+        
         //create an NSDictionary that contains the alarmobj
-        /*NSDictionary *alarmDict = [NSDictionary dictionaryWithObjectsAndKeys:newAlarm, @"alarmObj", nil];*/
+        NSDictionary *alarmDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                                   data, @"alarmData",
+                                   nil];
+        
         
         //create a notification for that alarm
-        [self scheduleNotificationOn:selectedDate text:name action:actionText sound:nil launchImage:nil andInfo:nil];
+        [self scheduleNotificationOn:selectedDate text:name action:actionText sound:nil launchImage:nil andInfo:alarmDict];
         
     }
 }
@@ -100,8 +109,7 @@ extern DawnUser *currentUser;
     
     localNotification.alertLaunchImage = launchImage;
     
-    self.badgeCount ++;
-    localNotification.applicationIconBadgeNumber = self.badgeCount;
+    localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
     localNotification.userInfo = userInfo;
         
     // Schedule it with the app

@@ -13,6 +13,7 @@
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 #import "DawnAlarm.h"
 #import "GoodMorningViewController.h"
+#import "deleteAlarm.h"
 
 @interface AppDelegate ()
 
@@ -32,18 +33,10 @@
     
     // Override point for customization after application launch.
     if (notif) {
-        //DawnAlarm *alarm = [notif.userInfo objectForKey:@"Alarm"];
         
-        application.applicationIconBadgeNumber = 0; // To decrease by 1 -> notif.applicationIconBadgeNumber-1;
-        
-        //[application cancelAllLocalNotifications];
-        
-        //Use the alarm to take you to the Good Morning page
-        /*[self.window.rootViewController presentViewController:_goodMornVC animated:FALSE completion:nil];*/
+        application.applicationIconBadgeNumber = 0;
+        [self goToGoodMorning];
     }
-    
-    /*[_window addSubview:_goodMornVC.view];
-    [_window makeKeyAndVisible];*/
     
     //ask to send notifications
     UIUserNotificationType types = UIUserNotificationTypeBadge |
@@ -121,26 +114,29 @@
     //ignore the deprecated warning, we're just going with it
 }
 
+- (void)goToGoodMorning {
+    
+    //get navigation controller
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    GoodMorningViewController *goodMornVC = [storyboard instantiateViewControllerWithIdentifier:@"goodMorning"];
+    UIViewController *topRootViewController = self.window.rootViewController;
+    while (topRootViewController.presentedViewController) {
+        
+        topRootViewController = topRootViewController.presentedViewController;
+    }
+
+    [topRootViewController presentViewController:goodMornVC animated:YES completion:^{
+        
+        [goodMornVC.back addTarget:self action:@selector(dismissModalViewController) forControlEvents:UIControlEventTouchUpInside];
+    }];
+    
+}
+
 - (void)alertView:(UIAlertView *)alertView
 clickedButtonAtIndex:(NSInteger)buttonIndex {
     
     if (buttonIndex == 1) {
-        //get navigation controller
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        GoodMorningViewController *goodMornVC = [storyboard instantiateViewControllerWithIdentifier:@"goodMorning"];
-        UIViewController *topRootViewController = self.window.rootViewController;
-        while (topRootViewController.presentedViewController) {
-            
-            topRootViewController = topRootViewController.presentedViewController;
-        }
-//        [self.window makeKeyAndVisible];
-        [topRootViewController presentViewController:goodMornVC animated:YES completion:^{
-            
-            [goodMornVC.back addTarget:self action:@selector(dismissModalViewController) forControlEvents:UIControlEventTouchUpInside];
-        }];
-//        [self.window.rootViewController performSegueWithIdentifier:@"goodMorningSegue" sender:self.window.rootViewController];
-        
-        
+        [self goToGoodMorning];
     }
     else {
         //snooze
@@ -161,36 +157,16 @@ didReceiveLocalNotification:(UILocalNotification *)notification
                                                            delegate:self cancelButtonTitle:@"Snooze"
                                                   otherButtonTitles:@"Morning Report", nil];
         
-        [alertView show];
         [application cancelAllLocalNotifications];
+        [alertView show];
+        [deleteAlarm deleteAlarm:notification];
         application.applicationIconBadgeNumber = 0;
     }
-    //delete the alarm
-    DawnAlarm *alarm = [notification.userInfo objectForKey:@"alarmObj"];
-    [currentUser deleteAlarm:alarm];
-    [alarmTable reloadData];
     
-    //[currentUser deleteAlarm:alarmobj];
-    
-    
-    //show the good morning page
-    
-    // create a GoodMorningViewConroller instance that is built using preferences
-     // that were passed through in the alarm
-    //GoodMorningViewController* goodMornVC = [[GoodMorningViewController alloc] init];
-    //[self.window.rootViewController.view addSubview:goodMornVC.view];
-    //[self.window.rootViewController presentViewController:goodMornVC animated:FALSE completion:nil];
-    //[_window addSubview:goodMornVC.view];
-    //[_window makeKeyAndVisible];
-    
-    /* Shit that you've been trying...
-     
-     GoodMorningViewController* goodMornVC = [[GoodMorningViewController alloc] init];
-     //[self.window.rootViewController.view addSubview:goodMornVC.view];
-     //[self presentViewController:goodMornVC animated:FALSE completion:nil];
-     [self performSegueWithIdentifier:@"modal" sender:self]; // you can specify either the button or `self` for the `sender
-     */
-    
+    else {
+        [deleteAlarm deleteAlarm:notification];
+        [self goToGoodMorning];
+    }
 }
 
 //Used for archiving
