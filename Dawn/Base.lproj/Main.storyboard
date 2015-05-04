@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="HPA-eJ-c0l" userLabel="DawnDatePicker">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="HPA-eJ-c0l" userLabel="DawnDatePicker">
                                 <rect key="frame" x="58" y="219" width="485" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="449977745.93096101">
                                     <!--2015-04-06 01:49:05 +0000-->
@@ -564,8 +564,9 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0K-9g-1sD">
                                 <rect key="frame" x="260" y="318" width="80" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Enter Dawn">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="257" y="216" width="87" height="30"/>
@@ -591,7 +592,7 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dys-af-abi">
-                                <rect key="frame" x="0.0" y="20" width="600" height="100"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="88"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="heightClass=compact" ambiguous="YES">
                                     <rect key="frame" x="0.0" y="20" width="600" height="15"/>
@@ -639,11 +640,12 @@
                             <constraint firstAttribute="centerX" secondItem="XW6-as-1JL" secondAttribute="centerX" id="Mho-Xj-kfu"/>
                             <constraint firstItem="P0K-9g-1sD" firstAttribute="centerX" secondItem="LMA-MO-OTw" secondAttribute="centerX" id="Mrl-fi-EaZ"/>
                             <constraint firstItem="P0K-9g-1sD" firstAttribute="top" secondItem="LMA-MO-OTw" secondAttribute="bottom" constant="8" id="NRz-oC-Pre"/>
-                            <constraint firstItem="t2h-ck-JRS" firstAttribute="height" secondItem="dys-af-abi" secondAttribute="height" id="Pl1-b6-cu8"/>
+                            <constraint firstItem="t2h-ck-JRS" firstAttribute="height" secondItem="dys-af-abi" secondAttribute="height" constant="12" id="Pl1-b6-cu8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3S9-FO-CAM" secondAttribute="trailing" constant="-16" id="Rpd-vx-paa"/>
                             <constraint firstItem="3S9-FO-CAM" firstAttribute="leading" secondItem="ubX-th-QM4" secondAttribute="leadingMargin" constant="-16" id="Rxu-8r-Cct"/>
                             <constraint firstItem="3S9-FO-CAM" firstAttribute="height" secondItem="t2h-ck-JRS" secondAttribute="height" multiplier="1.96" id="arv-qZ-DTp"/>
                             <constraint firstItem="XW6-as-1JL" firstAttribute="top" secondItem="P0K-9g-1sD" secondAttribute="bottom" constant="14" id="cQp-1G-eVU"/>
+                            <constraint firstItem="h8U-Gq-5sm" firstAttribute="top" secondItem="dys-af-abi" secondAttribute="bottom" id="ezM-fr-7tQ"/>
                             <constraint firstItem="t2h-ck-JRS" firstAttribute="leading" secondItem="ubX-th-QM4" secondAttribute="leadingMargin" constant="-16" id="jRm-7i-BTv"/>
                             <constraint firstAttribute="centerX" secondItem="t2h-ck-JRS" secondAttribute="centerX" id="k4j-OB-pAm"/>
                             <constraint firstItem="XW6-as-1JL" firstAttribute="leading" secondItem="LMA-MO-OTw" secondAttribute="leading" id="kNe-Zg-UpV"/>
@@ -655,6 +657,7 @@
                             <mask key="constraints">
                                 <exclude reference="J41-sZ-u2i"/>
                                 <exclude reference="k4j-OB-pAm"/>
+                                <exclude reference="8aK-SP-fDG"/>
                                 <exclude reference="uh4-OC-eGZ"/>
                                 <exclude reference="Bap-vr-Qkc"/>
                                 <exclude reference="Mho-Xj-kfu"/>
