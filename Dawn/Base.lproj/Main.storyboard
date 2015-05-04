@@ -561,6 +561,9 @@
                                 <state key="normal" title="Enter Dawn">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="360" y="152" width="80" height="30"/>
+                                </variation>
                                 <connections>
                                     <segue destination="49e-Tb-3d3" kind="show" identifier="EnterDawn" id="Bv7-hJ-u5U"/>
                                 </connections>
@@ -570,10 +573,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="275" y="123" width="251" height="21"/>
+                                </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XW6-as-1JL" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="175" y="362" width="251" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="275" y="196" width="251" height="0.0"/>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
