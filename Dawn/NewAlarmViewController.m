@@ -109,8 +109,7 @@ extern DawnUser *currentUser;
     
     localNotification.alertLaunchImage = launchImage;
     
-    self.badgeCount ++;
-    localNotification.applicationIconBadgeNumber = self.badgeCount;
+    localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
     localNotification.userInfo = userInfo;
         
     // Schedule it with the app

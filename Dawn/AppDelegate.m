@@ -157,15 +157,15 @@ didReceiveLocalNotification:(UILocalNotification *)notification
                                                            delegate:self cancelButtonTitle:@"Snooze"
                                                   otherButtonTitles:@"Morning Report", nil];
         
-        [alertView show];
         [application cancelAllLocalNotifications];
-        application.applicationIconBadgeNumber = 0;
+        [alertView show];
         [deleteAlarm deleteAlarm:notification];
+        application.applicationIconBadgeNumber = 0;
     }
     
     else {
-        [self goToGoodMorning];
         [deleteAlarm deleteAlarm:notification];
+        [self goToGoodMorning];
     }
 }
 
