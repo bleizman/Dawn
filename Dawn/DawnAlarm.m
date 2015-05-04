@@ -8,6 +8,9 @@
 
 
 #import "DawnAlarm.h"
+#import "DawnUser.h"
+
+extern DawnUser *currentUser;
 
 @implementation DawnAlarm
 
@@ -31,6 +34,7 @@
         _notes = @"";
         _isOn = true;
         _isNew = true;
+        _prefs = currentUser.preferences;
     }
     return self;
 }
@@ -42,6 +46,7 @@
     [aCoder encodeObject:self.notes forKey:@"aNotes"];
     [aCoder encodeBool:self.isOn forKey: @"aisOn"];
     [aCoder encodeBool:self.isNew forKey: @"aisNew"];
+    [aCoder encodeObject:self.prefs forKey:@"aPrefs"];
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder
@@ -53,6 +58,7 @@
         _notes = [aDecoder decodeObjectForKey:@"aNotes"];
         _isOn = [aDecoder decodeBoolForKey:@"aisOn"];
         _isNew = [aDecoder decodeBoolForKey:@"aisNew"];
+        _prefs = [aDecoder decodeObjectForKey:@"aPrefs"];
     }
     return self;
 }

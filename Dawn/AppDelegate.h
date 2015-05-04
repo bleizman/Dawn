@@ -16,6 +16,5 @@ NSString *archivepath;
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-- (void) deleteAlarm: (UILocalNotification *) notification;
 
 @end
