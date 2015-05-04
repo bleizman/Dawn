@@ -21,5 +21,6 @@
 @property BOOL isNew; //don't think we need this but leaving it just in case
 
 - (id)initWithName:(NSString*) name andDate:(NSDate*) date;
+- (id)initWithCoder:(NSCoder *)aDecoder;
 
 @end
