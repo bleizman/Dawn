@@ -25,6 +25,7 @@
     
     // set the edit button
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    alarmTable = self.alarmsTable;
     
     //self.myAlarms = [[NSMutableArray alloc] init];
     

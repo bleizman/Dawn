@@ -74,10 +74,10 @@ extern DawnUser *currentUser;
         NSLog(@"Names don't match");
         return FALSE;
     }
-    /*if (self.alarmTime != that.alarmTime) return FALSE;
-    if (self.notes != that.notes) return FALSE;
+    if (![self.alarmTime isEqualToDate:that.alarmTime]) return FALSE;
+    if (![self.notes isEqualToString:that.notes]) return FALSE;
     if (self.isOn != that.isOn) return FALSE;
-    if (self.isNew != that.isNew) return FALSE;*/
+    if (self.isNew != that.isNew) return FALSE;
     else {
         NSLog(@"Names do match, returning true");
         return TRUE;
