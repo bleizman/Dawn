@@ -16,12 +16,15 @@
 @property BOOL redditNews;
 @property BOOL sportsNews;
 @property BOOL scores;
-@property NSNumber *maxSnooze;
-@property NSNumber *snoozeMins;
+@property NSString *zipCode;
+
+@property int maxSnooze;
+@property int snoozeMins;
 
 //@property NSSet *newssites;
 
 - (id)initWithName:(NSString*) name;
 - (DawnPreferences*)setDefault: (DawnPreferences*) prefs;
+- (void) printPreferences;
 
 @end

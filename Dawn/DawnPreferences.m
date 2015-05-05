@@ -22,6 +22,7 @@
 - (id)initWithName:(NSString*) name{
     self = [super init];
     if (self) {
+        NSLog(@"self is true in the initWithMain message");
         _name = name;
         _weather = YES;
         _nyTimesNews = YES;
@@ -31,6 +32,7 @@
         _maxSnooze = [NSNumber numberWithInt:3];
         _snoozeMins = [NSNumber numberWithInt:1];
     }
+    NSLog(@"Self is false in the initWithName method!!!");
     return self;
 }
 
@@ -68,6 +70,19 @@
     prefs.weather = YES;
     return prefs;
 }
+
+- (void) printPreferences {
+    NSLog(@"The alarm's preferences are as follows: ");
+    NSLog(@"name is %@", self.name);
+    NSLog(@"weather is %d", self.weather);
+    NSLog(@"nyTimesNews is %d", self.nyTimesNews);
+    NSLog(@"redditNews is %d", self.redditNews);
+    NSLog(@"sportsNews is %d", self.sportsNews);
+    NSLog(@"scores is %d", self.scores);
+    NSLog(@"maxSnooze is %d", [self.maxSnooze intValue]);
+    NSLog(@"snoozeMins is %d", [self.snoozeMins intValue]);
+}
+
 
 
 @end

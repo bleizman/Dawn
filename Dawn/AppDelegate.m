@@ -13,7 +13,7 @@
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 #import "DawnAlarm.h"
 #import "GoodMorningViewController.h"
-#import "deleteAlarm.h"
+#import "AlarmMethods.h"
 
 @interface AppDelegate ()
 
@@ -150,17 +150,8 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
     
     //snooze
     else {
-        // change fire date
-        NSNumber *snoozeSeconds =[self.lastNotif.userInfo objectForKey:@"snoozeTime"];
-        snoozeSeconds = [NSNumber numberWithInt:[snoozeSeconds intValue]*60]; //sets as seconds
-        self.lastNotif.fireDate = [self.lastNotif.fireDate dateByAddingTimeInterval:[snoozeSeconds intValue]];
-        // decrement max snooze, update userInfo dictionary on notification
-        NSNumber *newMaxSnooze = [NSNumber numberWithInt:[[self.lastNotif.userInfo objectForKey:@"maxSnooze"] intValue] - 1];
-        [self.lastNotif.userInfo setValue:newMaxSnooze forKey:@"maxSnooze"];
-        
-        //schedule the notification
-        [[UIApplication sharedApplication] scheduleLocalNotification:self.lastNotif];
-        
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+        [AlarmMethods scheduleSnoozeNotificationWithLastNotification:self.lastNotif];
     }
 }
 
@@ -169,13 +160,16 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
 didReceiveLocalNotification:(UILocalNotification *)notification
 {
     UIApplicationState state = [application applicationState];
+    self.lastNotif = notification;
     if (state == UIApplicationStateActive) {
         NSLog(@"Getting an alert while in the app");
         
         //allocate space for alertView
         UIAlertView *alertView = [UIAlertView alloc];
         //if no more snoozes left, don't let snooze
-        if ([[self.lastNotif.userInfo objectForKey:@"maxSnooze"] intValue] == 0) {
+        int intMaxSnooze = [[self.lastNotif.userInfo objectForKey:@"maxSnooze"] intValue];
+        NSLog(@"Snoozes left is: %d", intMaxSnooze);
+        if (intMaxSnooze == 0) {
             alertView = [alertView initWithTitle:notification.alertBody
                                          message:@"No more snoozes!"
                                         delegate:self cancelButtonTitle:nil
@@ -189,14 +183,13 @@ didReceiveLocalNotification:(UILocalNotification *)notification
                                otherButtonTitles:@"Morning Report", nil];
         }
         [application cancelAllLocalNotifications];
-        self.lastNotif = notification;
         [alertView show];
         //[deleteAlarm deleteAlarm:notification];
         application.applicationIconBadgeNumber = 0;
     }
     
     else {
-        [deleteAlarm deleteAlarm:notification];
+        [AlarmMethods deleteAlarm:notification];
         [self goToGoodMorning];
     }
 }

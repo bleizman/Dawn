@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UISwitch *NewYorkTimesSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *RedditSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *WeatherSwitch;
+@property (weak, nonatomic) IBOutlet UITextField *ZipCodeField;
 
 @end
 
@@ -25,6 +26,7 @@
     self.NewYorkTimesSwitch.on = currentUser.preferences.nyTimesNews;
     self.RedditSwitch.on = currentUser.preferences.redditNews;
     self.WeatherSwitch.on = currentUser.preferences.weather;
+    self.ZipCodeField.text = currentUser.preferences.zipCode;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,6 +82,12 @@
     }
 }
 
+- (IBAction)EnterZipCode:(id)sender {
+    NSString *zcode = [(UITextField *)sender text];
+    if(zcode.length == 5){
+        currentUser.preferences.zipCode = zcode;
+    }
+}
 
 
 /*
