@@ -20,7 +20,7 @@
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *WelcomeLabel;
-@property (weak, nonatomic) IBOutlet UIButton *EnterDawn;
+@property (nonatomic) IBOutlet UIButton *EnterDawn;
 
 @end
 
@@ -63,21 +63,19 @@
         if (currentUser.name == nil) {
             currentUser.name = [FBSDKProfile currentProfile].name;
         }
-        //leave controller
-        [self enterButtonPressed:_enterButton];
         
-                //Leave controller if signed in
-        //[self.EnterDawn sendActionsForControlEvents:UIControlEventTouchDown];
+        //Uncomment what's below to pass loging page if already logged into facebook
+        /*//leave controller
+        TabBarViewController *myViewController = [[TabBarViewController alloc] init];
+        [self.navigationController pushViewController:myViewController animated:YES];
+        NSLog(@"Here!");
+        [self enterButtonPressed:_enterButton];*/
+        
     }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    TabBarViewController *myViewController = [[TabBarViewController alloc] init];
-    [self.navigationController pushViewController:myViewController animated:YES];
-    NSLog(@"Here!");
     
 }
 
@@ -86,13 +84,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)enterButtonPressed:(id)sender {
+/*- (IBAction)enterButtonPressed:(id)sender {
     
-//    [self performSegueWithIdentifier:@"EnterDawn" sender:self];
     TabBarViewController *tabBarViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"tabBarViewController"];
     [self.navigationController pushViewController:tabBarViewController animated:YES];
+    //[self.navigationController presentViewController:tabBarViewController animated:NO completion:nil];
     self.navigationController.navigationBarHidden = YES;
-}
+    NSLog(@"Should be moving to wherever it's going");
+}*/
 
 
 #pragma mark - Navigation
