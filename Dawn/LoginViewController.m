@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "MyAlarmsTableViewController.h"
+#import "TabBarViewController.h"
 #import <Parse/Parse.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
@@ -62,13 +63,20 @@
             currentUser.name = [FBSDKProfile currentProfile].name;
         }
         
-        //Leave controller if signed in
-        [self.EnterDawn sendActionsForControlEvents:UIControlEventTouchDown];
+        TabBarViewController *TBVC = [[TabBarViewController alloc] init];
+        [self dismissViewControllerAnimated:YES completion:^{[self presentViewController:TBVC animated:YES completion:^{}];}];
+
+        //[self performSegueWithIdentifier:@"EnterDawn" sender:nil];
     }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    TabBarViewController *myViewController = [[TabBarViewController alloc] init];
+    [self.navigationController pushViewController:myViewController animated:YES];
+    NSLog(@"Here!");
     
 }
 
@@ -78,13 +86,12 @@
 }
 
 /*
-#pragma mark - Navigation
-
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+    if ([[segue identifier] isEqualToString:@"EnterDawn"])
+    {
+        TabBarViewController *TabBarVC = [segue destinationViewController];
+    }
+} */
 
 @end
