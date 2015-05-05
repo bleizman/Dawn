@@ -16,6 +16,7 @@
 @property BOOL redditNews;
 @property BOOL sportsNews;
 @property BOOL scores;
+@property NSString *zipCode;
 
 @property int maxSnooze;
 @property int snoozeMins;
