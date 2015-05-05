@@ -385,7 +385,6 @@
 			files = (
 				477F84FE1AD21CC000B3F9C0 /* Main.storyboard in Resources */,
 				478B926A1AE95949001BA5E6 /* plus-simple-7.png in Resources */,
-				04C854ED1AF9574300093ED6 /* sunrise_cartoon_background.jpg in Resources */,
 				477F85031AD21CC000B3F9C0 /* LaunchScreen.xib in Resources */,
 				956438391AF96AE4007A3359 /* tiktokREAL.wav in Resources */,
 				478B92681AE9591D001BA5E6 /* clock-alarm-7.png in Resources */,
