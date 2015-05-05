@@ -198,7 +198,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xkH-Ep-1dE">
                                 <rect key="frame" x="150" y="118" width="300" height="20"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" label="ViewHor2"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="eTS-1Z-xjM"/>
@@ -206,7 +206,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iTh-Dq-MLa">
                                 <rect key="frame" x="150" y="61" width="300" height="20"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" label="ViewHor1"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="3tn-YO-YLb"/>
@@ -214,7 +214,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AKl-Yy-oCd">
                                 <rect key="frame" x="150" y="331" width="300" height="20"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" label="ViewHor3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="GdV-Ec-Xwm"/>
@@ -222,7 +222,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vDb-FK-Qxt">
                                 <rect key="frame" x="150" y="560" width="300" height="40"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" label="ViewHor4"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="2aZ-yf-ne5"/>
@@ -1117,21 +1117,21 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t2h-ck-JRS">
                                 <rect key="frame" x="0.0" y="181" width="600" height="100"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <variation key="heightClass=compact" ambiguous="YES">
                                     <rect key="frame" x="0.0" y="96" width="600" height="16"/>
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dys-af-abi">
                                 <rect key="frame" x="0.0" y="20" width="600" height="88"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <variation key="heightClass=compact" ambiguous="YES">
                                     <rect key="frame" x="0.0" y="20" width="600" height="15"/>
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3S9-FO-CAM">
                                 <rect key="frame" x="0.0" y="404" width="600" height="196"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <variation key="heightClass=compact" ambiguous="YES">
                                     <rect key="frame" x="0.0" y="370" width="600" height="30"/>
                                 </variation>
@@ -1148,7 +1148,7 @@
                                 </variation>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="3S9-FO-CAM" secondAttribute="bottom" id="0gJ-Kf-epn"/>
                             <constraint firstAttribute="centerX" secondItem="dys-af-abi" secondAttribute="centerX" id="0u5-45-3Ra"/>
@@ -1219,8 +1219,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This is the Good Morning Screen!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jA9-Bs-s4g">
-                                <rect key="frame" x="149" y="35" width="303" height="44"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the Good Morning Screen!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jA9-Bs-s4g">
+                                <rect key="frame" x="149" y="58" width="303" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="303" id="1WG-um-ByW"/>
                                     <constraint firstAttribute="height" constant="44" id="8eo-Ei-0yP"/>
@@ -1229,27 +1229,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Display the text here                                " selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dK-BC-iFg">
-                                <rect key="frame" x="149" y="93" width="288" height="435"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Display the text here                                " selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dK-BC-iFg">
+                                <rect key="frame" x="25" y="116" width="550" height="374"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="288" id="E97-zX-cHR"/>
-                                    <constraint firstAttribute="height" constant="435" id="v6c-wp-l2T"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bS-jU-YKC">
-                                <rect key="frame" x="243" y="536" width="114" height="30"/>
-                                <state key="normal" title="Back to Settings">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="lRV-1X-dtS" kind="show" id="K3N-TV-lOo"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5K7-Im-dMK">
-                                <rect key="frame" x="229" y="458" width="100" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5K7-Im-dMK">
+                                <rect key="frame" x="283" y="504" width="35" height="30"/>
                                 <state key="normal" title="Back">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1257,13 +1244,27 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6bS-jU-YKC" firstAttribute="centerX" secondItem="jA9-Bs-s4g" secondAttribute="centerX" id="Pdd-0m-Kth"/>
+                            <constraint firstItem="5K7-Im-dMK" firstAttribute="top" secondItem="6dK-BC-iFg" secondAttribute="bottom" constant="14" id="3nN-m8-u5w"/>
+                            <constraint firstItem="jA9-Bs-s4g" firstAttribute="top" secondItem="2Ye-ft-5ML" secondAttribute="bottom" constant="-6" id="Lga-HC-TFm"/>
+                            <constraint firstItem="jA9-Bs-s4g" firstAttribute="top" secondItem="2Ye-ft-5ML" secondAttribute="bottom" constant="-6" id="PD4-Y4-YtQ"/>
                             <constraint firstItem="jA9-Bs-s4g" firstAttribute="top" secondItem="2Ye-ft-5ML" secondAttribute="bottom" constant="15" id="RXs-1l-BcI"/>
                             <constraint firstItem="jA9-Bs-s4g" firstAttribute="centerX" secondItem="Ga4-eo-U7k" secondAttribute="centerX" id="Wqd-4d-lwt"/>
-                            <constraint firstItem="6bS-jU-YKC" firstAttribute="top" secondItem="6dK-BC-iFg" secondAttribute="bottom" constant="8" symbolic="YES" id="dHy-Ny-Ja2"/>
                             <constraint firstItem="6dK-BC-iFg" firstAttribute="top" secondItem="jA9-Bs-s4g" secondAttribute="bottom" constant="14" id="fVR-uG-CJI"/>
                             <constraint firstItem="6dK-BC-iFg" firstAttribute="leading" secondItem="jA9-Bs-s4g" secondAttribute="leading" id="huh-gg-ER2"/>
+                            <constraint firstAttribute="centerX" secondItem="6dK-BC-iFg" secondAttribute="centerX" id="lcF-Q3-RyL"/>
+                            <constraint firstItem="6dK-BC-iFg" firstAttribute="leading" secondItem="Ga4-eo-U7k" secondAttribute="leadingMargin" constant="9" id="lja-bI-gNL"/>
+                            <constraint firstAttribute="centerX" secondItem="5K7-Im-dMK" secondAttribute="centerX" id="mTk-ci-Kv7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6dK-BC-iFg" secondAttribute="trailing" constant="9" id="mYn-aF-ra5"/>
+                            <constraint firstAttribute="centerX" secondItem="jA9-Bs-s4g" secondAttribute="centerX" id="rgS-3Y-Zc6"/>
+                            <constraint firstItem="aXn-rM-v2u" firstAttribute="top" secondItem="5K7-Im-dMK" secondAttribute="bottom" constant="17" id="yLV-nz-5OG"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="huh-gg-ER2"/>
+                                <exclude reference="PD4-Y4-YtQ"/>
+                                <exclude reference="RXs-1l-BcI"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="KGh-fv-lLQ"/>
                     <connections>
@@ -1360,8 +1361,5 @@
         <image name="plus-simple-7.png" width="30" height="30"/>
         <image name="spanner-7.png" width="30" height="30"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="AH4-vC-TNy"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

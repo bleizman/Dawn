@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04C854EB1AF9478000093ED6 /* tiktok.wav in Resources */ = {isa = PBXBuildFile; fileRef = 04C854EA1AF9478000093ED6 /* tiktok.wav */; };
+		04C854ED1AF9574300093ED6 /* sunrise_cartoon_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04C854EC1AF9574300093ED6 /* sunrise_cartoon_background.jpg */; };
 		477C79B11ADB34DB009363C9 /* DawnAlarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 477C79AE1ADB34DB009363C9 /* DawnAlarm.m */; };
 		477C79B21ADB34DB009363C9 /* DawnUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 477C79B01ADB34DB009363C9 /* DawnUser.m */; };
 		477F84F21AD21CC000B3F9C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F84F11AD21CC000B3F9C0 /* main.m */; };
@@ -40,7 +42,6 @@
 		47B974001AE0B8C600AC5565 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47B973FE1AE0B8C600AC5565 /* FBSDKLoginKit.framework */; };
 		47B974011AE0B8C600AC5565 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47B973FF1AE0B8C600AC5565 /* FBSDKShareKit.framework */; };
 		47CAA7281AE95CD800E0464F /* GoodMorningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CAA7271AE95CD800E0464F /* GoodMorningViewController.m */; };
-		956438331AF9392D007A3359 /* tiktok.wav in Resources */ = {isa = PBXBuildFile; fileRef = 956438321AF9392D007A3359 /* tiktok.wav */; };
 		958F89071AF5981A00AA173F /* AlarmMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 958F89061AF5981A00AA173F /* AlarmMethods.m */; };
 		95AC72991ADCAF8400639561 /* CreatedAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC72981ADCAF8400639561 /* CreatedAlarmViewController.m */; };
 		95F710C01AE09A840045B4C2 /* NewAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F710BF1AE09A840045B4C2 /* NewAlarmViewController.m */; };
@@ -63,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04C854EA1AF9478000093ED6 /* tiktok.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tiktok.wav; sourceTree = "<group>"; };
+		04C854EC1AF9574300093ED6 /* sunrise_cartoon_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunrise_cartoon_background.jpg; sourceTree = "<group>"; };
 		477C79891AD749DF009363C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		477C79AD1ADB34DB009363C9 /* DawnAlarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DawnAlarm.h; sourceTree = "<group>"; };
 		477C79AE1ADB34DB009363C9 /* DawnAlarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DawnAlarm.m; sourceTree = "<group>"; };
@@ -104,7 +107,6 @@
 		47B973FF1AE0B8C600AC5565 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		47CAA7261AE95CD800E0464F /* GoodMorningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodMorningViewController.h; sourceTree = "<group>"; };
 		47CAA7271AE95CD800E0464F /* GoodMorningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodMorningViewController.m; sourceTree = "<group>"; };
-		956438321AF9392D007A3359 /* tiktok.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tiktok.wav; sourceTree = "<group>"; };
 		958F89051AF5981A00AA173F /* AlarmMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmMethods.h; sourceTree = "<group>"; };
 		958F89061AF5981A00AA173F /* AlarmMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmMethods.m; sourceTree = "<group>"; };
 		95AC72971ADCAF8400639561 /* CreatedAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatedAlarmViewController.h; sourceTree = "<group>"; };
@@ -216,7 +218,8 @@
 				95F710BF1AE09A840045B4C2 /* NewAlarmViewController.m */,
 				95AC72971ADCAF8400639561 /* CreatedAlarmViewController.h */,
 				95AC72981ADCAF8400639561 /* CreatedAlarmViewController.m */,
-				956438321AF9392D007A3359 /* tiktok.wav */,
+				04C854EA1AF9478000093ED6 /* tiktok.wav */,
+				04C854EC1AF9574300093ED6 /* sunrise_cartoon_background.jpg */,
 				47CAA7251AE95CA500E0464F /* Tab Bar Icons */,
 				477F84EF1AD21CC000B3F9C0 /* Supporting Files */,
 			);
@@ -382,10 +385,11 @@
 			files = (
 				477F84FE1AD21CC000B3F9C0 /* Main.storyboard in Resources */,
 				478B926A1AE95949001BA5E6 /* plus-simple-7.png in Resources */,
+				04C854ED1AF9574300093ED6 /* sunrise_cartoon_background.jpg in Resources */,
 				477F85031AD21CC000B3F9C0 /* LaunchScreen.xib in Resources */,
 				478B92681AE9591D001BA5E6 /* clock-alarm-7.png in Resources */,
 				477F85001AD21CC000B3F9C0 /* Images.xcassets in Resources */,
-				956438331AF9392D007A3359 /* tiktok.wav in Resources */,
+				04C854EB1AF9478000093ED6 /* tiktok.wav in Resources */,
 				478B926C1AE95958001BA5E6 /* spanner-7.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
