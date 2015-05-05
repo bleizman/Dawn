@@ -91,7 +91,7 @@
         NSLog(@"The maxSnooze we're putting in is %d", [newAlarm.prefs.snoozeMins intValue]);
         
         //create a notification for that alarm
-        [self scheduleNotificationOn:selectedDate text:name action:actionText sound:nil launchImage:nil andInfo:alarmDict];
+        [self scheduleNotificationOn:selectedDate text:name action:actionText sound:@"tiktok.wav" launchImage:nil andInfo:alarmDict];
 
     }
 }
@@ -112,11 +112,12 @@
     localNotification.alertAction = alertAction;
     
     if(soundfileName == nil)
-        localNotification.soundName =UILocalNotificationDefaultSoundName;
+        localNotification.soundName = UILocalNotificationDefaultSoundName;
     else
     {
         localNotification.soundName = soundfileName;
     }
+    NSLog(@"localNotification.soundName is %@", localNotification.soundName);
     
     localNotification.alertLaunchImage = launchImage;
     
