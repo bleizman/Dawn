@@ -22,12 +22,14 @@
 - (id)initWithName:(NSString*) name{
     self = [super init];
     if (self) {
-    _name = name;
-    _weather = YES;
-    _nyTimesNews = YES;
-    _redditNews = YES;
-    _sportsNews = YES;
-    _scores = YES;
+        _name = name;
+        _weather = YES;
+        _nyTimesNews = YES;
+        _redditNews = YES;
+        _sportsNews = YES;
+        _scores = YES;
+        _maxSnooze = [NSNumber numberWithInt:3];
+        _snoozeMins = [NSNumber numberWithInt:1];
     }
     return self;
 }
@@ -40,6 +42,8 @@
     [aCoder encodeBool:self.redditNews forKey:@"pReddit"];
     [aCoder encodeBool:self.sportsNews forKey: @"pSports"];
     [aCoder encodeBool:self.scores forKey: @"pScores"];
+    [aCoder encodeObject:self.maxSnooze forKey:@"pmaxSnooze"];
+    [aCoder encodeObject:self.snoozeMins forKey:@"psnoozeMins"];
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder
@@ -52,6 +56,8 @@
         _redditNews = [aDecoder decodeBoolForKey:@"pReddit"];
         _sportsNews = [aDecoder decodeBoolForKey:@"pSports"];
         _scores = [aDecoder decodeBoolForKey:@"pScores"];
+        _maxSnooze = [aDecoder decodeObjectForKey:@"pmaxSnooze"];
+        _snoozeMins = [aDecoder decodeObjectForKey:@"psnoozeMins"];
     }
     return self;
 }

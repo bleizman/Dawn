@@ -52,7 +52,7 @@
     if (self) {
         _name = name;
         _userEmail = email;
-        _preferences = [[DawnPreferences alloc] init];
+        _preferences = [self.preferences initWithName:@"User's Default Preferences"];
         _myAlarms = [[NSMutableArray alloc] init];
         _defaultNumber = 1;
     }

@@ -76,8 +76,9 @@ extern DawnUser *currentUser;
         //create an NSDictionary that contains the alarmobj
         NSDictionary *alarmDict = [NSDictionary dictionaryWithObjectsAndKeys:
                                    data, @"alarmData",
+                                   newAlarm.prefs.snoozeMins, @"snoozeMins",
+                                   newAlarm.prefs.maxSnooze, @"maxSnooze",
                                    nil];
-        
         
         //create a notification for that alarm
         [self scheduleNotificationOn:selectedDate text:name action:actionText sound:nil launchImage:nil andInfo:alarmDict];

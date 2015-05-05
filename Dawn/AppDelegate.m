@@ -18,6 +18,7 @@
 @interface AppDelegate ()
 
 @property BOOL isBackground;
+@property UILocalNotification *lastNotif;
 
 @end
 
@@ -124,7 +125,7 @@
         
         topRootViewController = topRootViewController.presentedViewController;
     }
-
+    
     [topRootViewController presentViewController:goodMornVC animated:YES completion:^{
         
         [goodMornVC.back addTarget:self action:@selector(dismissModalViewController) forControlEvents:UIControlEventTouchUpInside];
@@ -135,11 +136,26 @@
 - (void)alertView:(UIAlertView *)alertView
 clickedButtonAtIndex:(NSInteger)buttonIndex {
     
-    if (buttonIndex == 1) {
+    //no more snoozes left
+    if ([alertView numberOfButtons] == 1)
+        [self goToGoodMorning];
+    //snoozes left and choose to go to good morning page
+    else if (buttonIndex == 1) {
         [self goToGoodMorning];
     }
+    //snooze
     else {
-        //snooze
+        // change fire date
+        NSNumber *snoozeSeconds =[self.lastNotif.userInfo objectForKey:@"snoozeTime"];
+        snoozeSeconds = [NSNumber numberWithInt:[snoozeSeconds intValue]*60]; //sets as seconds
+        self.lastNotif.fireDate = [self.lastNotif.fireDate dateByAddingTimeInterval:[snoozeSeconds intValue]];
+        // decrement max snooze, update userInfo dictionary on notification
+        NSNumber *newMaxSnooze = [NSNumber numberWithInt:[[self.lastNotif.userInfo objectForKey:@"maxSnooze"] intValue] - 1];
+        [self.lastNotif.userInfo setValue:newMaxSnooze forKey:@"maxSnooze"];
+        
+        //schedule the notification
+        [[UIApplication sharedApplication] scheduleLocalNotification:self.lastNotif];
+        
     }
 }
 
@@ -149,15 +165,26 @@ didReceiveLocalNotification:(UILocalNotification *)notification
 {
     UIApplicationState state = [application applicationState];
     if (state == UIApplicationStateActive) {
-        //need to cancel the local notification that was sent
         NSLog(@"Getting an alert while in the app");
-        //[[UIApplication sharedApplication]cancelAllLocalNotifications];
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:notification.alertBody
-                                                            message:@"This is an in app alert"
-                                                           delegate:self cancelButtonTitle:@"Snooze"
-                                                  otherButtonTitles:@"Morning Report", nil];
         
+        //allocate space for alertView
+        UIAlertView *alertView = [UIAlertView alloc];
+        //if no more snoozes left, don't let snooze
+        if ([[self.lastNotif.userInfo objectForKey:@"maxSnooze"] intValue] == 0) {
+            alertView = [alertView initWithTitle:notification.alertBody
+                                         message:@"No more snoozes!"
+                                        delegate:self cancelButtonTitle:nil
+                               otherButtonTitles:@"Morning Report", nil];
+        }
+        else {
+            NSString *message = [NSString stringWithFormat: @"In app alert, %@ snoozes left", [notification.userInfo objectForKey:@"maxSnooze"]];
+            alertView = [alertView initWithTitle:notification.alertBody
+                                         message: message
+                                        delegate:self cancelButtonTitle:@"Snooze"
+                               otherButtonTitles:@"Morning Report", nil];
+        }
         [application cancelAllLocalNotifications];
+        self.lastNotif = notification;
         [alertView show];
         [deleteAlarm deleteAlarm:notification];
         application.applicationIconBadgeNumber = 0;
