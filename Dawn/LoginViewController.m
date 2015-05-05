@@ -7,7 +7,6 @@
 //
 
 #import "LoginViewController.h"
-#import "MyAlarmsTableViewController.h"
 #import "TabBarViewController.h"
 #import <Parse/Parse.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
