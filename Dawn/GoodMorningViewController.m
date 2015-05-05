@@ -18,41 +18,56 @@
 @implementation GoodMorningViewController
 
 -(NSString*)goodMorningTextBuilder {
-    NSMutableString *builderText = [[NSMutableString alloc] init];
+    __block NSMutableString *builderText = [[NSMutableString alloc] init];
     [builderText appendString:@"Good Morning!\n"];
     
-    DawnPreferences *currentPreferences = currentUser.preferences;
-    //currentAlarm *DawnAlarm = currentUser.myAlarms.first?
+    NSLog(@"Alarm is %@", currentAlarm.name);
+    DawnPreferences *currentPrefs;
     
-    //if(currentAlarm.notes != @"")
-        [builderText appendString:@"\nTodays Notes: \nCall your mother!\nYou have a test at 4:00\nFeed the dog!\n"];
+    
+    if(currentAlarm != nil){
+        currentPrefs = currentAlarm.prefs;
+    }
+    else{
+        currentPrefs = currentUser.preferences;
+        currentAlarm = [[DawnAlarm alloc] init];
+        NSLog(@"currentAlarm is empty"); //for testing only
+    }
+    
+    if(![currentAlarm.notes  isEqual: @""])
+        [builderText appendString:currentAlarm.notes];
 
-    if(currentPreferences.weather)
+    if(currentPrefs.weather)
         [builderText appendString:@"\nWeather:  \n78 and sunny! Woohoo!\n"];
     
-    if(currentPreferences.nyTimesNews)
+    if(currentPrefs.nyTimesNews)
         [builderText appendString:@"\nNews:  \nJack O'Brien Elected President!\n"];
     
-    if(currentPreferences.sportsNews)
+    if(currentPrefs.sportsNews)
         [builderText appendString:@"\nSports:  \nBen Leizman wins Olympic Gold!\n"];
     
-    if(currentPreferences.redditNews)
+    if(currentPrefs.redditNews)
         [builderText appendString:@"\nReddit:  \nLOL OMG FUNNY INTERNET!\n"];
     
     //Test interaction with database
     [builderText appendString:@"\nFromDatabase:\n"];
     
+    
     PFQuery *query = [PFQuery queryWithClassName:@"ThePrince"];
     [query getObjectInBackgroundWithId:@"L4rZ5s286Y" block:^(PFObject *headline, NSError *error) {
         // Do something with the returned PFObject in the headline variable.
         
-        /*NSString *myheadline = headline[@"text"];
+        NSString *myheadline = headline[@"Text"];
         
-        [builderText appendString:myheadline];
+        NSLog(@"builder so far:%@:", builderText);
 
-        NSLog(@"%@", headline[@"Text"]);*/
+        [builderText appendString:myheadline];
+        
+        NSLog(@"builder after far:%@:", builderText);
+        
+        NSLog(@"Returned from the Database! :%@:", myheadline);
     }];
-    
+
     [builderText appendString:@"\n\nYour dawn has come, start the day!"];
     
     return builderText;
@@ -60,6 +75,7 @@
 
 - (void)loadView {
     [super loadView];
+    NSLog(@"The Name of the current Alarm is: %@ .",currentAlarm.name);
     self.GoodMorningText.text = [self goodMorningTextBuilder];
     
 }
@@ -67,8 +83,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //Implement interaction with database?
-
 }
 
 - (void)didReceiveMemoryWarning {

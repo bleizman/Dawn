@@ -117,6 +117,10 @@
 
 - (void)goToGoodMorning {
     
+    //delete the alarm
+    NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:[self.lastNotif.userInfo objectForKey:@"alarmData"]];
+    currentAlarm = [[DawnAlarm alloc] initWithCoder:unarchiver];
+    
     //get navigation controller
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     GoodMorningViewController *goodMornVC = [storyboard instantiateViewControllerWithIdentifier:@"goodMorning"];
@@ -143,6 +147,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
     else if (buttonIndex == 1) {
         [self goToGoodMorning];
     }
+    
     //snooze
     else {
         // change fire date
@@ -186,7 +191,7 @@ didReceiveLocalNotification:(UILocalNotification *)notification
         [application cancelAllLocalNotifications];
         self.lastNotif = notification;
         [alertView show];
-        [deleteAlarm deleteAlarm:notification];
+        //[deleteAlarm deleteAlarm:notification];
         application.applicationIconBadgeNumber = 0;
     }
     

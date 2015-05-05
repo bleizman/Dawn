@@ -20,7 +20,9 @@
 @property BOOL isOn;
 @property BOOL isNew; //don't think we need this but leaving it just in case
 
-- (id)initWithName:(NSString*) name andDate:(NSDate*) date;
+// initialize with Name, Date, and Default prefs
+- (id)initWithName:(NSString*) name andDate:(NSDate*) date andPrefs: (DawnPreferences*) prefs;
+
 - (id)initWithCoder:(NSCoder *)aDecoder;
 
 @end

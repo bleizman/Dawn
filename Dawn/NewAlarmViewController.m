@@ -58,7 +58,7 @@ extern DawnUser *currentUser;
         NSLog(@"The name is %@", name);
         
         DawnAlarm *newAlarm =[[DawnAlarm alloc] init];
-        newAlarm = [newAlarm initWithName:name andDate:selectedDate];
+        newAlarm = [newAlarm initWithName:name andDate:selectedDate andPrefs:currentUser.preferences];
         [currentUser.myAlarms addObject:newAlarm];
         [CreatedAlarmViewController setText:newAlarm];
         

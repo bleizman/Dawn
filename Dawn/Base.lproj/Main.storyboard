@@ -709,16 +709,17 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bS-jU-YKC">
-                                <rect key="frame" x="243" y="536" width="114" height="30"/>
+                                <rect key="frame" x="243" y="562" width="114" height="30"/>
                                 <state key="normal" title="Back to Settings">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="lRV-1X-dtS" kind="show" id="K3N-TV-lOo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5K7-Im-dMK">
-                                <rect key="frame" x="229" y="458" width="100" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5K7-Im-dMK">
+                                <rect key="frame" x="243" y="524" width="100" height="30"/>
                                 <state key="normal" title="Back">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -726,12 +727,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="aXn-rM-v2u" firstAttribute="top" secondItem="5K7-Im-dMK" secondAttribute="bottom" constant="46" id="P0b-sR-1Yu"/>
                             <constraint firstItem="6bS-jU-YKC" firstAttribute="centerX" secondItem="jA9-Bs-s4g" secondAttribute="centerX" id="Pdd-0m-Kth"/>
                             <constraint firstItem="jA9-Bs-s4g" firstAttribute="top" secondItem="2Ye-ft-5ML" secondAttribute="bottom" constant="15" id="RXs-1l-BcI"/>
                             <constraint firstItem="jA9-Bs-s4g" firstAttribute="centerX" secondItem="Ga4-eo-U7k" secondAttribute="centerX" id="Wqd-4d-lwt"/>
-                            <constraint firstItem="6bS-jU-YKC" firstAttribute="top" secondItem="6dK-BC-iFg" secondAttribute="bottom" constant="8" symbolic="YES" id="dHy-Ny-Ja2"/>
+                            <constraint firstItem="6bS-jU-YKC" firstAttribute="top" secondItem="6dK-BC-iFg" secondAttribute="bottom" constant="34" id="dHy-Ny-Ja2"/>
                             <constraint firstItem="6dK-BC-iFg" firstAttribute="top" secondItem="jA9-Bs-s4g" secondAttribute="bottom" constant="14" id="fVR-uG-CJI"/>
                             <constraint firstItem="6dK-BC-iFg" firstAttribute="leading" secondItem="jA9-Bs-s4g" secondAttribute="leading" id="huh-gg-ER2"/>
+                            <constraint firstItem="5K7-Im-dMK" firstAttribute="leading" secondItem="6bS-jU-YKC" secondAttribute="leading" id="qWx-Uh-qtg"/>
+                            <constraint firstItem="5K7-Im-dMK" firstAttribute="centerX" secondItem="6dK-BC-iFg" secondAttribute="centerX" id="vNc-mc-PjM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KGh-fv-lLQ"/>

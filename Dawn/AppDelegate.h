@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "DawnUser.h"
+#import "DawnAlarm.h"
 
 extern DawnUser *currentUser;
 extern UITableView *alarmTable;
 NSString *archivepath;
+DawnAlarm *currentAlarm;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

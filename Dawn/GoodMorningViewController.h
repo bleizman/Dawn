@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "DawnUser.h"
+#import "DawnAlarm.h"
 #import "AppDelegate.h"
+
+extern DawnAlarm *currentAlarm;
 
 @interface GoodMorningViewController : UIViewController
 
