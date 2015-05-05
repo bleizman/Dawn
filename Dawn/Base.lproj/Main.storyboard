@@ -19,8 +19,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dark sunrise" translatesAutoresizingMaskIntoConstraints="NO" id="yjl-3S-I6v">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yjl-3S-I6v" secondAttribute="height" multiplier="1:1" id="qI6-XU-ia8"/>
+                                </constraints>
+                            </imageView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="HPA-eJ-c0l" userLabel="DawnDatePicker">
                                 <rect key="frame" x="58" y="222" width="485" height="162"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <date key="date" timeIntervalSinceReferenceDate="449977745.93096101">
                                     <!--2015-04-06 01:49:05 +0000-->
                                 </date>
@@ -37,11 +44,13 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bC-vm-szE">
-                                <rect key="frame" x="248" y="501" width="104" height="30"/>
+                                <rect key="frame" x="248" y="491" width="104" height="40"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="0JO-Ek-Rjs"/>
                                     <constraint firstAttribute="width" constant="104" id="ca7-l0-pil"/>
                                 </constraints>
-                                <state key="normal" title="Create Alarm!">
+                                <state key="normal" title="Create Alarm!" backgroundImage="yellow button">
+                                    <color key="titleColor" red="0.0" green="0.10511514249999999" blue="0.7699850063" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -49,8 +58,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNa-rs-mlU">
-                                <rect key="frame" x="235" y="429" width="130" height="30"/>
-                                <state key="normal" title="Advanced Settings">
+                                <rect key="frame" x="235" y="429" width="130" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="BMX-Ot-dI6"/>
+                                    <constraint firstAttribute="height" constant="40" id="eHH-aR-Qvx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Advanced Settings" backgroundImage="yellow button">
+                                    <color key="titleColor" red="0.0" green="0.10511514249999999" blue="0.7699850063" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -85,8 +100,8 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gE1-mM-xfV">
-                                <rect key="frame" x="0.0" y="459" width="600" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="469" width="600" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -101,14 +116,18 @@
                             <constraint firstItem="HPA-eJ-c0l" firstAttribute="width" secondItem="Nqy-Cc-t7M" secondAttribute="width" id="9X8-bl-TqH"/>
                             <constraint firstItem="URj-oT-0xk" firstAttribute="top" secondItem="HPA-eJ-c0l" secondAttribute="bottom" constant="7" id="A8h-ZJ-ysq"/>
                             <constraint firstAttribute="centerX" secondItem="NNa-rs-mlU" secondAttribute="centerX" id="BmS-r0-wne"/>
-                            <constraint firstItem="gE1-mM-xfV" firstAttribute="height" secondItem="URj-oT-0xk" secondAttribute="height" constant="-1" id="DPF-65-gkj"/>
+                            <constraint firstItem="gE1-mM-xfV" firstAttribute="height" secondItem="URj-oT-0xk" secondAttribute="height" multiplier="1/2" constant="-1" id="DPF-65-gkj"/>
+                            <constraint firstItem="gE1-mM-xfV" firstAttribute="top" secondItem="NNa-rs-mlU" secondAttribute="bottom" id="Dr0-K2-TM4"/>
                             <constraint firstItem="Owt-n5-iWE" firstAttribute="top" secondItem="lvg-hE-t2t" secondAttribute="bottom" constant="10" id="FaU-qR-IgS"/>
                             <constraint firstItem="HPA-eJ-c0l" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="42" id="HHe-Dw-O8w"/>
+                            <constraint firstItem="yjl-3S-I6v" firstAttribute="bottom" secondItem="tsR-hK-woN" secondAttribute="bottomMargin" id="KI7-J8-GJs"/>
                             <constraint firstAttribute="centerX" secondItem="fbj-IN-6Sg" secondAttribute="centerX" id="OEd-st-c18"/>
                             <constraint firstAttribute="centerX" secondItem="0bC-vm-szE" secondAttribute="centerX" id="Oe9-JF-W0E"/>
                             <constraint firstItem="eNn-xN-K2j" firstAttribute="height" secondItem="URj-oT-0xk" secondAttribute="height" multiplier="1/2" id="Qrj-WM-jj3"/>
+                            <constraint firstItem="yjl-3S-I6v" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="topMargin" id="T99-b6-hHh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="URj-oT-0xk" secondAttribute="trailing" constant="-16" id="TEz-3T-XNu"/>
                             <constraint firstAttribute="centerX" secondItem="Owt-n5-iWE" secondAttribute="centerX" id="UCJ-4C-Y1W"/>
+                            <constraint firstAttribute="centerX" secondItem="yjl-3S-I6v" secondAttribute="centerX" id="UJa-Bf-c7Z"/>
                             <constraint firstItem="lvg-hE-t2t" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="6" id="VQn-c4-RG9"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="0bC-vm-szE" secondAttribute="bottom" constant="20" id="X0p-Km-URB"/>
                             <constraint firstItem="lvg-hE-t2t" firstAttribute="height" secondItem="eNn-xN-K2j" secondAttribute="height" id="XKI-cC-86l"/>
@@ -118,6 +137,7 @@
                             <constraint firstItem="Nqy-Cc-t7M" firstAttribute="leading" secondItem="HPA-eJ-c0l" secondAttribute="leading" id="cGM-UO-RZY"/>
                             <constraint firstItem="0bC-vm-szE" firstAttribute="top" secondItem="gE1-mM-xfV" secondAttribute="bottom" id="cjL-9Q-7BC"/>
                             <constraint firstItem="HPA-eJ-c0l" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="eGo-5k-ddM"/>
+                            <constraint firstItem="0bC-vm-szE" firstAttribute="top" secondItem="gE1-mM-xfV" secondAttribute="bottom" constant="1" id="eQJ-IX-GRa"/>
                             <constraint firstItem="eNn-xN-K2j" firstAttribute="top" secondItem="Nqy-Cc-t7M" secondAttribute="bottom" constant="8" id="fI0-YD-vae"/>
                             <constraint firstItem="HPA-eJ-c0l" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="gYO-0E-d0F"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gE1-mM-xfV" secondAttribute="trailing" constant="-16" id="lAu-bP-BYp"/>
@@ -132,8 +152,10 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="gYO-0E-d0F"/>
+                                <exclude reference="a6b-sa-wvd"/>
                                 <exclude reference="5MU-j3-bQI"/>
                                 <exclude reference="6IS-e4-YSe"/>
+                                <exclude reference="cjL-9Q-7BC"/>
                                 <exclude reference="zcV-Jk-vvP"/>
                             </mask>
                         </variation>
@@ -1408,9 +1430,11 @@
     </scenes>
     <resources>
         <image name="clock-alarm-7.png" width="30" height="30"/>
+        <image name="dark sunrise" width="425" height="425"/>
         <image name="light sunrise" width="425" height="425"/>
         <image name="plus-simple-7.png" width="30" height="30"/>
         <image name="spanner-7.png" width="30" height="30"/>
+        <image name="yellow button" width="600" height="247"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Wa7-VA-JuX"/>
