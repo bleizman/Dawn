@@ -18,8 +18,8 @@
 @property BOOL scores;
 @property NSString *zipCode;
 
-@property int maxSnooze;
-@property int snoozeMins;
+@property NSNumber *maxSnooze;
+@property NSNumber *snoozeMins;
 
 //@property NSSet *newssites;
 
