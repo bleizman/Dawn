@@ -217,8 +217,6 @@
 				95F710BF1AE09A840045B4C2 /* NewAlarmViewController.m */,
 				95AC72971ADCAF8400639561 /* CreatedAlarmViewController.h */,
 				95AC72981ADCAF8400639561 /* CreatedAlarmViewController.m */,
-				04C854EA1AF9478000093ED6 /* tiktok.wav */,
-				04C854EC1AF9574300093ED6 /* sunrise_cartoon_background.jpg */,
 				47CAA7251AE95CA500E0464F /* Tab Bar Icons */,
 				477F84EF1AD21CC000B3F9C0 /* Supporting Files */,
 			);
@@ -384,12 +382,10 @@
 			files = (
 				477F84FE1AD21CC000B3F9C0 /* Main.storyboard in Resources */,
 				478B926A1AE95949001BA5E6 /* plus-simple-7.png in Resources */,
-				04C854ED1AF9574300093ED6 /* sunrise_cartoon_background.jpg in Resources */,
 				477F85031AD21CC000B3F9C0 /* LaunchScreen.xib in Resources */,
 				478B92681AE9591D001BA5E6 /* clock-alarm-7.png in Resources */,
 				47345AD41AF95597000D3301 /* AppIcon.appiconset in Resources */,
 				477F85001AD21CC000B3F9C0 /* Images.xcassets in Resources */,
-				04C854EB1AF9478000093ED6 /* tiktok.wav in Resources */,
 				478B926C1AE95958001BA5E6 /* spanner-7.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
