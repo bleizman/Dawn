@@ -24,5 +24,7 @@ extern UITableView *alarmTable;
                           sound:(NSString*) soundfileName
                     launchImage:(NSString*) launchImage
                         andInfo:(NSDictionary*) userInfo;
+@property (weak, nonatomic) IBOutlet UITextField *labelTextField;
+
 
 @end

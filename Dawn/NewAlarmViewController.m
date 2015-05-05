@@ -22,6 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(DoneEditing)];
+    [self.view addGestureRecognizer:tap];
     _badgeCount = 0;
     NSLog(@"Default number is %d", currentUser.defaultNumber);
 
@@ -122,6 +126,13 @@
     // Schedule it with the app
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     //[localNotification release];
+}
+
+- (IBAction)DoneEditing {
+    [self.labelTextField resignFirstResponder];
+}
+- (IBAction)TappedReturn:(id)sender {
+    [sender resignFirstResponder];
 }
 
 @end
