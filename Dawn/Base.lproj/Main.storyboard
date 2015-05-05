@@ -27,10 +27,13 @@
                                     <!--2015-04-04 10:00:01 +0000-->
                                 </date>
                             </datePicker>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Alarm Label " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nqy-Cc-t7M" userLabel="DawnAlarmLabel">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Alarm Label " minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Nqy-Cc-t7M" userLabel="DawnAlarmLabel">
                                 <rect key="frame" x="58" y="128" width="485" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="TappedReturn:" destination="9pv-A4-QxB" eventType="editingDidEndOnExit" id="7cA-In-0e0"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bC-vm-szE">
                                 <rect key="frame" x="248" y="495" width="104" height="30"/>
@@ -90,6 +93,7 @@
                         <outlet property="alarmDatePicker" destination="HPA-eJ-c0l" id="heZ-39-Q6g"/>
                         <outlet property="alarmLabel" destination="Nqy-Cc-t7M" id="RpI-Vi-6eO"/>
                         <outlet property="createNewAlarm" destination="0bC-vm-szE" id="Pf6-V6-ynm"/>
+                        <outlet property="labelTextField" destination="Nqy-Cc-t7M" id="x6u-hn-IAv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -506,10 +510,10 @@
             </objects>
             <point key="canvasLocation" x="2291" y="-1596"/>
         </scene>
-        <!--View Controller-->
+        <!--Advanced Settings1 View Controller-->
         <scene sceneID="jDG-SQ-FbE">
             <objects>
-                <viewController id="Xlh-tf-84o" sceneMemberID="viewController">
+                <viewController id="Xlh-tf-84o" customClass="AdvancedSettings1ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tmL-Ju-P4c"/>
                         <viewControllerLayoutGuide type="bottom" id="m7Z-fv-7NF"/>
@@ -672,6 +676,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="remindersText" destination="4BM-94-Y88" id="W6y-IG-YLO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yYA-EB-jzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

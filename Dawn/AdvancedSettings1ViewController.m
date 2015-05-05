@@ -12,6 +12,8 @@
 {
     NSArray *_snoozeTimePickerData;
     NSArray *_maxSnoozePickerData;
+    __weak IBOutlet UITextView *remindersText;
+    
 }
 @end
 
@@ -19,6 +21,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //initiliaze tap to get rid of gesture
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(DoneEditing)];
+    [self.view addGestureRecognizer:tap];
     // Do any additional setup after loading the view.
     // Initialize Data
     _snoozeTimePickerData = @[@"1 Minute", @"2 Minutes", @"3 Minutes", @"4 Minutes", @"5 Minutes", @"6 Minutes", @"7 Minutes", @"8 Minutes", @"9 Minutes", @"10 Minutes", @"12 Minutes", @"15 Minutes", @"20 Minutes", @"25 Minutes", @"30 Minutes", @"45 Minutes", @"1 hour", @"2 hours"];
@@ -63,6 +70,11 @@
 - (IBAction)unwindToNewAlarm:(UIStoryboardSegue *)segue {
     
 }
+
+- (IBAction)DoneEditing {
+    [remindersText resignFirstResponder];
+}
+
 
 /*
 #pragma mark - Navigation
