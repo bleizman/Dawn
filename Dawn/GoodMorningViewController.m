@@ -18,7 +18,11 @@
 @implementation GoodMorningViewController
 
 -(NSString*)goodMorningTextBuilder {
-    __block NSMutableString *builderText = [[NSMutableString alloc] init];
+    PFObject *myObj;
+    PFQuery *query;
+    NSString *myString;
+    
+    NSMutableString *builderText = [[NSMutableString alloc] init];
     [builderText appendString:@"Good Morning!\n"];
     
     NSLog(@"Alarm is %@", currentAlarm.name);
@@ -37,37 +41,89 @@
     if(![currentAlarm.notes  isEqual: @""])
         [builderText appendString:currentAlarm.notes];
 
-    if(currentPrefs.weather)
-        [builderText appendString:@"\nWeather:  \n78 and sunny! Woohoo!\n"];
-    
-    if(currentPrefs.nyTimesNews)
-        [builderText appendString:@"\nNews:  \nJack O'Brien Elected President!\n"];
-    
-    if(currentPrefs.sportsNews)
-        [builderText appendString:@"\nSports:  \nBen Leizman wins Olympic Gold!\n"];
-    
-    if(currentPrefs.redditNews)
-        [builderText appendString:@"\nReddit:  \nLOL OMG FUNNY INTERNET!\n"];
-    
-    //Test interaction with database
-    [builderText appendString:@"\nFromDatabase:\n"];
-    
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"ThePrince"];
-    [query getObjectInBackgroundWithId:@"L4rZ5s286Y" block:^(PFObject *headline, NSError *error) {
-        // Do something with the returned PFObject in the headline variable.
+    if(currentPrefs.weather) {
+        [builderText appendString:@"\nWeather:\n"];
         
-        NSString *myheadline = headline[@"Text"];
+        query = [PFQuery queryWithClassName:@"Weather"];
+        [query whereKey:@"Zipcode" equalTo:@"08540"];
+        NSArray* weatherarray = [query findObjects];
         
-        NSLog(@"builder so far:%@:", builderText);
-
+        if([weatherarray count] > 0){
+        myObj = [weatherarray objectAtIndex: 0];
+        myString = myObj[@"info"];
+        if (![myString isEqualToString: nil]) {
+            NSLog(@"%@", myString);
+            [builderText appendString:myString];
+        }
+        }
+        else {
+            [builderText appendString:@"weather unavailable for your zipcode"];
+        }
+    }
+    
+    
+    if(currentPrefs.nyTimesNews) {
+        [builderText appendString:@"\n\nNews:\n"];
+        
+        query = [PFQuery queryWithClassName:@"News"];
+        [query whereKey:@"Source" equalTo:@"NYTimes"];
+        NSArray* newsarray = [query findObjects];
+        
+        myObj = [newsarray objectAtIndex: 0];
+        myString = myObj[@"Text"];
+        if (![myString isEqualToString: nil]) {
+            NSLog(@"%@", myString);
+            [builderText appendString:myString];
+        }
+    }
+    
+    
+    if(currentPrefs.sportsNews) {
+        [builderText appendString:@"\n\nSports:\n"];
+        
+        query = [PFQuery queryWithClassName:@"Sports"];
+        [query whereKey:@"Sport" equalTo:@"Test"];
+        NSArray* sportsArray = [query findObjects];
+        
+        myObj = [sportsArray objectAtIndex: 0];
+        myString = myObj[@"Text"];
+        if (![myString isEqualToString: nil]) {
+            NSLog(@"%@", myString);
+            [builderText appendString:myString];
+        }
+    }
+    
+    if(currentPrefs.redditNews) {
+        [builderText appendString:@"\n\nReddit:\n"];
+        
+        query = [PFQuery queryWithClassName:@"Reddit"];
+        [query whereKey:@"Subject" equalTo:@"Funny!"];
+        NSArray* redditarray = [query findObjects];
+        
+        myObj = [redditarray objectAtIndex: 0];
+        myString = myObj[@"Text"];
+        if (![myString isEqualToString: nil]) {
+            NSLog(@"%@", myString);
+            [builderText appendString:myString];
+        }
+    }
+    
+    //Test interaction with database...
+    /*
+    [builderText appendString:@"\nTEST: FromDatabase:\n"];
+    
+    query = [PFQuery queryWithClassName:@"ThePrince"];
+    [query whereKey:@"Section" equalTo:@"Headline"];
+    NSArray* scoreArray = [query findObjects];
+    
+    PFObject *myobject = [scoreArray objectAtIndex: 0];
+    NSString *myheadline = myobject[@"Text"];
+    if (![myheadline isEqualToString: nil]) {
+        NSLog(@"%@", myheadline);
         [builderText appendString:myheadline];
-        
-        NSLog(@"builder after far:%@:", builderText);
-        
-        NSLog(@"Returned from the Database! :%@:", myheadline);
-    }];
+    } */
 
+    // Leave a nice message at the bottom
     [builderText appendString:@"\n\nYour dawn has come, start the day!"];
     
     return builderText;
@@ -76,13 +132,12 @@
 - (void)loadView {
     [super loadView];
     NSLog(@"The Name of the current Alarm is: %@ .",currentAlarm.name);
-    self.GoodMorningText.text = [self goodMorningTextBuilder];
-    
+    self.GoodMorningText.text = @"Loading your personalized data...";
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.GoodMorningText.text = [self goodMorningTextBuilder];
 }
 
 - (void)didReceiveMemoryWarning {
