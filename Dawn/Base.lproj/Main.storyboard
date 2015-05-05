@@ -44,9 +44,9 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bC-vm-szE">
-                                <rect key="frame" x="248" y="501" width="104" height="30"/>
+                                <rect key="frame" x="248" y="491" width="104" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="0JO-Ek-Rjs"/>
+                                    <constraint firstAttribute="height" constant="40" id="0JO-Ek-Rjs"/>
                                     <constraint firstAttribute="width" constant="104" id="ca7-l0-pil"/>
                                 </constraints>
                                 <state key="normal" title="Create Alarm!" backgroundImage="yellow button">
@@ -58,10 +58,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNa-rs-mlU">
-                                <rect key="frame" x="235" y="429" width="130" height="30"/>
+                                <rect key="frame" x="235" y="429" width="130" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="BMX-Ot-dI6"/>
-                                    <constraint firstAttribute="height" constant="30" id="eHH-aR-Qvx"/>
+                                    <constraint firstAttribute="height" constant="40" id="eHH-aR-Qvx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Advanced Settings" backgroundImage="yellow button">
@@ -100,7 +100,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gE1-mM-xfV">
-                                <rect key="frame" x="0.0" y="459" width="600" height="42"/>
+                                <rect key="frame" x="0.0" y="469" width="600" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -116,7 +116,8 @@
                             <constraint firstItem="HPA-eJ-c0l" firstAttribute="width" secondItem="Nqy-Cc-t7M" secondAttribute="width" id="9X8-bl-TqH"/>
                             <constraint firstItem="URj-oT-0xk" firstAttribute="top" secondItem="HPA-eJ-c0l" secondAttribute="bottom" constant="7" id="A8h-ZJ-ysq"/>
                             <constraint firstAttribute="centerX" secondItem="NNa-rs-mlU" secondAttribute="centerX" id="BmS-r0-wne"/>
-                            <constraint firstItem="gE1-mM-xfV" firstAttribute="height" secondItem="URj-oT-0xk" secondAttribute="height" constant="-1" id="DPF-65-gkj"/>
+                            <constraint firstItem="gE1-mM-xfV" firstAttribute="height" secondItem="URj-oT-0xk" secondAttribute="height" multiplier="1/2" constant="-1" id="DPF-65-gkj"/>
+                            <constraint firstItem="gE1-mM-xfV" firstAttribute="top" secondItem="NNa-rs-mlU" secondAttribute="bottom" id="Dr0-K2-TM4"/>
                             <constraint firstItem="Owt-n5-iWE" firstAttribute="top" secondItem="lvg-hE-t2t" secondAttribute="bottom" constant="10" id="FaU-qR-IgS"/>
                             <constraint firstItem="HPA-eJ-c0l" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="42" id="HHe-Dw-O8w"/>
                             <constraint firstItem="yjl-3S-I6v" firstAttribute="bottom" secondItem="tsR-hK-woN" secondAttribute="bottomMargin" id="KI7-J8-GJs"/>
@@ -136,6 +137,7 @@
                             <constraint firstItem="Nqy-Cc-t7M" firstAttribute="leading" secondItem="HPA-eJ-c0l" secondAttribute="leading" id="cGM-UO-RZY"/>
                             <constraint firstItem="0bC-vm-szE" firstAttribute="top" secondItem="gE1-mM-xfV" secondAttribute="bottom" id="cjL-9Q-7BC"/>
                             <constraint firstItem="HPA-eJ-c0l" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="eGo-5k-ddM"/>
+                            <constraint firstItem="0bC-vm-szE" firstAttribute="top" secondItem="gE1-mM-xfV" secondAttribute="bottom" constant="1" id="eQJ-IX-GRa"/>
                             <constraint firstItem="eNn-xN-K2j" firstAttribute="top" secondItem="Nqy-Cc-t7M" secondAttribute="bottom" constant="8" id="fI0-YD-vae"/>
                             <constraint firstItem="HPA-eJ-c0l" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="gYO-0E-d0F"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gE1-mM-xfV" secondAttribute="trailing" constant="-16" id="lAu-bP-BYp"/>
@@ -150,8 +152,10 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="gYO-0E-d0F"/>
+                                <exclude reference="a6b-sa-wvd"/>
                                 <exclude reference="5MU-j3-bQI"/>
                                 <exclude reference="6IS-e4-YSe"/>
+                                <exclude reference="cjL-9Q-7BC"/>
                                 <exclude reference="zcV-Jk-vvP"/>
                             </mask>
                         </variation>
