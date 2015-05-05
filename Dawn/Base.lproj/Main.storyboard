@@ -1164,15 +1164,6 @@
                                     <segue destination="49e-Tb-3d3" kind="show" identifier="EnterDawnButton" id="Bv7-hJ-u5U"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please sign in through Facebook" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMA-MO-OTw">
-                                <rect key="frame" x="175" y="289" width="251" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=compact" ambiguous="YES">
-                                    <rect key="frame" x="175" y="120" width="251" height="21"/>
-                                </variation>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t2h-ck-JRS">
                                 <rect key="frame" x="0.0" y="181" width="600" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1224,11 +1215,7 @@
                             <constraint firstItem="dys-af-abi" firstAttribute="leading" secondItem="ubX-th-QM4" secondAttribute="leadingMargin" constant="-16" id="IyH-nd-P7G"/>
                             <constraint firstAttribute="centerX" secondItem="dys-af-abi" secondAttribute="centerX" id="J41-sZ-u2i"/>
                             <constraint firstAttribute="bottom" secondItem="3S9-FO-CAM" secondAttribute="bottom" id="JRe-Zf-hzB"/>
-                            <constraint firstAttribute="centerX" secondItem="LMA-MO-OTw" secondAttribute="centerX" id="LyW-Vl-vMb"/>
-                            <constraint firstItem="LMA-MO-OTw" firstAttribute="top" secondItem="t2h-ck-JRS" secondAttribute="bottom" constant="8" id="MTu-Cg-ukL"/>
                             <constraint firstAttribute="centerX" secondItem="XW6-as-1JL" secondAttribute="centerX" id="Mho-Xj-kfu"/>
-                            <constraint firstItem="P0K-9g-1sD" firstAttribute="centerX" secondItem="LMA-MO-OTw" secondAttribute="centerX" id="Mrl-fi-EaZ"/>
-                            <constraint firstItem="P0K-9g-1sD" firstAttribute="top" secondItem="LMA-MO-OTw" secondAttribute="bottom" constant="8" id="NRz-oC-Pre"/>
                             <constraint firstItem="t2h-ck-JRS" firstAttribute="height" secondItem="dys-af-abi" secondAttribute="height" constant="12" id="Pl1-b6-cu8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3S9-FO-CAM" secondAttribute="trailing" constant="-16" id="Rpd-vx-paa"/>
                             <constraint firstItem="3S9-FO-CAM" firstAttribute="leading" secondItem="ubX-th-QM4" secondAttribute="leadingMargin" constant="-16" id="Rxu-8r-Cct"/>
@@ -1238,10 +1225,8 @@
                             <constraint firstItem="h8U-Gq-5sm" firstAttribute="top" secondItem="dys-af-abi" secondAttribute="bottom" id="ezM-fr-7tQ"/>
                             <constraint firstItem="t2h-ck-JRS" firstAttribute="leading" secondItem="ubX-th-QM4" secondAttribute="leadingMargin" constant="-16" id="jRm-7i-BTv"/>
                             <constraint firstAttribute="centerX" secondItem="t2h-ck-JRS" secondAttribute="centerX" id="k4j-OB-pAm"/>
-                            <constraint firstItem="XW6-as-1JL" firstAttribute="leading" secondItem="LMA-MO-OTw" secondAttribute="leading" id="kNe-Zg-UpV"/>
                             <constraint firstAttribute="centerX" secondItem="eXZ-yS-MnC" secondAttribute="centerX" id="kpI-pa-FBp"/>
-                            <constraint firstItem="h8U-Gq-5sm" firstAttribute="centerX" secondItem="LMA-MO-OTw" secondAttribute="centerX" id="uh4-OC-eGZ"/>
-                            <constraint firstItem="XW6-as-1JL" firstAttribute="trailing" secondItem="LMA-MO-OTw" secondAttribute="trailing" id="wSX-fB-TmZ"/>
+                            <constraint firstItem="P0K-9g-1sD" firstAttribute="top" secondItem="t2h-ck-JRS" secondAttribute="bottom" constant="37" id="ltw-Wj-2gV"/>
                             <constraint firstItem="lf2-Kp-D87" firstAttribute="top" secondItem="eXZ-yS-MnC" secondAttribute="bottom" id="wfq-s1-xGg"/>
                             <constraint firstItem="t2h-ck-JRS" firstAttribute="top" secondItem="h8U-Gq-5sm" secondAttribute="bottom" constant="6" id="yvb-Bl-Ri4"/>
                         </constraints>
@@ -1250,12 +1235,8 @@
                                 <exclude reference="J41-sZ-u2i"/>
                                 <exclude reference="k4j-OB-pAm"/>
                                 <exclude reference="8aK-SP-fDG"/>
-                                <exclude reference="uh4-OC-eGZ"/>
                                 <exclude reference="Bap-vr-Qkc"/>
                                 <exclude reference="Mho-Xj-kfu"/>
-                                <exclude reference="kNe-Zg-UpV"/>
-                                <exclude reference="wSX-fB-TmZ"/>
-                                <exclude reference="Mrl-fi-EaZ"/>
                             </mask>
                         </variation>
                     </view>
