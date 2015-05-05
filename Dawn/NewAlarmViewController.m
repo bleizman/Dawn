@@ -11,8 +11,6 @@
 #import "DawnUser.h"
 #import "CreatedAlarmViewController.h"
 
-extern DawnUser *currentUser;
-
 @interface NewAlarmViewController ()
 
 @property int badgeCount;
@@ -60,6 +58,12 @@ extern DawnUser *currentUser;
         DawnAlarm *newAlarm =[[DawnAlarm alloc] init];
         newAlarm = [newAlarm initWithName:name andDate:selectedDate];
         [currentUser.myAlarms addObject:newAlarm];
+        NSLog(@"Initialized with the following preferences ");
+        [newAlarm.prefs printPreferences];
+        NSNumber *maxSnooze = newAlarm.prefs.maxSnooze;
+        NSNumber *snoozeMins = newAlarm.prefs.snoozeMins;
+        
+        NSLog(@"but now the maxSnooze is %d", [newAlarm.prefs.snoozeMins intValue]);
         [CreatedAlarmViewController setText:newAlarm];
         
         [alarmTable reloadData];
@@ -76,13 +80,15 @@ extern DawnUser *currentUser;
         //create an NSDictionary that contains the alarmobj
         NSDictionary *alarmDict = [NSDictionary dictionaryWithObjectsAndKeys:
                                    data, @"alarmData",
-                                   newAlarm.prefs.snoozeMins, @"snoozeMins",
-                                   newAlarm.prefs.maxSnooze, @"maxSnooze",
+                                   snoozeMins, @"snoozeMins",
+                                   maxSnooze, @"maxSnooze",
                                    nil];
+        
+        NSLog(@"The maxSnooze we're putting in is %d", [newAlarm.prefs.snoozeMins intValue]);
         
         //create a notification for that alarm
         [self scheduleNotificationOn:selectedDate text:name action:actionText sound:nil launchImage:nil andInfo:alarmDict];
-        
+
     }
 }
 

@@ -23,5 +23,6 @@
 
 - (id)initWithName:(NSString*) name;
 - (DawnPreferences*)setDefault: (DawnPreferences*) prefs;
+- (void) printPreferences;
 
 @end

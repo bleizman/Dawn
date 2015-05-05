@@ -13,8 +13,9 @@
 extern UITableView *alarmTable;
 extern DawnUser *currentUser;
 
-@interface deleteAlarm : NSObject
+@interface AlarmMethods : NSObject
 
 + (void)deleteAlarm:(UILocalNotification *)notification;
++ (void) scheduleSnoozeNotificationWithLastNotification: (UILocalNotification *) lastNotif;
 
 @end

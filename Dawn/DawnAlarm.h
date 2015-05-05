@@ -15,7 +15,7 @@
 @property NSString *name;
 @property NSDate *alarmTime;
 @property NSString *notes;
-@property BOOL *snooze;
+@property BOOL snooze;
 @property DawnPreferences *prefs;
 @property BOOL isOn;
 @property BOOL isNew; //don't think we need this but leaving it just in case

@@ -40,7 +40,7 @@
 		47B974001AE0B8C600AC5565 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47B973FE1AE0B8C600AC5565 /* FBSDKLoginKit.framework */; };
 		47B974011AE0B8C600AC5565 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47B973FF1AE0B8C600AC5565 /* FBSDKShareKit.framework */; };
 		47CAA7281AE95CD800E0464F /* GoodMorningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CAA7271AE95CD800E0464F /* GoodMorningViewController.m */; };
-		958F89071AF5981A00AA173F /* deleteAlarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 958F89061AF5981A00AA173F /* deleteAlarm.m */; };
+		958F89071AF5981A00AA173F /* AlarmMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 958F89061AF5981A00AA173F /* AlarmMethods.m */; };
 		95AC72991ADCAF8400639561 /* CreatedAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC72981ADCAF8400639561 /* CreatedAlarmViewController.m */; };
 		95F710C01AE09A840045B4C2 /* NewAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F710BF1AE09A840045B4C2 /* NewAlarmViewController.m */; };
 		95F710C31AE09DEE0045B4C2 /* AdvancedSettings1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F710C21AE09DEE0045B4C2 /* AdvancedSettings1ViewController.m */; };
@@ -103,8 +103,8 @@
 		47B973FF1AE0B8C600AC5565 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		47CAA7261AE95CD800E0464F /* GoodMorningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodMorningViewController.h; sourceTree = "<group>"; };
 		47CAA7271AE95CD800E0464F /* GoodMorningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodMorningViewController.m; sourceTree = "<group>"; };
-		958F89051AF5981A00AA173F /* deleteAlarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = deleteAlarm.h; sourceTree = "<group>"; };
-		958F89061AF5981A00AA173F /* deleteAlarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = deleteAlarm.m; sourceTree = "<group>"; };
+		958F89051AF5981A00AA173F /* AlarmMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmMethods.h; sourceTree = "<group>"; };
+		958F89061AF5981A00AA173F /* AlarmMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmMethods.m; sourceTree = "<group>"; };
 		95AC72971ADCAF8400639561 /* CreatedAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatedAlarmViewController.h; sourceTree = "<group>"; };
 		95AC72981ADCAF8400639561 /* CreatedAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatedAlarmViewController.m; sourceTree = "<group>"; };
 		95F710BE1AE09A840045B4C2 /* NewAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAlarmViewController.h; sourceTree = "<group>"; };
@@ -202,8 +202,8 @@
 				477F84F41AD21CC000B3F9C0 /* AppDelegate.m */,
 				95F710C71AE0A0D90045B4C2 /* MyAlarmsTableViewController.h */,
 				95F710C81AE0A0D90045B4C2 /* MyAlarmsTableViewController.m */,
-				958F89051AF5981A00AA173F /* deleteAlarm.h */,
-				958F89061AF5981A00AA173F /* deleteAlarm.m */,
+				958F89051AF5981A00AA173F /* AlarmMethods.h */,
+				958F89061AF5981A00AA173F /* AlarmMethods.m */,
 				95F710C41AE0A0A90045B4C2 /* SettingsViewController.h */,
 				95F710C51AE0A0A90045B4C2 /* SettingsViewController.m */,
 				95F710C11AE09DEE0045B4C2 /* AdvancedSettings1ViewController.h */,
@@ -400,7 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				958F89071AF5981A00AA173F /* deleteAlarm.m in Sources */,
+				958F89071AF5981A00AA173F /* AlarmMethods.m in Sources */,
 				477C79B21ADB34DB009363C9 /* DawnUser.m in Sources */,
 				95F710C91AE0A0D90045B4C2 /* MyAlarmsTableViewController.m in Sources */,
 				95F710C01AE09A840045B4C2 /* NewAlarmViewController.m in Sources */,
