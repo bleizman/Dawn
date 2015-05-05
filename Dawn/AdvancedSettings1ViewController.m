@@ -10,6 +10,9 @@
 
 @interface AdvancedSettings1ViewController ()
 
+@property (weak, nonatomic) IBOutlet UIPickerView *snoozeTimePicker;
+
+
 @end
 
 @implementation AdvancedSettings1ViewController
