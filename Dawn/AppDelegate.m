@@ -141,10 +141,15 @@
 clickedButtonAtIndex:(NSInteger)buttonIndex {
     
     //no more snoozes left
-    if ([alertView numberOfButtons] == 1)
+    if ([alertView numberOfButtons] == 1) {
+        //delete the alarm
+        [AlarmMethods deleteAlarm:self.lastNotif];
         [self goToGoodMorning];
+    }
     //snoozes left and choose to go to good morning page
     else if (buttonIndex == 1) {
+        //delete the alarm
+        [AlarmMethods deleteAlarm:self.lastNotif];
         [self goToGoodMorning];
     }
     

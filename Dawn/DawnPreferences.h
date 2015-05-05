@@ -17,7 +17,6 @@
 @property BOOL sportsNews;
 @property BOOL scores;
 @property NSString *zipCode;
-
 @property NSNumber *maxSnooze;
 @property NSNumber *snoozeMins;
 
