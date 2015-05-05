@@ -15,6 +15,7 @@
 #import <FBSDKCoreKit/FBSDKProfile.h>
 #import <ParseUI/ParseUI.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+#import "TabBarViewController.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *WelcomeLabel;
@@ -61,9 +62,11 @@
         if (currentUser.name == nil) {
             currentUser.name = [FBSDKProfile currentProfile].name;
         }
+        //leave controller
+        [self enterButtonPressed:_enterButton];
         
-        //Leave controller if signed in
-        [self.EnterDawn sendActionsForControlEvents:UIControlEventTouchDown];
+                //Leave controller if signed in
+        //[self.EnterDawn sendActionsForControlEvents:UIControlEventTouchDown];
     }
 }
 
@@ -77,14 +80,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+- (IBAction)enterButtonPressed:(id)sender {
+    
+//    [self performSegueWithIdentifier:@"EnterDawn" sender:self];
+    TabBarViewController *tabBarViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"tabBarViewController"];
+    [self.navigationController pushViewController:tabBarViewController animated:YES];
+    self.navigationController.navigationBarHidden = YES;
+}
 
+
+#pragma mark - Navigation
+/*
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
 }
-*/
+ */
 
 @end
