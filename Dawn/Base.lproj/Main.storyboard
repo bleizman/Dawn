@@ -1131,7 +1131,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goodpics" translatesAutoresizingMaskIntoConstraints="NO" id="eXZ-yS-MnC">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light sunrise" translatesAutoresizingMaskIntoConstraints="NO" id="eXZ-yS-MnC">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="eXZ-yS-MnC" secondAttribute="height" multiplier="1:1" id="kJO-Sz-gyp"/>
@@ -1408,7 +1408,7 @@
     </scenes>
     <resources>
         <image name="clock-alarm-7.png" width="30" height="30"/>
-        <image name="goodpics" width="425" height="425"/>
+        <image name="light sunrise" width="425" height="425"/>
         <image name="plus-simple-7.png" width="30" height="30"/>
         <image name="spanner-7.png" width="30" height="30"/>
     </resources>
