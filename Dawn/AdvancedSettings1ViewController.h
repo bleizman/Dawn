@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AdvancedSettings1ViewController : UIViewController
+@interface AdvancedSettings1ViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIPickerView *snoozeTimePicker;
+@property (weak, nonatomic) IBOutlet UIPickerView *maxSnoozePicker;
 
 - (IBAction)unwindToNewAlarm:(UIStoryboardSegue *)segue;
 
