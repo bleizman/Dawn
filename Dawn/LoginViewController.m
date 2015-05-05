@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "MyAlarmsTableViewController.h"
+#import "TabBarViewController.h"
 #import <Parse/Parse.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
@@ -72,6 +73,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    TabBarViewController *myViewController = [[TabBarViewController alloc] init];
+    [self.navigationController pushViewController:myViewController animated:YES];
+    NSLog(@"Here!");
     
 }
 

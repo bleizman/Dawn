@@ -19,13 +19,13 @@ extern DawnUser *currentUser;
 {
     self = [super init];
     if (self) {
-        self = [self initWithName:@"Default Alarm" andDate:[NSDate date]];
+        self = [self initWithName:@"Default Alarm" andDate:[NSDate date] andPrefs:[[DawnPreferences alloc]init]];
     }
     return self;
 }
 
-// initialize with name and Date known
-- (id)initWithName:(NSString*) name andDate:(NSDate*) date
+// initialize with Name, Date, and Default prefs
+- (id)initWithName:(NSString*) name andDate:(NSDate*) date andPrefs: (DawnPreferences*) prefs
 {
     self = [super init];
     if (self) {
@@ -34,10 +34,7 @@ extern DawnUser *currentUser;
         _notes = @"";
         _isOn = true;
         _isNew = true;
-        _snooze = true;
-        // figure out how to copy the User's defualt preferences and save as new preferences
-        _prefs = [DawnPreferences new];
-        _prefs = [self.prefs initWithName:@"Alarm Default Preferences"];
+        _prefs = prefs;
     }
     return self;
 }

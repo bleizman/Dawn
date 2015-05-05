@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47345AD41AF95597000D3301 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 47345AD31AF95597000D3301 /* AppIcon.appiconset */; };
 		477C79B11ADB34DB009363C9 /* DawnAlarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 477C79AE1ADB34DB009363C9 /* DawnAlarm.m */; };
 		477C79B21ADB34DB009363C9 /* DawnUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 477C79B01ADB34DB009363C9 /* DawnUser.m */; };
 		477F84F21AD21CC000B3F9C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 477F84F11AD21CC000B3F9C0 /* main.m */; };
@@ -63,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		47345AD31AF95597000D3301 /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
 		477C79891AD749DF009363C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		477C79AD1ADB34DB009363C9 /* DawnAlarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DawnAlarm.h; sourceTree = "<group>"; };
 		477C79AE1ADB34DB009363C9 /* DawnAlarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DawnAlarm.m; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				95F710C11AE09DEE0045B4C2 /* AdvancedSettings1ViewController.h */,
 				95F710C21AE09DEE0045B4C2 /* AdvancedSettings1ViewController.m */,
 				477F84FF1AD21CC000B3F9C0 /* Images.xcassets */,
+				47345AD31AF95597000D3301 /* AppIcon.appiconset */,
 				477F85011AD21CC000B3F9C0 /* LaunchScreen.xib */,
 				95F710BE1AE09A840045B4C2 /* NewAlarmViewController.h */,
 				95F710BF1AE09A840045B4C2 /* NewAlarmViewController.m */,
@@ -382,9 +385,11 @@
 			files = (
 				477F84FE1AD21CC000B3F9C0 /* Main.storyboard in Resources */,
 				478B926A1AE95949001BA5E6 /* plus-simple-7.png in Resources */,
+				04C854ED1AF9574300093ED6 /* sunrise_cartoon_background.jpg in Resources */,
 				477F85031AD21CC000B3F9C0 /* LaunchScreen.xib in Resources */,
 				956438391AF96AE4007A3359 /* tiktokREAL.wav in Resources */,
 				478B92681AE9591D001BA5E6 /* clock-alarm-7.png in Resources */,
+				47345AD41AF95597000D3301 /* AppIcon.appiconset in Resources */,
 				477F85001AD21CC000B3F9C0 /* Images.xcassets in Resources */,
 				478B926C1AE95958001BA5E6 /* spanner-7.png in Resources */,
 			);
@@ -540,6 +545,8 @@
 		477F85131AD21CC000B3F9C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = DawnIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -549,12 +556,15 @@
 				INFOPLIST_FILE = Dawn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		477F85141AD21CC000B3F9C0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = DawnIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -564,6 +574,7 @@
 				INFOPLIST_FILE = Dawn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

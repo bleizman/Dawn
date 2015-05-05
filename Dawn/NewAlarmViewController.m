@@ -60,7 +60,7 @@
         NSLog(@"The name is %@", name);
         
         DawnAlarm *newAlarm =[[DawnAlarm alloc] init];
-        newAlarm = [newAlarm initWithName:name andDate:selectedDate];
+        newAlarm = [newAlarm initWithName:name andDate:selectedDate andPrefs:currentUser.preferences];
         [currentUser.myAlarms addObject:newAlarm];
         NSLog(@"Initialized with the following preferences ");
         [newAlarm.prefs printPreferences];

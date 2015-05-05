@@ -89,18 +89,6 @@
     }
 }
 
-/*
-- (void) prefSwitchChanged:(id)sender {
-    UISwitch *oldSwitch = sender;
-    DawnPreferences *mypreferences = currentUser.preferences;
-
-    if (mypreferences.sportsnews.on)
-        alarm.isOn = false;
-    else alarm.isOn = true;
-    NSLog( @"Alarm being printed is of the name %@", alarm.name);
-    NSLog( @"The switch is now %@", alarm.isOn ? @"ON" : @"OFF" );
-}
- */
 
 /*
 #pragma mark - Navigation
