@@ -986,7 +986,7 @@
         <!--Navigation Controller-->
         <scene sceneID="29c-ar-D9i">
             <objects>
-                <navigationController id="doj-M1-fKQ" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="doj-M1-fKQ" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JDE-MY-D2M">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
