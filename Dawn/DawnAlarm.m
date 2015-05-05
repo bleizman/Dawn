@@ -34,7 +34,10 @@ extern DawnUser *currentUser;
         _notes = @"";
         _isOn = true;
         _isNew = true;
-        _prefs = currentUser.preferences;
+        _snooze = true;
+        // figure out how to copy the User's defualt preferences and save as new preferences
+        _prefs = [DawnPreferences new];
+        _prefs = [self.prefs initWithName:@"Alarm Default Preferences"];
     }
     return self;
 }
@@ -46,6 +49,7 @@ extern DawnUser *currentUser;
     [aCoder encodeObject:self.notes forKey:@"aNotes"];
     [aCoder encodeBool:self.isOn forKey: @"aisOn"];
     [aCoder encodeBool:self.isNew forKey: @"aisNew"];
+    [aCoder encodeBool:self.snooze forKey: @"asnooze"];
     [aCoder encodeObject:self.prefs forKey:@"aPrefs"];
 }
 
@@ -58,6 +62,7 @@ extern DawnUser *currentUser;
         _notes = [aDecoder decodeObjectForKey:@"aNotes"];
         _isOn = [aDecoder decodeBoolForKey:@"aisOn"];
         _isNew = [aDecoder decodeBoolForKey:@"aisNew"];
+        _snooze = [aDecoder decodeBoolForKey:@"asnooze"];
         _prefs = [aDecoder decodeObjectForKey:@"aPrefs"];
     }
     return self;
