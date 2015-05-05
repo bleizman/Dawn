@@ -69,7 +69,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="5IU-op-eln" kind="presentation" id="sc1-Gc-xUM"/>
+                                    <segue destination="2fg-0S-gj8" kind="presentation" id="7LM-ls-gKF"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarm Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Owt-n5-iWE">
@@ -171,6 +171,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="757" y="-799"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="M3j-Oc-1OS">
+            <objects>
+                <navigationController id="2fg-0S-gj8" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vJ0-Oq-WT3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="5IU-op-eln" kind="relationship" relationship="rootViewController" id="RCQ-H0-yDZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aVf-Ac-Dgz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1478" y="-1604"/>
         </scene>
         <!--Advanced Settings View Controller-->
         <scene sceneID="5io-Bz-ePa">
@@ -300,21 +316,11 @@
                                     <constraint firstAttribute="width" constant="300" id="2aZ-yf-ne5"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fz-SB-CbM">
-                                <rect key="frame" x="532" y="550" width="32" height="30"/>
-                                <state key="normal" title="Next">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="FnB-yB-OaI" kind="presentation" id="sIY-xX-PJM"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="AKm-is-ZJz" secondAttribute="centerX" id="2V2-Qq-iPM"/>
                             <constraint firstItem="gtP-iR-Y3X" firstAttribute="top" secondItem="VEp-ff-AUr" secondAttribute="bottom" constant="12" id="4V7-Cr-hwC"/>
-                            <constraint firstItem="AFl-L2-mhk" firstAttribute="top" secondItem="0fz-SB-CbM" secondAttribute="bottom" constant="20" id="6ky-d8-4fx"/>
                             <constraint firstAttribute="centerX" secondItem="gtP-iR-Y3X" secondAttribute="centerX" id="9Kq-sE-jyV"/>
                             <constraint firstAttribute="centerX" secondItem="VEp-ff-AUr" secondAttribute="centerX" id="A3C-fq-SzC"/>
                             <constraint firstItem="Ad6-JF-rP4" firstAttribute="top" secondItem="ukn-pt-AqZ" secondAttribute="bottom" constant="2" id="CPi-xi-Sa2"/>
@@ -339,12 +345,10 @@
                             <constraint firstItem="AKm-is-ZJz" firstAttribute="leading" secondItem="uR5-Ko-J43" secondAttribute="leadingMargin" constant="-16" id="bBU-nL-yAb"/>
                             <constraint firstAttribute="centerX" secondItem="AKl-Yy-oCd" secondAttribute="centerX" id="gil-mG-V3E"/>
                             <constraint firstAttribute="centerX" secondItem="ukn-pt-AqZ" secondAttribute="centerX" id="hBd-Nc-SY8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0fz-SB-CbM" secondAttribute="trailing" constant="20" id="hzQ-sW-tJf"/>
                             <constraint firstAttribute="centerX" secondItem="xkH-Ep-1dE" secondAttribute="centerX" id="kmv-BO-C8a"/>
                             <constraint firstItem="xkH-Ep-1dE" firstAttribute="top" secondItem="tvK-ZY-R9H" secondAttribute="bottom" constant="-7" id="kyr-Al-guc"/>
                             <constraint firstItem="VEp-ff-AUr" firstAttribute="top" secondItem="AKl-Yy-oCd" secondAttribute="bottom" constant="6" id="nbw-St-j7h"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ad6-JF-rP4" secondAttribute="trailing" constant="-16" id="nyL-Vv-LEy"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0fz-SB-CbM" secondAttribute="trailing" constant="14" id="q8r-qT-h5i"/>
                             <constraint firstAttribute="bottom" secondItem="vDb-FK-Qxt" secondAttribute="bottom" id="tRx-0i-qu3"/>
                             <constraint firstItem="Ad6-JF-rP4" firstAttribute="top" secondItem="ukn-pt-AqZ" secondAttribute="bottom" constant="2" id="w9K-zP-lHC"/>
                             <constraint firstItem="vDb-FK-Qxt" firstAttribute="top" secondItem="gtP-iR-Y3X" secondAttribute="bottom" constant="8" id="xR4-fs-LWk"/>
@@ -358,10 +362,16 @@
                                 <exclude reference="kyr-Al-guc"/>
                                 <exclude reference="Wh0-iQ-QhR"/>
                                 <exclude reference="SX3-uT-qwM"/>
-                                <exclude reference="q8r-qT-h5i"/>
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Advanced Settings 1/3" id="1Z4-pF-pul">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="xnC-b0-U0f">
+                            <connections>
+                                <segue destination="FnB-yB-OaI" kind="show" id="Hk5-6S-iCe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="maxSnoozePicker" destination="gtP-iR-Y3X" id="Nyc-NE-yOX"/>
                         <outlet property="snoozeTimePicker" destination="Ad6-JF-rP4" id="AFt-pJ-Ubm"/>
@@ -369,9 +379,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C8C-eY-nbX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1618" y="-1596"/>
+            <point key="canvasLocation" x="2294" y="-1604"/>
         </scene>
-        <!--View Controller-->
+        <!--Advanced Settings 2/3-->
         <scene sceneID="2TJ-P8-6Rg">
             <objects>
                 <viewController id="FnB-yB-OaI" sceneMemberID="viewController">
@@ -488,15 +498,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kb3-Gj-kpm">
-                                <rect key="frame" x="532" y="550" width="32" height="30"/>
-                                <state key="normal" title="Next">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Xlh-tf-84o" kind="presentation" id="VUL-0g-v9T"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sports" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Any-Db-BuP">
                                 <rect key="frame" x="189" y="199" width="51" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -552,7 +553,6 @@
                             <constraint firstItem="zjV-W8-B8g" firstAttribute="top" secondItem="de3-BK-a7Z" secondAttribute="topMargin" id="dyQ-KM-exy"/>
                             <constraint firstItem="mBk-HO-ueA" firstAttribute="leading" secondItem="zjV-W8-B8g" secondAttribute="trailing" constant="31" id="gb6-0Q-cdu"/>
                             <constraint firstItem="zjV-W8-B8g" firstAttribute="leading" secondItem="de3-BK-a7Z" secondAttribute="leadingMargin" constant="12" id="gcC-yN-18L"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Kb3-Gj-kpm" secondAttribute="trailing" constant="20" id="gcc-sb-Scu"/>
                             <constraint firstItem="Hhf-Ie-leU" firstAttribute="leading" secondItem="zjV-W8-B8g" secondAttribute="trailing" constant="31" id="hYf-hZ-Yht"/>
                             <constraint firstItem="W6M-Qc-uUc" firstAttribute="top" secondItem="Any-Db-BuP" secondAttribute="bottom" constant="14" id="inS-Jm-RQR"/>
                             <constraint firstItem="Xme-f6-Xix" firstAttribute="top" secondItem="SYm-wf-Ndu" secondAttribute="bottom" constant="4" id="ixl-71-OmG"/>
@@ -562,7 +562,6 @@
                             <constraint firstItem="okf-RT-14j" firstAttribute="top" secondItem="U5B-G6-4mj" secondAttribute="bottom" constant="9" id="ljk-os-eKp"/>
                             <constraint firstItem="GaE-Vq-shH" firstAttribute="top" secondItem="W6M-Qc-uUc" secondAttribute="bottom" constant="14" id="nmf-pR-JgY"/>
                             <constraint firstItem="c30-sE-Ptu" firstAttribute="top" secondItem="Lyx-3t-A94" secondAttribute="bottom" constant="14" id="p0m-Gs-2on"/>
-                            <constraint firstItem="Vvn-XK-6OL" firstAttribute="top" secondItem="Kb3-Gj-kpm" secondAttribute="bottom" constant="20" id="pD2-9g-LbJ"/>
                             <constraint firstItem="3FI-Cv-dOp" firstAttribute="height" secondItem="5Le-R6-CRN" secondAttribute="height" id="qvj-Is-wey"/>
                             <constraint firstItem="Lyx-3t-A94" firstAttribute="top" secondItem="Xme-f6-Xix" secondAttribute="bottom" constant="13" id="r0b-er-ofP"/>
                             <constraint firstItem="xRR-Bn-716" firstAttribute="leading" secondItem="SYm-wf-Ndu" secondAttribute="trailing" constant="-7" id="soX-aO-lDz"/>
@@ -577,12 +576,19 @@
                             <constraint firstItem="Lyx-3t-A94" firstAttribute="leading" secondItem="zjV-W8-B8g" secondAttribute="trailing" constant="-8" id="zg2-vj-7Xv"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Advanced Settings 2/3" id="8DX-CS-QkA">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="ZHb-WV-l4b">
+                            <connections>
+                                <segue destination="Xlh-tf-84o" kind="show" id="SCU-xS-ksO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SWK-lg-uzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2291" y="-1596"/>
+            <point key="canvasLocation" x="3041" y="-1604"/>
         </scene>
-        <!--Advanced Settings1 View Controller-->
+        <!--Advanced Settings 3/3-->
         <scene sceneID="jDG-SQ-FbE">
             <objects>
                 <viewController id="Xlh-tf-84o" customClass="AdvancedSettings1ViewController" sceneMemberID="viewController">
@@ -624,6 +630,9 @@
                                 <state key="normal" title="Create Alarm">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="6al-9j-INz" kind="unwind" unwindAction="unwindToNewAlarm:" id="w35-13-oTY"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xdL-zU-JsA">
                                 <rect key="frame" x="0.0" y="45" width="600" height="20"/>
@@ -748,13 +757,21 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Advanced Settings 3/3" id="nxS-FM-6L7">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="UjS-3B-JJv">
+                            <connections>
+                                <segue destination="6al-9j-INz" kind="unwind" unwindAction="unwindToNewAlarm:" id="ryj-b0-g2R"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="remindersText" destination="4BM-94-Y88" id="W6y-IG-YLO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yYA-EB-jzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="6al-9j-INz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2963" y="-1583"/>
+            <point key="canvasLocation" x="3769" y="-1604"/>
         </scene>
         <!--Alarm Created View Controller-->
         <scene sceneID="l1p-nr-W9V">
