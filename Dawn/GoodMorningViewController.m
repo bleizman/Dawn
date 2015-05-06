@@ -38,7 +38,7 @@
         NSLog(@"currentAlarm is empty"); //for testing only
     }
     
-    if(![currentAlarm.prefs.notes  isEqual: @""])
+    if(![currentAlarm.prefs.notes  isEqual: @""] && currentAlarm.prefs.notes != nil)
         [builderText appendString:currentAlarm.prefs.notes];
 
     if(currentPrefs.weather) {
@@ -69,11 +69,16 @@
         [query whereKey:@"Source" equalTo:@"NYTimes"];
         NSArray* newsarray = [query findObjects];
         
+        if([newsarray count] > 0){
         myObj = [newsarray objectAtIndex: 0];
         myString = myObj[@"Text"];
         if (![myString isEqualToString: nil]) {
             NSLog(@"%@", myString);
             [builderText appendString:myString];
+        }
+        }
+        else {
+            [builderText appendString:@"News unavailable! Sorry!"];
         }
     }
     
@@ -85,11 +90,16 @@
         [query whereKey:@"Sport" equalTo:@"Test"];
         NSArray* sportsArray = [query findObjects];
         
+        if([sportsArray count] > 0){
         myObj = [sportsArray objectAtIndex: 0];
         myString = myObj[@"Text"];
         if (![myString isEqualToString: nil]) {
             NSLog(@"%@", myString);
             [builderText appendString:myString];
+        }
+        }
+        else {
+            [builderText appendString:@"Sports unavailable! Sorry!"];
         }
     }
     
@@ -100,11 +110,16 @@
         [query whereKey:@"Subject" equalTo:@"Funny!"];
         NSArray* redditarray = [query findObjects];
         
+        if([redditarray count] > 0){
         myObj = [redditarray objectAtIndex: 0];
         myString = myObj[@"Text"];
         if (![myString isEqualToString: nil]) {
             NSLog(@"%@", myString);
             [builderText appendString:myString];
+        }
+        }
+        else {
+            [builderText appendString:@"Reddit unavailable! Sorry!"];
         }
     }
     
