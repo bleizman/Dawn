@@ -38,8 +38,8 @@
         NSLog(@"currentAlarm is empty"); //for testing only
     }
     
-    if(![currentAlarm.notes  isEqual: @""])
-        [builderText appendString:currentAlarm.notes];
+    if(![currentAlarm.prefs.notes  isEqual: @""])
+        [builderText appendString:currentAlarm.prefs.notes];
 
     if(currentPrefs.weather) {
         [builderText appendString:@"\nWeather:\n"];

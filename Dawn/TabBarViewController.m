@@ -19,8 +19,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.delegate = self;
+//    self.delegate = self;
     
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    self.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {

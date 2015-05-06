@@ -14,10 +14,11 @@
 #import <FBSDKCoreKit/FBSDKProfile.h>
 #import <ParseUI/ParseUI.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+#import "TabBarViewController.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *WelcomeLabel;
-@property (weak, nonatomic) IBOutlet UIButton *EnterDawn;
+@property (nonatomic) IBOutlet UIButton *EnterDawn;
 
 @end
 
@@ -61,20 +62,18 @@
             currentUser.name = [FBSDKProfile currentProfile].name;
         }
         
-        TabBarViewController *TBVC = [[TabBarViewController alloc] init];
-        [self dismissViewControllerAnimated:YES completion:^{[self presentViewController:TBVC animated:YES completion:^{}];}];
-
-        //[self performSegueWithIdentifier:@"EnterDawn" sender:nil];
+        //Uncomment what's below to pass loging page if already logged into facebook
+        /*//leave controller
+        TabBarViewController *myViewController = [[TabBarViewController alloc] init];
+        [self.navigationController pushViewController:myViewController animated:YES];
+        NSLog(@"Here!");
+        [self enterButtonPressed:_enterButton];*/
+        
     }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    TabBarViewController *myViewController = [[TabBarViewController alloc] init];
-    [self.navigationController pushViewController:myViewController animated:YES];
-    NSLog(@"Here!");
     
 }
 
@@ -83,13 +82,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+/*- (IBAction)enterButtonPressed:(id)sender {
+    
+    TabBarViewController *tabBarViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"tabBarViewController"];
+    [self.navigationController pushViewController:tabBarViewController animated:YES];
+    //[self.navigationController presentViewController:tabBarViewController animated:NO completion:nil];
+    self.navigationController.navigationBarHidden = YES;
+    NSLog(@"Should be moving to wherever it's going");
+}*/
+
+
+#pragma mark - Navigation
 /*
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"EnterDawn"])
-    {
-        TabBarViewController *TabBarVC = [segue destinationViewController];
-    }
-} */
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    
+}
+ */
 
 @end

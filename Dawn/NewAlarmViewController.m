@@ -91,7 +91,7 @@
         NSLog(@"The maxSnooze we're putting in is %d", [newAlarm.prefs.snoozeMins intValue]);
         
         //create a notification for that alarm
-        [self scheduleNotificationOn:selectedDate text:name action:actionText sound:@"tiktok.wav" launchImage:nil andInfo:alarmDict];
+        [self scheduleNotificationOn:selectedDate text:name action:actionText sound:@"tiktokREAL.wav" launchImage:nil andInfo:alarmDict];
 
     }
 }

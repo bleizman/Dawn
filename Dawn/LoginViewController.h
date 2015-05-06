@@ -15,4 +15,6 @@ extern NSString *archivepath;
 
 @interface LoginViewController : UIViewController
 
+/*- (IBAction)enterButtonPressed:(id)sender;*/
+
 @end
