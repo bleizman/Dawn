@@ -12,13 +12,18 @@
 
 extern DawnUser *currentUser;
 extern UITableView *alarmTable;
+NSDate *selectedDate;
+NSString *name;
+
 
 @interface NewAlarmViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *alarmLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *alarmDatePicker;
 @property (weak, nonatomic) IBOutlet UIButton *createNewAlarm;
+@property (weak, nonatomic) IBOutlet UIButton *advancedSettingsButton;
+
 - (IBAction)unwindToNewAlarm:(UIStoryboardSegue *)segue;
-- (void) scheduleNotificationOn:(NSDate*) fireDate
++ (void) scheduleNotificationOn:(NSDate*) fireDate
                            text:(NSString*) alertText
                          action:(NSString*) alertAction
                           sound:(NSString*) soundfileName

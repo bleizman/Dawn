@@ -40,6 +40,59 @@
     
 }
 
+- (void) setDate:(NSDate*) date andName:(NSString*) thisname {
+    NSLog(@"Should be adding a new alarm here!");
+    selectedDate = date;
+    NSLog(@"The date is %@", selectedDate);
+    name = thisname;
+    if ([name isEqualToString:@""]) {
+        name = [NSString stringWithFormat: @"Default Alarm %d", currentUser.defaultNumber];
+        currentUser.defaultNumber++;
+    }
+    NSLog(@"The name is %@", name);
+}
+
++ (void) setAlarmAndNotifwithPrefs:(DawnPreferences *) prefs {
+    
+    DawnAlarm *newAlarm =[[DawnAlarm alloc] init];
+    if (prefs == nil) {
+        newAlarm = [newAlarm initWithName:name andDate:selectedDate andPrefs:currentUser.preferences];
+    }
+    else {
+        newAlarm = [newAlarm initWithName:name andDate:selectedDate andPrefs:prefs];
+    }
+    [currentUser.myAlarms addObject:newAlarm];
+    NSLog(@"Initialized with the following preferences ");
+    [newAlarm.prefs printPreferences];
+    NSNumber *maxSnooze = newAlarm.prefs.maxSnooze;
+    NSNumber *snoozeMins = newAlarm.prefs.snoozeMins;
+    
+    [CreatedAlarmViewController setText:newAlarm];
+    
+    [alarmTable reloadData];
+    //NSDictionary *dict = [NSDictionary dictionaryWithObject:newAlarm forKey:@"alarm"];
+    
+    NSString* actionText = @"Morning Report";
+    
+    //create data from alarm object
+    NSMutableData *data = [NSMutableData new];
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+    [newAlarm encodeWithCoder:archiver];
+    [archiver finishEncoding];
+    
+    //create an NSDictionary that contains the alarmobj
+    NSDictionary *alarmDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                               data, @"alarmData",
+                               snoozeMins, @"snoozeMins",
+                               maxSnooze, @"maxSnooze",
+                               nil];
+    
+    NSLog(@"The maxSnooze we're putting in is %d", [newAlarm.prefs.snoozeMins intValue]);
+    
+    //create a notification for that alarm
+    [NewAlarmViewController scheduleNotificationOn:selectedDate text:name action:actionText sound:@"tiktokREAL.wav" launchImage:nil andInfo:alarmDict];
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -49,54 +102,17 @@
     
     if (sender == _createNewAlarm) {
         
-        NSLog(@"Should be adding a new alarm here!");
-        NSDate *selectedDate = [_alarmDatePicker date];
-        NSLog(@"The date is %@", selectedDate);
-        NSString *name = [_alarmLabel text];
-        if ([name isEqualToString:@""]) {
-            name = [NSString stringWithFormat: @"Default Alarm %d", currentUser.defaultNumber];
-            currentUser.defaultNumber++;
-        }
-        NSLog(@"The name is %@", name);
+        [self setDate:[_alarmDatePicker date] andName:[_alarmLabel text]];
+        [NewAlarmViewController setAlarmAndNotifwithPrefs:nil];
         
-        DawnAlarm *newAlarm =[[DawnAlarm alloc] init];
-        newAlarm = [newAlarm initWithName:name andDate:selectedDate andPrefs:currentUser.preferences];
-        [currentUser.myAlarms addObject:newAlarm];
-        NSLog(@"Initialized with the following preferences ");
-        [newAlarm.prefs printPreferences];
-        NSNumber *maxSnooze = newAlarm.prefs.maxSnooze;
-        NSNumber *snoozeMins = newAlarm.prefs.snoozeMins;
-        
-        NSLog(@"but now the maxSnooze is %d", [newAlarm.prefs.snoozeMins intValue]);
-        [CreatedAlarmViewController setText:newAlarm];
-        
-        [alarmTable reloadData];
-        //NSDictionary *dict = [NSDictionary dictionaryWithObject:newAlarm forKey:@"alarm"];
-        
-        NSString* actionText = @"Morning Report";
-        
-        //create data from alarm object
-        NSMutableData *data = [NSMutableData new];
-        NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
-        [newAlarm encodeWithCoder:archiver];
-        [archiver finishEncoding];
-        
-        //create an NSDictionary that contains the alarmobj
-        NSDictionary *alarmDict = [NSDictionary dictionaryWithObjectsAndKeys:
-                                   data, @"alarmData",
-                                   snoozeMins, @"snoozeMins",
-                                   maxSnooze, @"maxSnooze",
-                                   nil];
-        
-        NSLog(@"The maxSnooze we're putting in is %d", [newAlarm.prefs.snoozeMins intValue]);
-        
-        //create a notification for that alarm
-        [self scheduleNotificationOn:selectedDate text:name action:actionText sound:@"tiktokREAL.wav" launchImage:nil andInfo:alarmDict];
-
+    }
+    
+    else if (sender == _advancedSettingsButton) {
+        [self setDate:[_alarmDatePicker date] andName:[_alarmLabel text]];
     }
 }
 
-- (void) scheduleNotificationOn:(NSDate*) fireDate
++ (void) scheduleNotificationOn:(NSDate*) fireDate
                            text:(NSString*) alertText
                          action:(NSString*) alertAction
                           sound:(NSString*) soundfileName
