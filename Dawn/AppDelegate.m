@@ -111,8 +111,8 @@
         
         topRootViewController = topRootViewController.presentedViewController;
     }
-    [topRootViewController dismissModalViewControllerAnimated:YES];
-    //ignore the deprecated warning, we're just going with it
+    //[topRootViewController dismissModalViewControllerAnimated:YES ]; // <- deprecated, don't use
+    [topRootViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)goToGoodMorning {

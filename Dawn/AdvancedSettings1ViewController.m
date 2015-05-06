@@ -66,10 +66,6 @@
         return _snoozeTimePickerData[row];
     else return _maxSnoozePickerData[row];
 }
-//Delete this unwindToNewAlarm when actually implementing!!!
-- (IBAction)unwindToNewAlarm:(UIStoryboardSegue *)segue {
-    
-}
 
 - (IBAction)DoneEditing {
     [remindersText resignFirstResponder];

@@ -600,16 +600,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Any Reminders for tomorrow?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOI-Ec-91C">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Any Reminders for tomorrow?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOI-Ec-91C">
                                 <rect key="frame" x="185" y="20" width="230" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="waE-1h-Pyi">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="waE-1h-Pyi">
                                 <rect key="frame" x="13" y="65" width="575" height="264"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4BM-94-Y88">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4BM-94-Y88">
                                         <rect key="frame" x="18" y="18" width="539" height="228"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -625,28 +625,19 @@
                                     <constraint firstItem="4BM-94-Y88" firstAttribute="leading" secondItem="waE-1h-Pyi" secondAttribute="leading" constant="18" id="sHU-yg-lpp"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39e-gS-yzi">
-                                <rect key="frame" x="255" y="542" width="90" height="30"/>
-                                <state key="normal" title="Create Alarm">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="6al-9j-INz" kind="unwind" unwindAction="unwindToNewAlarm:" id="w35-13-oTY"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xdL-zU-JsA">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xdL-zU-JsA">
                                 <rect key="frame" x="0.0" y="45" width="600" height="20"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ceW-2v-nwe">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ceW-2v-nwe">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJN-vl-0lj">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cJN-vl-0lj">
                                 <rect key="frame" x="0.0" y="498" width="600" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sP0-ii-oiM">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sP0-ii-oiM">
                                 <rect key="frame" x="154" y="385" width="293" height="29"/>
                                 <segments>
                                     <segment title="Mon"/>
@@ -658,7 +649,7 @@
                                     <segment title="Sun"/>
                                 </segments>
                             </segmentedControl>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yZ3-iI-T57">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yZ3-iI-T57">
                                 <rect key="frame" x="145" y="466" width="311" height="29"/>
                                 <segments>
                                     <segment title="This week only"/>
@@ -666,13 +657,13 @@
                                     <segment title="Every 2 weeks"/>
                                 </segments>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What day(s) do you want this alarm?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0n-Fb-5q5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="What day(s) do you want this alarm?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0n-Fb-5q5">
                                 <rect key="frame" x="161" y="353" width="279" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How often do you want it?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSg-Ke-c0m">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="How often do you want it?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSg-Ke-c0m">
                                 <rect key="frame" x="199" y="431" width="202" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="202" id="WMP-Nv-EuN"/>
@@ -681,15 +672,15 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LbJ-d8-PP6">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LbJ-d8-PP6">
                                 <rect key="frame" x="0.0" y="421" width="600" height="10"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GDU-cR-9xf">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GDU-cR-9xf">
                                 <rect key="frame" x="0.0" y="580" width="600" height="20"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FK4-MV-z7G">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FK4-MV-z7G">
                                 <rect key="frame" x="0.0" y="331" width="600" height="20"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -702,7 +693,6 @@
                             <constraint firstItem="sP0-ii-oiM" firstAttribute="top" secondItem="Z0n-Fb-5q5" secondAttribute="bottom" constant="11" id="3mx-lJ-z4m"/>
                             <constraint firstAttribute="centerX" secondItem="sP0-ii-oiM" secondAttribute="centerX" id="3ud-xA-vBh"/>
                             <constraint firstItem="waE-1h-Pyi" firstAttribute="top" secondItem="xdL-zU-JsA" secondAttribute="bottom" id="6hN-Et-A18"/>
-                            <constraint firstItem="39e-gS-yzi" firstAttribute="top" secondItem="cJN-vl-0lj" secondAttribute="bottom" constant="4" id="6km-Sy-0xK"/>
                             <constraint firstAttribute="centerX" secondItem="waE-1h-Pyi" secondAttribute="centerX" id="6oT-vR-LSk"/>
                             <constraint firstItem="LbJ-d8-PP6" firstAttribute="top" secondItem="sP0-ii-oiM" secondAttribute="bottom" constant="8" id="8dZ-Pw-9L2"/>
                             <constraint firstAttribute="centerX" secondItem="Z0n-Fb-5q5" secondAttribute="centerX" id="8gB-KP-szZ"/>
@@ -713,7 +703,6 @@
                             <constraint firstAttribute="trailingMargin" secondItem="cJN-vl-0lj" secondAttribute="trailing" constant="-16" id="ETH-5G-g4u"/>
                             <constraint firstItem="yZ3-iI-T57" firstAttribute="top" secondItem="mSg-Ke-c0m" secondAttribute="bottom" constant="14" id="Gpz-8l-JVs"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sP0-ii-oiM" secondAttribute="trailing" constant="10" id="HzF-LU-6Bi"/>
-                            <constraint firstItem="GDU-cR-9xf" firstAttribute="top" secondItem="39e-gS-yzi" secondAttribute="bottom" constant="8" id="K98-dg-9wL"/>
                             <constraint firstAttribute="centerX" secondItem="mOI-Ec-91C" secondAttribute="centerX" id="KUn-Z0-ZKd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xdL-zU-JsA" secondAttribute="trailing" constant="-16" id="LeT-Pf-Kd3"/>
                             <constraint firstItem="FK4-MV-z7G" firstAttribute="top" secondItem="waE-1h-Pyi" secondAttribute="bottom" constant="2" id="Ltn-Oh-jTN"/>
@@ -729,8 +718,6 @@
                             <constraint firstAttribute="trailingMargin" secondItem="waE-1h-Pyi" secondAttribute="trailing" constant="-4" id="a7a-rn-ecB"/>
                             <constraint firstItem="LbJ-d8-PP6" firstAttribute="leading" secondItem="uDA-LJ-VRZ" secondAttribute="leadingMargin" constant="-16" id="bvB-sb-kzR"/>
                             <constraint firstItem="mOI-Ec-91C" firstAttribute="top" secondItem="ceW-2v-nwe" secondAttribute="bottom" id="cqS-DR-wZv"/>
-                            <constraint firstAttribute="centerX" secondItem="39e-gS-yzi" secondAttribute="centerX" id="dWM-6e-Alm"/>
-                            <constraint firstItem="GDU-cR-9xf" firstAttribute="top" secondItem="39e-gS-yzi" secondAttribute="bottom" constant="8" id="g93-CE-YjD"/>
                             <constraint firstItem="FK4-MV-z7G" firstAttribute="height" secondItem="LbJ-d8-PP6" secondAttribute="height" multiplier="2" id="k0C-vV-B3p"/>
                             <constraint firstItem="GDU-cR-9xf" firstAttribute="height" secondItem="xdL-zU-JsA" secondAttribute="height" id="k5g-Sv-9S5"/>
                             <constraint firstItem="ceW-2v-nwe" firstAttribute="top" secondItem="uDA-LJ-VRZ" secondAttribute="topMargin" id="l2V-QD-je8"/>
@@ -753,12 +740,11 @@
                                 <exclude reference="Ltn-Oh-jTN"/>
                                 <exclude reference="SJj-oh-UJI"/>
                                 <exclude reference="QYL-1l-zdg"/>
-                                <exclude reference="K98-dg-9wL"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Advanced Settings 3/3" id="nxS-FM-6L7">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="UjS-3B-JJv">
+                        <barButtonItem key="rightBarButtonItem" title="Create Alarm!" id="UjS-3B-JJv">
                             <connections>
                                 <segue destination="6al-9j-INz" kind="unwind" unwindAction="unwindToNewAlarm:" id="ryj-b0-g2R"/>
                             </connections>
