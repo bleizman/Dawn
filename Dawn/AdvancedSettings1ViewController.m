@@ -13,6 +13,7 @@
     NSArray *_snoozeTimePickerData;
     NSArray *_maxSnoozePickerData;
     __weak IBOutlet UITextView *remindersText;
+    __weak IBOutlet UIBarButtonItem *createAlarmButton;
     
 }
 @end
@@ -28,9 +29,9 @@
     [self.view addGestureRecognizer:tap];
     // Do any additional setup after loading the view.
     // Initialize Data
-    _snoozeTimePickerData = @[@"1 Minute", @"2 Minutes", @"3 Minutes", @"4 Minutes", @"5 Minutes", @"6 Minutes", @"7 Minutes", @"8 Minutes", @"9 Minutes", @"10 Minutes", @"12 Minutes", @"15 Minutes", @"20 Minutes", @"25 Minutes", @"30 Minutes", @"45 Minutes", @"1 hour", @"2 hours"];
+    _snoozeTimePickerData = @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"12", @"15", @"20", @"30"];
     
-    _maxSnoozePickerData = @[@"∞", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12",];
+    _maxSnoozePickerData = @[@"0", @"1", @"2", @"3", @"4", @"5", @"∞"];
     
     // Connect data
     self.snoozeTimePicker.dataSource = self;
@@ -66,24 +67,22 @@
         return _snoozeTimePickerData[row];
     else return _maxSnoozePickerData[row];
 }
-//Delete this unwindToNewAlarm when actually implementing!!!
-- (IBAction)unwindToNewAlarm:(UIStoryboardSegue *)segue {
-    
-}
 
 - (IBAction)DoneEditing {
     [remindersText resignFirstResponder];
 }
 
-
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    
+    // THIS IS A BUG BUT WILL ALWAYS SAVE THE ALARM (CAN'T CANCEL ALARM ONCE IT IS MADE
+    
+    
 }
-*/
 
 @end
