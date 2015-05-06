@@ -23,11 +23,10 @@
     NSString *myString;
     
     NSMutableString *builderText = [[NSMutableString alloc] init];
-    [builderText appendString:@"Good Morning!\n"];
+    [builderText appendString:@"Good Morning! Here is some information to start your day!\n"];
     
     NSLog(@"Alarm is %@", currentAlarm.name);
     DawnPreferences *currentPrefs;
-    
     
     if(currentAlarm != nil){
         currentPrefs = currentAlarm.prefs;
@@ -38,9 +37,12 @@
         NSLog(@"currentAlarm is empty"); //for testing only
     }
     
-    if(![currentAlarm.prefs.notes  isEqual: @""] && currentAlarm.prefs.notes != nil)
+    if(![currentAlarm.prefs.notes  isEqual: @""] && currentAlarm.prefs.notes != nil) {
+        [builderText appendString:@"You left the following notes to yourself:\n"];
         [builderText appendString:currentAlarm.prefs.notes];
+    }
 
+    /*
     if(currentPrefs.weather) {
         [builderText appendString:@"\nWeather:\n"];
         
@@ -59,7 +61,7 @@
         else {
             [builderText appendString:@"weather unavailable for your zipcode"];
         }
-    }
+    } */
     
     
     if(currentPrefs.nyTimesNews) {
@@ -68,17 +70,19 @@
         query = [PFQuery queryWithClassName:@"News"];
         [query whereKey:@"Source" equalTo:@"NYTimes"];
         NSArray* newsarray = [query findObjects];
-        
-        if([newsarray count] > 0){
-        myObj = [newsarray objectAtIndex: 0];
-        myString = myObj[@"Text"];
-        if (![myString isEqualToString: nil]) {
-            NSLog(@"%@", myString);
-            [builderText appendString:myString];
-        }
-        }
-        else {
-            [builderText appendString:@"News unavailable! Sorry!"];
+    
+        for (PFObject *news in newsarray) {
+            myString = news[@"Text"];
+            
+            //NSDate *timeretrieved = news[@"createdAt"];
+            if (myString != nil) {
+                NSLog(@"%@", myString);
+                [builderText appendString:@"-"];
+                [builderText appendString:myString];
+                [builderText appendString:@"\n   "];
+                [builderText appendString:news[@"Url"]];
+                [builderText appendString:@"\n"];
+            }
         }
     }
     
@@ -91,54 +95,49 @@
         NSArray* sportsArray = [query findObjects];
         
         if([sportsArray count] > 0){
-        myObj = [sportsArray objectAtIndex: 0];
-        myString = myObj[@"Text"];
-        if (![myString isEqualToString: nil]) {
-            NSLog(@"%@", myString);
-            [builderText appendString:myString];
-        }
+            myObj = [sportsArray objectAtIndex: 0];
+            myString = myObj[@"Text"];
+            if (![myString isEqualToString: nil]) {
+                NSLog(@"%@", myString);
+                [builderText appendString:@"-"];
+                [builderText appendString:myString];
+            }
         }
         else {
             [builderText appendString:@"Sports unavailable! Sorry!"];
         }
     }
     
+
     if(currentPrefs.redditNews) {
         [builderText appendString:@"\n\nReddit:\n"];
         
         query = [PFQuery queryWithClassName:@"Reddit"];
-        [query whereKey:@"Subject" equalTo:@"Funny!"];
         NSArray* redditarray = [query findObjects];
         
-        if([redditarray count] > 0){
-        myObj = [redditarray objectAtIndex: 0];
-        myString = myObj[@"Text"];
-        if (![myString isEqualToString: nil]) {
-            NSLog(@"%@", myString);
-            [builderText appendString:myString];
-        }
-        }
-        else {
-            [builderText appendString:@"Reddit unavailable! Sorry!"];
+        for (PFObject *rNews in redditarray) {
+           // NSDate *timeretrieved = rNews[@"createdAt"];
+            
+            myString = rNews[@"Title"];
+            if (myString != nil) {
+                NSLog(@"%@", myString);
+                [builderText appendString:@"-"];
+                [builderText appendString:myString];
+                [builderText appendString:@"\n   "];
+                
+                if (rNews[@"Url"] != nil) {
+                    NSString *url = rNews[@"Url"];
+                    [builderText appendString:url];
+                    [builderText appendString:@"\n"];
+                }
+            }
         }
     }
     
-    //Test interaction with database...
-    /*
-    [builderText appendString:@"\nTEST: FromDatabase:\n"];
-    
-    query = [PFQuery queryWithClassName:@"ThePrince"];
-    [query whereKey:@"Section" equalTo:@"Headline"];
-    NSArray* scoreArray = [query findObjects];
-    
-    PFObject *myobject = [scoreArray objectAtIndex: 0];
-    NSString *myheadline = myobject[@"Text"];
-    if (![myheadline isEqualToString: nil]) {
-        NSLog(@"%@", myheadline);
-        [builderText appendString:myheadline];
-    } */
+    for(int i = 0; i < 40; i++)
+        [builderText appendString:@"This is a dumbline\n"];
 
-    // Leave a nice message at the bottom
+    
     [builderText appendString:@"\n\nYour dawn has come, start the day!"];
     
     return builderText;

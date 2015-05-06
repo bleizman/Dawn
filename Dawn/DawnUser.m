@@ -18,6 +18,7 @@
     [aCoder encodeObject:self.preferences forKey:@"uPreferences"];
     [aCoder encodeObject:self.myAlarms forKey:@"uAlarms"];
     [aCoder encodeObject:self.userEmail forKey:@"uEmail"];
+    [aCoder encodeInt:self.defaultNumber forKey:@"uNum"];
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder

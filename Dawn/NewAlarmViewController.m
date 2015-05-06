@@ -54,7 +54,7 @@
         NSLog(@"The date is %@", selectedDate);
         NSString *name = [_alarmLabel text];
         if ([name isEqualToString:@""]) {
-            name = [NSString stringWithFormat: @"Default Alarm %d", currentUser.defaultNumber];
+            name = [NSString stringWithFormat: @"Alarm %d", currentUser.defaultNumber];
             currentUser.defaultNumber++;
         }
         NSLog(@"The name is %@", name);

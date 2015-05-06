@@ -433,6 +433,8 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="Mhr-Fb-EvR"/>
+                                <exclude reference="kyr-Al-guc"/>
+                                <exclude reference="Wh0-iQ-QhR"/>
                                 <exclude reference="Max-Ih-izn"/>
                                 <exclude reference="ctm-H6-h8v"/>
                                 <exclude reference="koF-Et-lmn"/>
@@ -441,8 +443,6 @@
                                 <exclude reference="vDR-6W-MXQ"/>
                                 <exclude reference="w9K-zP-lHC"/>
                                 <exclude reference="ycC-9t-oD7"/>
-                                <exclude reference="kyr-Al-guc"/>
-                                <exclude reference="Wh0-iQ-QhR"/>
                                 <exclude reference="Gpt-mc-aFd"/>
                                 <exclude reference="WqZ-vP-gVx"/>
                                 <exclude reference="aFI-Gu-KE3"/>
@@ -996,7 +996,7 @@
                                     <constraint firstAttribute="height" constant="185" id="6ud-dO-qOL"/>
                                     <constraint firstAttribute="width" constant="243" id="El7-qm-toP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="144"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="150"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -1036,7 +1036,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationLevel="1" indentationWidth="10" reuseIdentifier="ListPrototypeCell" id="NHa-0f-tFp">
+                            <tableViewCell opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="15" reuseIdentifier="ListPrototypeCell" id="NHa-0f-tFp">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NHa-0f-tFp" id="nOZ-iu-bbS">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -1512,11 +1512,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Display the text here                                " selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dK-BC-iFg">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" editable="NO" text="Display the text here                                " translatesAutoresizingMaskIntoConstraints="NO" id="6dK-BC-iFg">
                                 <rect key="frame" x="60" y="122" width="480" height="386"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5K7-Im-dMK">
                                 <rect key="frame" x="283" y="513" width="35" height="30"/>
