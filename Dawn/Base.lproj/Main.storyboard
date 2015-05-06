@@ -374,6 +374,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="maxSnoozePicker" destination="gtP-iR-Y3X" id="Nyc-NE-yOX"/>
+                        <outlet property="snoozeSwitch" destination="9u3-e9-ybT" id="9v8-gS-doZ"/>
                         <outlet property="snoozeTimePicker" destination="Ad6-JF-rP4" id="AFt-pJ-Ubm"/>
                     </connections>
                 </viewController>
@@ -384,7 +385,7 @@
         <!--Advanced Settings 2/3-->
         <scene sceneID="2TJ-P8-6Rg">
             <objects>
-                <viewController id="FnB-yB-OaI" sceneMemberID="viewController">
+                <viewController id="FnB-yB-OaI" customClass="AdvancedSettings1ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fP9-7j-3xH"/>
                         <viewControllerLayoutGuide type="bottom" id="Vvn-XK-6OL"/>
@@ -583,6 +584,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nytSwitch" destination="GaE-Vq-shH" id="1Ln-ax-HPM"/>
+                        <outlet property="redditSwitch" destination="puz-mn-swh" id="nnb-wd-pvN"/>
+                        <outlet property="sportsSwitch" destination="c30-sE-Ptu" id="PNC-pX-ajr"/>
+                        <outlet property="weatherSwitch" destination="U5B-G6-4mj" id="wzU-eB-QVH"/>
+                        <outlet property="zipField" destination="mBk-HO-ueA" id="69z-Qo-qtX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SWK-lg-uzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -751,7 +759,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="createAlarmButton" destination="UjS-3B-JJv" id="k0K-ch-Fv9"/>
                         <outlet property="remindersText" destination="4BM-94-Y88" id="W6y-IG-YLO"/>
+                        <outlet property="remindersTextView" destination="4BM-94-Y88" id="t4b-mo-QTl"/>
+                        <outlet property="repeatDaysSegmentController" destination="sP0-ii-oiM" id="lAy-K4-BfT"/>
+                        <outlet property="repeatWeekSegmentController" destination="yZ3-iI-T57" id="gZb-Nz-A4O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yYA-EB-jzf" userLabel="First Responder" sceneMemberID="firstResponder"/>

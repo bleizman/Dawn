@@ -12,13 +12,19 @@
 
 @property NSString *name;
 @property BOOL weather;
+@property BOOL snooze;
 @property BOOL nyTimesNews;
 @property BOOL redditNews;
 @property BOOL sportsNews;
-@property BOOL scores;
+@property BOOL scores; //don't have implemented yet
 @property NSString *zipCode;
-@property NSNumber *maxSnooze;
 @property NSNumber *snoozeMins;
+@property NSNumber *maxSnooze;
+
+@property NSString *notes;
+@property NSMutableArray *repeatDays;
+@property NSMutableArray *repeatWeeks;
+
 
 //@property NSSet *newssites;
 
