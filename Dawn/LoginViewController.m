@@ -26,9 +26,7 @@
 
 - (void)loadView {
     [super loadView];
-    
-    // I define archivepath in AppDelegate.m
-    NSLog(@"%@", archivepath);
+    BOOL isNew = NO;
     
     // If file exists, load user. Else create new
     if ( [[NSFileManager defaultManager] fileExistsAtPath:archivepath]) {
@@ -45,6 +43,7 @@
         // create a new user
         currentUser = [[DawnUser alloc] init];
         NSLog(@"First time use, create a new user object");
+        isNew = YES;
     }
     
     // Do this if user already logged into Facebook
@@ -61,6 +60,11 @@
         if (currentUser.name == nil) {
             currentUser.name = [FBSDKProfile currentProfile].name;
         }
+    }
+    else if (!isNew){
+        self.WelcomeLabel.text = @"Welcome back to Dawn";
+        self.WelcomeLabel.adjustsFontSizeToFitWidth = YES;
+    }
         
         //Uncomment what's below to pass loging page if already logged into facebook
         /*//leave controller
@@ -68,8 +72,6 @@
         [self.navigationController pushViewController:myViewController animated:YES];
         NSLog(@"Here!");
         [self enterButtonPressed:_enterButton];*/
-        
-    }
 }
 
 - (void)viewDidLoad {
