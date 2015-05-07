@@ -53,7 +53,7 @@
             
             PFObject *myWeather = [weatherarray objectAtIndex: 0];
 
-            NSString *myWeatherString = [NSString stringWithFormat: @"%@:\nThe temperature is %@ degrees and the conditions are %@.\n", myWeather[@"info"], myWeather[@"temp"], myWeather[@"description"]];
+            NSString *myWeatherString = [NSString stringWithFormat: @"%@:\nThe current temperature is %@ degrees. The current conditions are %@.\n", myWeather[@"info"], myWeather[@"temp"], myWeather[@"description"]];
             
             if([myWeatherString containsString:@"rain"] || [myWeatherString containsString:@"Rain"])
                 myWeatherString = [myWeatherString stringByAppendingString:@"Chance of rain! Might want to bring a coat!\n"];

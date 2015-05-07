@@ -1027,7 +1027,7 @@
             </objects>
             <point key="canvasLocation" x="1598" y="-784"/>
         </scene>
-        <!--Title-->
+        <!--My Alarms-->
         <scene sceneID="PVK-Ik-F9s">
             <objects>
                 <tableViewController id="cPG-Vj-JiV" customClass="MyAlarmsTableViewController" sceneMemberID="viewController">
@@ -1048,7 +1048,7 @@
                             <outlet property="delegate" destination="cPG-Vj-JiV" id="g3a-o2-LME"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="Gsn-jN-vlL">
+                    <navigationItem key="navigationItem" title="My Alarms" id="Gsn-jN-vlL">
                         <barButtonItem key="backBarButtonItem" title="asdfasd" id="NuY-Fu-A8C"/>
                     </navigationItem>
                     <connections>
@@ -1496,11 +1496,11 @@
                                     <constraint firstAttribute="width" secondItem="v6q-3c-mqT" secondAttribute="height" multiplier="1:1" id="ryb-xv-Dbs"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAe-Ba-x58">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bAe-Ba-x58">
                                 <rect key="frame" x="53" y="64" width="493" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good Morning!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jA9-Bs-s4g">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Good Morning!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jA9-Bs-s4g">
                                 <rect key="frame" x="149" y="70" width="303" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="303" id="1WG-um-ByW"/>
@@ -1510,24 +1510,24 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" editable="NO" text="Display the text here                                " translatesAutoresizingMaskIntoConstraints="NO" id="6dK-BC-iFg">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" pagingEnabled="YES" editable="NO" text="Display the text here                                " translatesAutoresizingMaskIntoConstraints="NO" id="6dK-BC-iFg">
                                 <rect key="frame" x="60" y="122" width="480" height="386"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5K7-Im-dMK">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5K7-Im-dMK">
                                 <rect key="frame" x="283" y="513" width="35" height="30"/>
                                 <state key="normal" title="Back">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAR-S5-7Rv">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bAR-S5-7Rv">
                                 <rect key="frame" x="0.0" y="64" width="53" height="487"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M3B-uJ-YOh">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M3B-uJ-YOh">
                                 <rect key="frame" x="547" y="64" width="53" height="487"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
