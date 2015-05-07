@@ -43,7 +43,6 @@
     
     
     if(currentPrefs.weather) {
-        [builderText appendString:@"\n\nThe Weather in "];
         
         query = [PFQuery queryWithClassName:@"Weather"];
         [query whereKey:@"zipcode" equalTo:currentPrefs.zipCode];
@@ -53,7 +52,7 @@
             
             PFObject *myWeather = [weatherarray objectAtIndex: 0];
 
-            NSString *myWeatherString = [NSString stringWithFormat: @"%@:\nThe current temperature is %@ degrees. The current conditions are %@.\n", myWeather[@"info"], myWeather[@"temp"], myWeather[@"description"]];
+            NSString *myWeatherString = [NSString stringWithFormat: @"\n\nThe Weather in %@:\nThe current temperature is %@ degrees. The current conditions are %@.\n", myWeather[@"info"], myWeather[@"temp"], myWeather[@"description"]];
             
             if([myWeatherString containsString:@"rain"] || [myWeatherString containsString:@"Rain"])
                 myWeatherString = [myWeatherString stringByAppendingString:@"Chance of rain! Might want to bring a coat!\n"];
@@ -61,7 +60,7 @@
             [builderText appendString:myWeatherString];
         }
         else {
-            [builderText appendString:@"Sorry, Weather is unavailable for your zipcode.\n"];
+            [builderText appendString:@"\n\n Weather:\nSorry, Weather is unavailable for your zipcode. The database will update in 1 minute!\n"];
         }
     }
     
