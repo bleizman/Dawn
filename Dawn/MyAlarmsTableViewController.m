@@ -69,7 +69,14 @@
     /*if (!alarmobj.isNew) //don't need this
         return cell;*/
     
-    cell.textLabel.text = alarmobj.name;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.timeStyle = NSDateFormatterShortStyle;
+    NSString *myAlarmTime = [dateFormatter stringFromDate:alarmobj.alarmTime];
+    
+    NSString *AlarmText = [alarmobj.name stringByAppendingString:@", "];
+    AlarmText = [AlarmText stringByAppendingString:myAlarmTime];
+    
+    cell.textLabel.text = AlarmText;
     
     UISwitch *mySwitch = [[UISwitch alloc] init];
     mySwitch.tag = indexPath.row;

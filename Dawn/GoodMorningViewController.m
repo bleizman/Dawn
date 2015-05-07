@@ -18,12 +18,14 @@
 @implementation GoodMorningViewController
 
 -(NSString*)goodMorningTextBuilder {
-    __block NSMutableString *builderText = [[NSMutableString alloc] init];
-    [builderText appendString:@"Good Morning!\n"];
+    PFQuery *query;
+    NSString *myString;
+    
+    NSMutableString *builderText = [[NSMutableString alloc] init];
+    [builderText appendString:@"Good Morning! Here is some information to start your day!\n"];
     
     NSLog(@"Alarm is %@", currentAlarm.name);
     DawnPreferences *currentPrefs;
-    
     
     if(currentAlarm != nil){
         currentPrefs = currentAlarm.prefs;
@@ -34,41 +36,114 @@
         NSLog(@"currentAlarm is empty"); //for testing only
     }
     
-    if(![currentAlarm.prefs.notes  isEqual: @""])
+    if(![currentAlarm.prefs.notes  isEqual: @""] && currentAlarm.prefs.notes != nil) {
+        [builderText appendString:@"You left the following notes to yourself:\n"];
         [builderText appendString:currentAlarm.prefs.notes];
+    }
+    
+    
+    if(currentPrefs.weather) {
+        [builderText appendString:@"\nWeather in "];
+        
+        query = [PFQuery queryWithClassName:@"Weather"];
+        [query whereKey:@"zipcode" equalTo:@"08540"];
+        NSArray* weatherarray = [query findObjects];
+        
+        if([weatherarray count] > 0){
+            
+            PFObject *myWeather = [weatherarray objectAtIndex: 0];
 
-    if(currentPrefs.weather)
-        [builderText appendString:@"\nWeather:  \n78 and sunny! Woohoo!\n"];
-    
-    if(currentPrefs.nyTimesNews)
-        [builderText appendString:@"\nNews:  \nJack O'Brien Elected President!\n"];
-    
-    if(currentPrefs.sportsNews)
-        [builderText appendString:@"\nSports:  \nBen Leizman wins Olympic Gold!\n"];
-    
-    if(currentPrefs.redditNews)
-        [builderText appendString:@"\nReddit:  \nLOL OMG FUNNY INTERNET!\n"];
-    
-    //Test interaction with database
-    [builderText appendString:@"\nFromDatabase:\n"];
+            NSString *myWeatherString = [NSString stringWithFormat: @"%@:\nThe current temperature is %@ degrees. The current conditions are %@.\n", myWeather[@"info"], myWeather[@"temp"], myWeather[@"description"]];
+            
+            if([myWeatherString containsString:@"rain"] || [myWeatherString containsString:@"Rain"])
+                myWeatherString = [myWeatherString stringByAppendingString:@"Chance of rain! Might want to bring a coat!\n"];
+            
+            [builderText appendString:myWeatherString];
+        }
+        else {
+            [builderText appendString:@"Sorry, Weather is unavailable for your zipcode.\n"];
+        }
+    }
     
     
-    PFQuery *query = [PFQuery queryWithClassName:@"ThePrince"];
-    [query getObjectInBackgroundWithId:@"L4rZ5s286Y" block:^(PFObject *headline, NSError *error) {
-        // Do something with the returned PFObject in the headline variable.
+    if(currentPrefs.nyTimesNews) {
+        [builderText appendString:@"\n\nNew York Times:\n"];
         
-        NSString *myheadline = headline[@"Text"];
+        query = [PFQuery queryWithClassName:@"News"];
+        NSArray* newsarray = [query findObjects];
+    
+        for (PFObject *news in newsarray) {
+            myString = news[@"text"];
+            
+            if (myString != nil) {
+                NSLog(@"%@", myString);
+                [builderText appendString:@"-"];
+                [builderText appendString:myString];
+                [builderText appendString:@"\n   "];
+                if (news[@"url"] != nil) {
+                    NSString *url = news[@"url"];
+                    [builderText appendString:url];
+                    [builderText appendString:@"\n"];
+                }
+            }
+        }
+    }
+    
+    
+    if(currentPrefs.sportsNews) {
+        [builderText appendString:@"\n\ESPN news:\n"];
         
-        NSLog(@"builder so far:%@:", builderText);
+        query = [PFQuery queryWithClassName:@"Sports"];
+        NSArray* sportsArray = [query findObjects];
+        
+        for (PFObject *sports in sportsArray) {
+            
+            myString = sports[@"text"];
+            if (myString != nil) {
+                NSLog(@"%@", myString);
+                NSString *sport = sports[@"sport"];
+                [builderText appendString:@"-"];
+                [builderText appendString:sport];
+                [builderText appendString:@": "];
+                [builderText appendString:myString];
+                [builderText appendString:@"\n   "];
+                
+                if (sports[@"url"] != nil) {
+                    NSString *url = sports[@"url"];
+                    [builderText appendString:url];
+                    [builderText appendString:@"\n"];
+                }
+            }
+        }
+    }
 
-        [builderText appendString:myheadline];
+    
+    if(currentPrefs.redditNews) {
+        [builderText appendString:@"\n\nReddit:\n"];
         
-        NSLog(@"builder after far:%@:", builderText);
+        query = [PFQuery queryWithClassName:@"Reddit"];
+        NSArray* redditarray = [query findObjects];
         
-        NSLog(@"Returned from the Database! :%@:", myheadline);
-    }];
-
-    [builderText appendString:@"\n\nYour dawn has come, start the day!"];
+        for (PFObject *rNews in redditarray) {
+            
+            myString = rNews[@"title"];
+            if (myString != nil) {
+                NSLog(@"%@", myString);
+                [builderText appendString:@"-"];
+                [builderText appendString:myString];
+                [builderText appendString:@"\n   "];
+                
+                if (rNews[@"url"] != nil) {
+                    NSString *url = rNews[@"url"];
+                    [builderText appendString:url];
+                    [builderText appendString:@"\n"];
+                }
+            }
+        }
+    }
+    
+    // nice message at the bottom
+    [builderText appendString:@"\n\nYour dawn has come, go start the day!"];
     
     return builderText;
 }
@@ -76,13 +151,12 @@
 - (void)loadView {
     [super loadView];
     NSLog(@"The Name of the current Alarm is: %@ .",currentAlarm.name);
-    self.GoodMorningText.text = [self goodMorningTextBuilder];
-    
+    self.GoodMorningText.text = @"Loading your personalized data...";
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.GoodMorningText.text = [self goodMorningTextBuilder];
 }
 
 - (void)didReceiveMemoryWarning {
