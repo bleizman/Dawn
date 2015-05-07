@@ -63,7 +63,7 @@
         newAlarm = [newAlarm initWithName:name andTime:selectedDate andPrefs:prefs andType:@"advanced"];
     }
     
-    [currentUser.myAlarms addObject:newAlarm];
+    [currentUser addAlarm:newAlarm];
     NSLog(@"Initialized with the following preferences ");
     [newAlarm.prefs printPreferences];
     NSNumber *maxSnooze = newAlarm.prefs.maxSnooze;
