@@ -18,6 +18,7 @@
     [aCoder encodeObject:self.preferences forKey:@"uPreferences"];
     [aCoder encodeObject:self.myAlarms forKey:@"uAlarms"];
     [aCoder encodeObject:self.userEmail forKey:@"uEmail"];
+    [aCoder encodeObject:self.zipcode forKey:@"uZip"];
     [aCoder encodeInt:self.defaultNumber forKey:@"uNum"];
 }
 
@@ -29,6 +30,7 @@
         _preferences = [aDecoder decodeObjectForKey:@"uPreferences"];
         _myAlarms = [aDecoder decodeObjectForKey:@"uAlarms"];
         _userEmail = [aDecoder decodeObjectForKey:@"uEmail"];
+        _zipcode = [aDecoder decodeObjectForKey:@"uZip"];
         _defaultNumber = 1;
     }
     return self;
@@ -56,6 +58,7 @@
         _preferences = [DawnPreferences new];
         _preferences = [self.preferences initWithName:@"User's Default Preferences"];
         _myAlarms = [[NSMutableArray alloc] init];
+        _zipcode = @"08540";
         _defaultNumber = 1;
     }
     return self;

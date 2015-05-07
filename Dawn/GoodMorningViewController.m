@@ -18,7 +18,6 @@
 @implementation GoodMorningViewController
 
 -(NSString*)goodMorningTextBuilder {
-    PFObject *myObj;
     PFQuery *query;
     NSString *myString;
     
@@ -41,92 +40,48 @@
         [builderText appendString:@"You left the following notes to yourself:\n"];
         [builderText appendString:currentAlarm.prefs.notes];
     }
-
-    /*
+    
+    
     if(currentPrefs.weather) {
-        [builderText appendString:@"\nWeather:\n"];
+        [builderText appendString:@"\nWeather in "];
         
         query = [PFQuery queryWithClassName:@"Weather"];
-        [query whereKey:@"Zipcode" equalTo:@"08540"];
+        [query whereKey:@"zipcode" equalTo:@"08540"];
         NSArray* weatherarray = [query findObjects];
         
         if([weatherarray count] > 0){
-        myObj = [weatherarray objectAtIndex: 0];
-        myString = myObj[@"info"];
-        if (![myString isEqualToString: nil]) {
-            NSLog(@"%@", myString);
-            [builderText appendString:myString];
-        }
+            
+            PFObject *myWeather = [weatherarray objectAtIndex: 0];
+
+            NSString *myWeatherString = [NSString stringWithFormat: @"%@:\nThe temperature is %@ degrees and the conditions are %@.\n", myWeather[@"info"], myWeather[@"temp"], myWeather[@"description"]];
+            
+            if([myWeatherString containsString:@"rain"] || [myWeatherString containsString:@"Rain"])
+                myWeatherString = [myWeatherString stringByAppendingString:@"Chance of rain! Might want to bring a coat!\n"];
+            
+            [builderText appendString:myWeatherString];
         }
         else {
-            [builderText appendString:@"weather unavailable for your zipcode"];
+            [builderText appendString:@"Sorry, Weather is unavailable for your zipcode.\n"];
         }
-    } */
+    }
     
     
     if(currentPrefs.nyTimesNews) {
-        [builderText appendString:@"\n\nNews:\n"];
+        [builderText appendString:@"\n\nNew York Times:\n"];
         
         query = [PFQuery queryWithClassName:@"News"];
-        [query whereKey:@"Source" equalTo:@"NYTimes"];
         NSArray* newsarray = [query findObjects];
     
         for (PFObject *news in newsarray) {
-            myString = news[@"Text"];
+            myString = news[@"text"];
             
-            //NSDate *timeretrieved = news[@"createdAt"];
             if (myString != nil) {
                 NSLog(@"%@", myString);
                 [builderText appendString:@"-"];
                 [builderText appendString:myString];
                 [builderText appendString:@"\n   "];
-                [builderText appendString:news[@"Url"]];
-                [builderText appendString:@"\n"];
-            }
-        }
-    }
-    
-    
-    if(currentPrefs.sportsNews) {
-        [builderText appendString:@"\n\nSports:\n"];
-        
-        query = [PFQuery queryWithClassName:@"Sports"];
-        [query whereKey:@"Sport" equalTo:@"Test"];
-        NSArray* sportsArray = [query findObjects];
-        
-        if([sportsArray count] > 0){
-            myObj = [sportsArray objectAtIndex: 0];
-            myString = myObj[@"Text"];
-            if (![myString isEqualToString: nil]) {
-                NSLog(@"%@", myString);
-                [builderText appendString:@"-"];
-                [builderText appendString:myString];
-            }
-        }
-        else {
-            [builderText appendString:@"Sports unavailable! Sorry!"];
-        }
-    }
-    
-
-    if(currentPrefs.redditNews) {
-        [builderText appendString:@"\n\nReddit:\n"];
-        
-        query = [PFQuery queryWithClassName:@"Reddit"];
-        NSArray* redditarray = [query findObjects];
-        
-        for (PFObject *rNews in redditarray) {
-           // NSDate *timeretrieved = rNews[@"createdAt"];
-            
-            myString = rNews[@"Title"];
-            if (myString != nil) {
-                NSLog(@"%@", myString);
-                [builderText appendString:@"-"];
-                [builderText appendString:myString];
-                [builderText appendString:@"\n   "];
-                
-                if (rNews[@"Url"] != nil) {
-                    NSString *url = rNews[@"Url"];
+                if (news[@"url"] != nil) {
+                    NSString *url = news[@"url"];
                     [builderText appendString:url];
                     [builderText appendString:@"\n"];
                 }
@@ -134,11 +89,61 @@
         }
     }
     
-    for(int i = 0; i < 40; i++)
-        [builderText appendString:@"This is a dumbline\n"];
+    
+    if(currentPrefs.sportsNews) {
+        [builderText appendString:@"\n\ESPN news:\n"];
+        
+        query = [PFQuery queryWithClassName:@"Sports"];
+        NSArray* sportsArray = [query findObjects];
+        
+        for (PFObject *sports in sportsArray) {
+            
+            myString = sports[@"text"];
+            if (myString != nil) {
+                NSLog(@"%@", myString);
+                NSString *sport = sports[@"sport"];
+                [builderText appendString:@"-"];
+                [builderText appendString:sport];
+                [builderText appendString:@": "];
+                [builderText appendString:myString];
+                [builderText appendString:@"\n   "];
+                
+                if (sports[@"url"] != nil) {
+                    NSString *url = sports[@"url"];
+                    [builderText appendString:url];
+                    [builderText appendString:@"\n"];
+                }
+            }
+        }
+    }
 
     
-    [builderText appendString:@"\n\nYour dawn has come, start the day!"];
+    if(currentPrefs.redditNews) {
+        [builderText appendString:@"\n\nReddit:\n"];
+        
+        query = [PFQuery queryWithClassName:@"Reddit"];
+        NSArray* redditarray = [query findObjects];
+        
+        for (PFObject *rNews in redditarray) {
+            
+            myString = rNews[@"title"];
+            if (myString != nil) {
+                NSLog(@"%@", myString);
+                [builderText appendString:@"-"];
+                [builderText appendString:myString];
+                [builderText appendString:@"\n   "];
+                
+                if (rNews[@"url"] != nil) {
+                    NSString *url = rNews[@"url"];
+                    [builderText appendString:url];
+                    [builderText appendString:@"\n"];
+                }
+            }
+        }
+    }
+    
+    // nice message at the bottom
+    [builderText appendString:@"\n\nYour dawn has come, go start the day!"];
     
     return builderText;
 }

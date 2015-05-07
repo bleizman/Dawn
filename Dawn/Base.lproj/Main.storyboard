@@ -1324,11 +1324,12 @@
                         <outlet property="SportsSwitch" destination="0cl-IG-Vff" id="7lX-Vz-Ypn"/>
                         <outlet property="WeatherSwitch" destination="6j6-84-zpp" id="VIa-dx-qpR"/>
                         <outlet property="ZipCodeField" destination="nYj-oG-WIr" id="qcY-Q1-Ckj"/>
+                        <segue destination="6eA-Z0-w0c" kind="show" identifier="goodMorning" id="08z-tb-ybL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GO7-ux-gXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="873" y="964"/>
+            <point key="canvasLocation" x="757" y="857"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oY8-iY-aoA">
@@ -1534,17 +1535,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="v6q-3c-mqT" secondAttribute="centerX" id="1tS-52-irf"/>
-                            <constraint firstItem="aXn-rM-v2u" firstAttribute="top" secondItem="5K7-Im-dMK" secondAttribute="bottom" constant="8" id="2qg-gX-Id1"/>
+                            <constraint firstItem="aXn-rM-v2u" firstAttribute="top" secondItem="5K7-Im-dMK" secondAttribute="bottom" constant="57" id="2qg-gX-Id1"/>
                             <constraint firstItem="bAR-S5-7Rv" firstAttribute="leading" secondItem="Ga4-eo-U7k" secondAttribute="leadingMargin" constant="-16" id="3Ar-BO-Zak"/>
-                            <constraint firstItem="aXn-rM-v2u" firstAttribute="top" secondItem="M3B-uJ-YOh" secondAttribute="bottom" id="AYx-Nd-VgL"/>
+                            <constraint firstItem="aXn-rM-v2u" firstAttribute="top" secondItem="M3B-uJ-YOh" secondAttribute="bottom" constant="49" id="AYx-Nd-VgL"/>
                             <constraint firstItem="6dK-BC-iFg" firstAttribute="leading" secondItem="Ga4-eo-U7k" secondAttribute="leadingMargin" constant="44" id="C0O-xM-lI3"/>
                             <constraint firstItem="M3B-uJ-YOh" firstAttribute="leading" secondItem="bAe-Ba-x58" secondAttribute="trailing" constant="1" id="C4u-GQ-OQ3"/>
                             <constraint firstItem="6dK-BC-iFg" firstAttribute="width" secondItem="bAe-Ba-x58" secondAttribute="width" multiplier="480/493" id="Ebf-lb-TFf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="M3B-uJ-YOh" secondAttribute="trailing" constant="-16" id="Fzq-oK-w0x"/>
                             <constraint firstItem="v6q-3c-mqT" firstAttribute="top" secondItem="Ga4-eo-U7k" secondAttribute="topMargin" id="Gnx-5X-XDK"/>
                             <constraint firstItem="5K7-Im-dMK" firstAttribute="centerX" secondItem="6dK-BC-iFg" secondAttribute="centerX" id="KfP-jy-IE7"/>
-                            <constraint firstItem="bAe-Ba-x58" firstAttribute="top" secondItem="2Ye-ft-5ML" secondAttribute="bottom" id="MDw-fi-jB5"/>
-                            <constraint firstItem="aXn-rM-v2u" firstAttribute="top" secondItem="bAe-Ba-x58" secondAttribute="bottom" id="MOD-qX-N4Y"/>
+                            <constraint firstItem="bAe-Ba-x58" firstAttribute="top" secondItem="2Ye-ft-5ML" secondAttribute="bottom" constant="44" id="MDw-fi-jB5"/>
+                            <constraint firstItem="aXn-rM-v2u" firstAttribute="top" secondItem="bAe-Ba-x58" secondAttribute="bottom" constant="49" id="MOD-qX-N4Y"/>
                             <constraint firstItem="bAe-Ba-x58" firstAttribute="leading" secondItem="bAR-S5-7Rv" secondAttribute="trailing" id="Pbw-0e-4Sp"/>
                             <constraint firstItem="aXn-rM-v2u" firstAttribute="top" secondItem="5K7-Im-dMK" secondAttribute="bottom" constant="57" id="RVS-NI-7s7"/>
                             <constraint firstItem="jA9-Bs-s4g" firstAttribute="top" secondItem="2Ye-ft-5ML" secondAttribute="bottom" constant="15" id="RXs-1l-BcI"/>
@@ -1557,19 +1558,19 @@
                             <constraint firstItem="v6q-3c-mqT" firstAttribute="bottom" secondItem="Ga4-eo-U7k" secondAttribute="bottomMargin" id="fUE-Nb-Vob"/>
                             <constraint firstItem="6dK-BC-iFg" firstAttribute="top" secondItem="jA9-Bs-s4g" secondAttribute="bottom" constant="14" id="fVR-uG-CJI"/>
                             <constraint firstItem="6dK-BC-iFg" firstAttribute="leading" secondItem="jA9-Bs-s4g" secondAttribute="leading" id="huh-gg-ER2"/>
-                            <constraint firstItem="M3B-uJ-YOh" firstAttribute="top" secondItem="2Ye-ft-5ML" secondAttribute="bottom" id="k8g-4F-a02"/>
+                            <constraint firstItem="M3B-uJ-YOh" firstAttribute="top" secondItem="2Ye-ft-5ML" secondAttribute="bottom" constant="44" id="k8g-4F-a02"/>
                             <constraint firstAttribute="centerX" secondItem="6dK-BC-iFg" secondAttribute="centerX" id="lcF-Q3-RyL"/>
                             <constraint firstItem="6dK-BC-iFg" firstAttribute="leading" secondItem="Ga4-eo-U7k" secondAttribute="leadingMargin" constant="9" id="lja-bI-gNL"/>
                             <constraint firstAttribute="centerX" secondItem="5K7-Im-dMK" secondAttribute="centerX" id="mTk-ci-Kv7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6dK-BC-iFg" secondAttribute="trailing" constant="9" id="mYn-aF-ra5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6dK-BC-iFg" secondAttribute="trailing" constant="44" id="nD9-N3-Zbt"/>
-                            <constraint firstItem="aXn-rM-v2u" firstAttribute="top" secondItem="bAR-S5-7Rv" secondAttribute="bottom" id="o96-mk-RhL"/>
+                            <constraint firstItem="aXn-rM-v2u" firstAttribute="top" secondItem="bAR-S5-7Rv" secondAttribute="bottom" constant="49" id="o96-mk-RhL"/>
                             <constraint firstItem="bAe-Ba-x58" firstAttribute="leading" secondItem="Ga4-eo-U7k" secondAttribute="leading" constant="53" id="p7T-d1-7fu"/>
                             <constraint firstAttribute="trailing" secondItem="bAe-Ba-x58" secondAttribute="trailing" constant="54" id="qO5-s2-Ej6"/>
                             <constraint firstAttribute="centerX" secondItem="jA9-Bs-s4g" secondAttribute="centerX" id="rgS-3Y-Zc6"/>
-                            <constraint firstItem="bAR-S5-7Rv" firstAttribute="top" secondItem="2Ye-ft-5ML" secondAttribute="bottom" id="shC-dQ-V3U"/>
+                            <constraint firstItem="bAR-S5-7Rv" firstAttribute="top" secondItem="2Ye-ft-5ML" secondAttribute="bottom" constant="44" id="shC-dQ-V3U"/>
                             <constraint firstItem="v6q-3c-mqT" firstAttribute="width" secondItem="bAe-Ba-x58" secondAttribute="width" multiplier="600/493" id="upE-gD-KFQ"/>
-                            <constraint firstItem="jA9-Bs-s4g" firstAttribute="top" secondItem="2Ye-ft-5ML" secondAttribute="bottom" constant="6" id="v4O-D3-oVN"/>
+                            <constraint firstItem="jA9-Bs-s4g" firstAttribute="top" secondItem="2Ye-ft-5ML" secondAttribute="bottom" constant="50" id="v4O-D3-oVN"/>
                             <constraint firstItem="5K7-Im-dMK" firstAttribute="top" secondItem="6dK-BC-iFg" secondAttribute="bottom" constant="5" id="w84-0I-rnl"/>
                             <constraint firstItem="aXn-rM-v2u" firstAttribute="top" secondItem="5K7-Im-dMK" secondAttribute="bottom" constant="17" id="yLV-nz-5OG"/>
                         </constraints>
@@ -1601,7 +1602,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bf0-vM-7vc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-994" y="1895"/>
+            <point key="canvasLocation" x="-1097" y="891"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
