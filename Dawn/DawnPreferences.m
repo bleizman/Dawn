@@ -13,7 +13,7 @@
 - (id)init{
     self = [super init];
     if (self) {
-        self = [self initWithName:@"default" andZip:@"44124"];
+        self = [self initWithName:@"default" andZip:@"08540"];
     }
     return self;
 }
