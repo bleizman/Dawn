@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UISwitch *RedditSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *WeatherSwitch;
 @property (weak, nonatomic) IBOutlet UITextField *ZipCodeField;
+@property CGPoint originalCenter;
 
 @end
 
@@ -34,6 +35,8 @@
                                    initWithTarget:self
                                    action:@selector(DoneEditing)];
     [self.view addGestureRecognizer:tap];
+    
+    self.originalCenter = self.view.center;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -116,6 +119,14 @@
             NSLog(@"Zipcode already exists in database");
         }
     }
+}
+
+- (IBAction)BeginEditZipCode:(id)sender {
+    self.view.center = CGPointMake(self.originalCenter.x, self.originalCenter.y-150);
+}
+
+- (IBAction)EndEditZipCode:(id)sender {
+    self.view.center = self.originalCenter;
 }
 
 - (IBAction)DoneEditing {
