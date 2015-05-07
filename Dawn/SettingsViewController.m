@@ -7,6 +7,7 @@
 //
 
 #import "SettingsViewController.h"
+#import <Parse/Parse.h>
 
 @interface SettingsViewController ()
 @property (weak, nonatomic) IBOutlet UISwitch *SportsSwitch;
@@ -14,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UISwitch *RedditSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *WeatherSwitch;
 @property (weak, nonatomic) IBOutlet UITextField *ZipCodeField;
+@property CGPoint originalCenter;
 
 @end
 
@@ -33,6 +35,8 @@
                                    initWithTarget:self
                                    action:@selector(DoneEditing)];
     [self.view addGestureRecognizer:tap];
+    
+    self.originalCenter = self.view.center;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -92,7 +96,37 @@
     NSString *zcode = [(UITextField *)sender text];
     if(zcode.length == 5){
         currentUser.preferences.zipCode = zcode;
+        
+        //Check if zipcode exists in database
+        PFQuery *query = [PFQuery queryWithClassName:@"Weather"];
+        [query whereKey:@"zipcode" equalTo:zcode];
+        NSArray* weatherarray = [query findObjects];
+        
+        //If it does not, add it!
+        if ([weatherarray count] <= 0){
+            NSLog(@"Zipcode does not exist in database");
+            PFObject *weather = [PFObject objectWithClassName:@"Weather"];
+            weather[@"zipcode"] = zcode;
+            [weather saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    NSLog(@"Sucessfully saved zipcode to database!");
+                } else {
+                    NSLog(@"Error in saving zipcode to database.");
+                }
+            }];
+        }
+        else {
+            NSLog(@"Zipcode already exists in database");
+        }
     }
+}
+
+- (IBAction)BeginEditZipCode:(id)sender {
+    self.view.center = CGPointMake(self.originalCenter.x, self.originalCenter.y-150);
+}
+
+- (IBAction)EndEditZipCode:(id)sender {
+    self.view.center = self.originalCenter;
 }
 
 - (IBAction)DoneEditing {

@@ -22,7 +22,7 @@
     NSString *myString;
     
     NSMutableString *builderText = [[NSMutableString alloc] init];
-    [builderText appendString:@"Good Morning! Here is some information to start your day!\n"];
+    [builderText appendString:@"Welcome to the Good Morning Screen! Use this information to start your day!\n"];
     
     NSLog(@"Alarm is %@", currentAlarm.name);
     DawnPreferences *currentPrefs;
@@ -37,23 +37,22 @@
     }
     
     if(![currentAlarm.prefs.notes  isEqual: @""] && currentAlarm.prefs.notes != nil) {
-        [builderText appendString:@"You left the following notes to yourself:\n"];
+        [builderText appendString:@"\n\nYou have the following notes for today:\n"];
         [builderText appendString:currentAlarm.prefs.notes];
     }
     
     
     if(currentPrefs.weather) {
-        [builderText appendString:@"\nWeather in "];
         
         query = [PFQuery queryWithClassName:@"Weather"];
-        [query whereKey:@"zipcode" equalTo:@"08540"];
+        [query whereKey:@"zipcode" equalTo:currentPrefs.zipCode];
         NSArray* weatherarray = [query findObjects];
         
         if([weatherarray count] > 0){
             
             PFObject *myWeather = [weatherarray objectAtIndex: 0];
 
-            NSString *myWeatherString = [NSString stringWithFormat: @"%@:\nThe current temperature is %@ degrees. The current conditions are %@.\n", myWeather[@"info"], myWeather[@"temp"], myWeather[@"description"]];
+            NSString *myWeatherString = [NSString stringWithFormat: @"\n\nThe Weather in %@:\nThe current temperature is %@ degrees. The current conditions are %@.\n", myWeather[@"info"], myWeather[@"temp"], myWeather[@"description"]];
             
             if([myWeatherString containsString:@"rain"] || [myWeatherString containsString:@"Rain"])
                 myWeatherString = [myWeatherString stringByAppendingString:@"Chance of rain! Might want to bring a coat!\n"];
@@ -61,13 +60,13 @@
             [builderText appendString:myWeatherString];
         }
         else {
-            [builderText appendString:@"Sorry, Weather is unavailable for your zipcode.\n"];
+            [builderText appendString:@"\n\n Weather:\nSorry, Weather is unavailable for your zipcode. The database will update in 1 minute!\n"];
         }
     }
     
     
     if(currentPrefs.nyTimesNews) {
-        [builderText appendString:@"\n\nNew York Times:\n"];
+        [builderText appendString:@"\n\nNew York Times Top Stories:\n"];
         
         query = [PFQuery queryWithClassName:@"News"];
         NSArray* newsarray = [query findObjects];
@@ -91,7 +90,7 @@
     
     
     if(currentPrefs.sportsNews) {
-        [builderText appendString:@"\n\ESPN news:\n"];
+        [builderText appendString:@"\n\nESPN News:\n"];
         
         query = [PFQuery queryWithClassName:@"Sports"];
         NSArray* sportsArray = [query findObjects];
@@ -119,7 +118,7 @@
 
     
     if(currentPrefs.redditNews) {
-        [builderText appendString:@"\n\nReddit:\n"];
+        [builderText appendString:@"\n\nGoodies from Reddit:\n"];
         
         query = [PFQuery queryWithClassName:@"Reddit"];
         NSArray* redditarray = [query findObjects];

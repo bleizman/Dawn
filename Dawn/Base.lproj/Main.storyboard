@@ -1392,6 +1392,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
+                                    <action selector="BeginEditZipCode:" destination="lRV-1X-dtS" eventType="editingDidBegin" id="JiP-FW-RqH"/>
+                                    <action selector="EndEditZipCode:" destination="lRV-1X-dtS" eventType="editingDidEnd" id="826-bB-783"/>
                                     <action selector="EnterZipCode:" destination="lRV-1X-dtS" eventType="editingDidEnd" id="An1-Yr-r9Q"/>
                                 </connections>
                             </textField>
