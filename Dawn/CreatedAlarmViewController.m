@@ -30,8 +30,6 @@ static NSString* date;
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.timeStyle = NSDateFormatterShortStyle;
-    dateFormatter.dateStyle =NSDateFormatterMediumStyle;
-    
     date = [dateFormatter stringFromDate:newAlarm.alarmTime];
     
     NSLog(@"Should be printing the date %@ here", [date description]);
