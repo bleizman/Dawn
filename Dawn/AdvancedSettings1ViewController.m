@@ -65,6 +65,10 @@ DawnPreferences *prefs;
     self.maxSnoozePicker.delegate = self;
     
     self.originalCenter = self.view.center;
+    
+    // set zipcode button
+    if ([self.zipField.text isEqualToString:@""])
+        self.zipField.text = currentUser.preferences.zipCode;
 }
 
 - (void)didReceiveMemoryWarning {
