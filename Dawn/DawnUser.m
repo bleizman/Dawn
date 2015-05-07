@@ -53,7 +53,7 @@
         _preferences = [DawnPreferences new];
         _preferences = [self.preferences initWithName:@"User's Default Preferences" andZip:@"08540"];
         _myAlarms = [[NSMutableArray alloc] init];
-        _defaultNumber = [NSNumber numberWithInt:0];
+        _defaultNumber = [NSNumber numberWithInt:1];
     }
     return self;
 }
