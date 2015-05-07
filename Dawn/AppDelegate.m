@@ -187,6 +187,7 @@ didReceiveLocalNotification:(UILocalNotification *)notification
                                         delegate:self cancelButtonTitle:@"Snooze"
                                otherButtonTitles:@"Morning Report", nil];
         }
+        
         [application cancelAllLocalNotifications];
         [alertView show];
         //[deleteAlarm deleteAlarm:notification];

@@ -92,10 +92,6 @@ DawnPreferences *prefs;
     else return _maxSnoozePickerData[row];
 }
 
-- (IBAction)DoneEditing {
-    [self.remindersTextView resignFirstResponder];
-}
-
 - (void) setToAdvancedPreferences1 {
     
     prefs.snooze = [self.snoozeSwitch isOn];
@@ -191,6 +187,14 @@ DawnPreferences *prefs;
         [self.sunButton setSelected:![self.sunButton isSelected]];
         NSLog(@"%@ is %d", self.sunButton, [self.sunButton isSelected]);
     }
+}
+- (IBAction)DoneEditing {
+    [self.remindersTextView resignFirstResponder];
+    [self.zipField resignFirstResponder];
+}
+
+- (IBAction)tappedReturn:(id)sender {
+    [sender resignFirstResponder];
 }
 
 

@@ -27,6 +27,12 @@
     self.RedditSwitch.on = currentUser.preferences.redditNews;
     self.WeatherSwitch.on = currentUser.preferences.weather;
     self.ZipCodeField.text = currentUser.preferences.zipCode;
+    
+    //Set tap to stop editing zipCode
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(DoneEditing)];
+    [self.view addGestureRecognizer:tap];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -89,6 +95,9 @@
     }
 }
 
+- (IBAction)DoneEditing {
+    [self.ZipCodeField resignFirstResponder];
+}
 
 /*
 #pragma mark - Navigation
