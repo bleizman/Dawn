@@ -13,14 +13,12 @@
 @interface DawnUser : NSObject <NSCoding>
 
 @property NSString *name;
-@property NSString *userEmail;
 @property DawnPreferences *preferences;
 @property NSMutableArray *myAlarms;
-@property NSString *zipcode;
-@property int defaultNumber;
+@property NSNumber *defaultNumber;
 
 // Initialize User with a Name
-- (id)initWithName:(NSString*) name andEmail: (NSString*) email;
+- (id)initWithName:(NSString*) name;
 
 // Add a new Dawn alarm to the User's alarms
 - (void) addAlarm:(DawnAlarm*) newAlarm;

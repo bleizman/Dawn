@@ -15,25 +15,25 @@ extern DawnUser *currentUser;
 @implementation DawnAlarm
 
 // initialize without any knowledge of alarm
-- (id)init
+/* - (id)init
 {
     self = [super init];
     if (self) {
-        self = [self initWithName:@"Default Alarm" andDate:[NSDate date] andPrefs:[[DawnPreferences alloc]init]];
+        self = [self initWithName:@"Default Alarm" andTime:[NSDate date] andPrefs:[[DawnPreferences alloc]init]];
     }
     return self;
-}
+} */
 
-// initialize with Name, Date, and Default prefs
-- (id)initWithName:(NSString*) name andDate:(NSDate*) date andPrefs: (DawnPreferences*) prefs
-{
+// initialize with Name, time, preferences, and type
+- (id)initWithName:(NSString *)name andTime:(NSDate *)time andPrefs:(DawnPreferences *)prefs andType:(NSString *)type {
     self = [super init];
     if (self) {
         _name = name;
-        _alarmTime = date;
+        _alarmTime = time;
         _isOn = true;
         _isNew = true;
         _prefs = prefs;
+        _alarmType = type;
     }
     return self;
 }
@@ -45,6 +45,7 @@ extern DawnUser *currentUser;
     [aCoder encodeBool:self.isOn forKey: @"aisOn"];
     [aCoder encodeBool:self.isNew forKey: @"aisNew"];
     [aCoder encodeObject:self.prefs forKey:@"aPrefs"];
+    [aCoder encodeObject:self.alarmType forKey:@"aType"];
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder
@@ -56,19 +57,19 @@ extern DawnUser *currentUser;
         _isOn = [aDecoder decodeBoolForKey:@"aisOn"];
         _isNew = [aDecoder decodeBoolForKey:@"aisNew"];
         _prefs = [aDecoder decodeObjectForKey:@"aPrefs"];
+        _alarmType = [aDecoder decodeObjectForKey:@"aType"];
     }
     return self;
 }
 
 -(BOOL)isEqual:(id)object {
     DawnAlarm *that = object;
-    if (![self.name isEqualToString:that.name]) {
-        NSLog(@"Names don't match");
-        return FALSE;
-    }
-    if (![self.alarmTime isEqualToDate:that.alarmTime]) return FALSE;
-    if (self.isOn != that.isOn) return FALSE;
-    if (self.isNew != that.isNew) return FALSE;
+    if (![self.name isEqualToString:that.name]) return FALSE;
+    else if (![self.alarmTime isEqualToDate:that.alarmTime]) return FALSE;
+    else if (self.isOn != that.isOn) return FALSE;
+    else if (self.isNew != that.isNew) return FALSE;
+    else if (![self.alarmType isEqualToString:that.alarmType]) return FALSE;
+    else if (![self.prefs isEqual:that.prefs]) return FALSE;
     else {
         NSLog(@"Names do match, returning true");
         return TRUE;
