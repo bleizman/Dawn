@@ -17,7 +17,7 @@
     [aCoder encodeObject:self.name forKey:@"uName"];
     [aCoder encodeObject:self.preferences forKey:@"uPreferences"];
     [aCoder encodeObject:self.myAlarms forKey:@"uAlarms"];
-    [aCoder encodeObject:self.userEmail forKey:@"uEmail"];
+    [aCoder encodeObject:self.defaultNumber forKey:@"uNumber"];
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder
@@ -27,8 +27,7 @@
         _name = [aDecoder decodeObjectForKey:@"uName"];
         _preferences = [aDecoder decodeObjectForKey:@"uPreferences"];
         _myAlarms = [aDecoder decodeObjectForKey:@"uAlarms"];
-        _userEmail = [aDecoder decodeObjectForKey:@"uEmail"];
-        _defaultNumber = 1;
+        _defaultNumber = [aDecoder decodeObjectForKey:@"uNumber"];
     }
     return self;
 }
@@ -38,7 +37,7 @@
 {
     self = [super init];
     if (self) {
-        self = [self initWithName:nil andEmail:@"lol@lol.com"];
+        self = [self initWithName:nil];
     }
     return self;
     
@@ -46,16 +45,15 @@
 
 
 // Initialize User with a Name
-- (id)initWithName:(NSString*) name andEmail: (NSString*) email;
+- (id)initWithName:(NSString*) name;
 {
     self = [super init];
     if (self) {
         _name = name;
-        _userEmail = email;
         _preferences = [DawnPreferences new];
-        _preferences = [self.preferences initWithName:@"User's Default Preferences"];
+        _preferences = [self.preferences initWithName:@"User's Default Preferences" andZip:@"08540"];
         _myAlarms = [[NSMutableArray alloc] init];
-        _defaultNumber = 1;
+        _defaultNumber = [NSNumber numberWithInt:0];
     }
     return self;
 }

@@ -16,20 +16,19 @@
 @property BOOL nyTimesNews;
 @property BOOL redditNews;
 @property BOOL sportsNews;
-@property BOOL scores; //don't have implemented yet
 @property NSString *zipCode;
 @property NSNumber *snoozeMins;
 @property NSNumber *maxSnooze;
 
 @property NSString *notes;
-@property NSMutableArray *repeatDays;
-@property NSMutableArray *repeatWeeks;
+@property NSMutableDictionary *repeatDays;
+@property NSMutableDictionary *repeatWeeks;
 
 
 //@property NSSet *newssites;
 
-- (id)initWithName:(NSString*) name;
-- (DawnPreferences*)setDefault: (DawnPreferences*) prefs;
+- (id)initWithName:(NSString*) name andZip:(NSString *) zip;
+// - (DawnPreferences*)setDefault: (DawnPreferences*) prefs;
 - (void) printPreferences;
 
 @end

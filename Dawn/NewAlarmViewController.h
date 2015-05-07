@@ -21,6 +21,7 @@ NSString *name;
 @property (weak, nonatomic) IBOutlet UIDatePicker *alarmDatePicker;
 @property (weak, nonatomic) IBOutlet UIButton *createNewAlarm;
 @property (weak, nonatomic) IBOutlet UIButton *advancedSettingsButton;
+@property (weak, nonatomic) IBOutlet UITextField *labelTextField;
 
 - (IBAction)unwindToNewAlarm:(UIStoryboardSegue *)segue;
 + (void) scheduleNotificationOn:(NSDate*) fireDate
@@ -29,7 +30,7 @@ NSString *name;
                           sound:(NSString*) soundfileName
                     launchImage:(NSString*) launchImage
                         andInfo:(NSDictionary*) userInfo;
-@property (weak, nonatomic) IBOutlet UITextField *labelTextField;
++ (void) setAlarmAndNotifwithPrefs:(DawnPreferences *) prefs;
 
 
 @end

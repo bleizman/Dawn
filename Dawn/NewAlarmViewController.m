@@ -10,6 +10,7 @@
 #import "MyAlarmsTableViewController.h"
 #import "DawnUser.h"
 #import "CreatedAlarmViewController.h"
+#import "AdvancedSettings1ViewController.h"
 
 @interface NewAlarmViewController ()
 
@@ -27,7 +28,7 @@
                                    action:@selector(DoneEditing)];
     [self.view addGestureRecognizer:tap];
     _badgeCount = 0;
-    NSLog(@"Default number is %d", currentUser.defaultNumber);
+    NSLog(@"Default number is %d", [currentUser.defaultNumber intValue]);
 
 }
 
@@ -46,8 +47,8 @@
     NSLog(@"The date is %@", selectedDate);
     name = thisname;
     if ([name isEqualToString:@""]) {
-        name = [NSString stringWithFormat: @"Default Alarm %d", currentUser.defaultNumber];
-        currentUser.defaultNumber++;
+        name = [NSString stringWithFormat: @"Default Alarm %d", [currentUser.defaultNumber intValue]];
+        currentUser.defaultNumber = [NSNumber numberWithInt:[currentUser.defaultNumber intValue] + 1];
     }
     NSLog(@"The name is %@", name);
 }
@@ -56,11 +57,12 @@
     
     DawnAlarm *newAlarm =[[DawnAlarm alloc] init];
     if (prefs == nil) {
-        newAlarm = [newAlarm initWithName:name andDate:selectedDate andPrefs:currentUser.preferences];
+        newAlarm = [newAlarm initWithName:name andTime:selectedDate andPrefs:currentUser.preferences andType:@"quick"];
     }
     else {
-        newAlarm = [newAlarm initWithName:name andDate:selectedDate andPrefs:prefs];
+        newAlarm = [newAlarm initWithName:name andTime:selectedDate andPrefs:prefs andType:@"advanced"];
     }
+    
     [currentUser.myAlarms addObject:newAlarm];
     NSLog(@"Initialized with the following preferences ");
     [newAlarm.prefs printPreferences];
@@ -101,14 +103,13 @@
     // Pass the selected object to the new view controller.
     
     if (sender == _createNewAlarm) {
-        
         [self setDate:[_alarmDatePicker date] andName:[_alarmLabel text]];
         [NewAlarmViewController setAlarmAndNotifwithPrefs:nil];
-        
     }
     
     else if (sender == _advancedSettingsButton) {
         [self setDate:[_alarmDatePicker date] andName:[_alarmLabel text]];
+        // Advanced settings changes preferences to represent those in advanced settings
     }
 }
 
