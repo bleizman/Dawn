@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="P16-CJ-aQj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="P16-CJ-aQj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -1129,7 +1129,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWa-FO-frR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="sWa-FO-frR">
                                 <rect key="frame" x="104" y="153" width="393" height="89"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="89" id="joq-Is-EmC"/>
@@ -1139,7 +1139,7 @@
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="41" name="ComicSansMS"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -1164,20 +1164,7 @@
                                     <segue destination="H6w-hg-jQq" kind="unwind" unwindAction="unwindToNewAlarm:" id="TrM-0z-BTC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcr-SJ-sFy">
-                                <rect key="frame" x="104" y="20" width="393" height="89"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="You did it!!">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="41" name="ComicSansMS"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZhO-uE-9si">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="8:00" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZhO-uE-9si">
                                 <rect key="frame" x="179" y="236" width="243" height="185"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1190,17 +1177,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fcr-SJ-sFy" firstAttribute="trailing" secondItem="sWa-FO-frR" secondAttribute="trailing" id="AT6-qv-eUU"/>
-                            <constraint firstItem="sWa-FO-frR" firstAttribute="top" secondItem="fcr-SJ-sFy" secondAttribute="bottom" constant="44" id="Duj-0A-oEs"/>
                             <constraint firstAttribute="centerX" secondItem="sWa-FO-frR" secondAttribute="centerX" id="IRN-AC-3Fm"/>
-                            <constraint firstItem="fcr-SJ-sFy" firstAttribute="top" secondItem="JIF-HF-SPd" secondAttribute="bottom" id="KFC-jj-ZKw"/>
                             <constraint firstItem="sWa-FO-frR" firstAttribute="leading" secondItem="rqN-PL-sOi" secondAttribute="leadingMargin" constant="88" id="UeW-bV-BYi"/>
                             <constraint firstItem="sWa-FO-frR" firstAttribute="top" secondItem="rqN-PL-sOi" secondAttribute="top" constant="153" id="fjh-Ev-ye3"/>
                             <constraint firstItem="JfH-Wg-G7a" firstAttribute="top" secondItem="8Ox-ja-tGz" secondAttribute="bottom" constant="122" id="gsa-pJ-s2P"/>
                             <constraint firstAttribute="centerX" secondItem="8Ox-ja-tGz" secondAttribute="centerX" id="jyj-up-EWa"/>
-                            <constraint firstItem="fcr-SJ-sFy" firstAttribute="leading" secondItem="sWa-FO-frR" secondAttribute="leading" id="rPP-zD-pyN"/>
                             <constraint firstItem="8Ox-ja-tGz" firstAttribute="top" secondItem="ZhO-uE-9si" secondAttribute="bottom" constant="27" id="sbg-OQ-LHT"/>
-                            <constraint firstAttribute="centerX" secondItem="fcr-SJ-sFy" secondAttribute="centerX" id="vQ8-vm-LMH"/>
                             <constraint firstItem="8Ox-ja-tGz" firstAttribute="centerX" secondItem="rqN-PL-sOi" secondAttribute="centerX" id="vQg-vY-BzP"/>
                             <constraint firstItem="ZhO-uE-9si" firstAttribute="centerX" secondItem="8Ox-ja-tGz" secondAttribute="centerX" id="wxK-nK-akq"/>
                         </constraints>
