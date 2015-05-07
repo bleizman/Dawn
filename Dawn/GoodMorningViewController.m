@@ -46,7 +46,7 @@
         [builderText appendString:@"\n\nThe Weather in "];
         
         query = [PFQuery queryWithClassName:@"Weather"];
-        [query whereKey:@"zipcode" equalTo:@"08540"];
+        [query whereKey:@"zipcode" equalTo:currentPrefs.zipCode];
         NSArray* weatherarray = [query findObjects];
         
         if([weatherarray count] > 0){
