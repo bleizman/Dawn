@@ -604,6 +604,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
+                                    <action selector="BeginEditZipCode:" destination="FnB-yB-OaI" eventType="editingDidBegin" id="VaP-My-P8R"/>
                                     <action selector="tappedReturn:" destination="FnB-yB-OaI" eventType="editingDidEndOnExit" id="SN5-Hx-AOg"/>
                                 </connections>
                             </textField>
