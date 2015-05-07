@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Dawnteam. All rights reserved.
 //
 
+#import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioToolbox.h>
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
@@ -47,6 +49,13 @@
     [UIUserNotificationSettings settingsForTypes:types categories:nil];
     
     [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
+    
+    // setup AVAudioPlayer
+    NSString *alarmMusicPath = [[NSBundle mainBundle] pathForResource:@"tiktokREAL" ofType:@"wav"];
+    NSURL *alarmMusicURL = [NSURL fileURLWithPath:alarmMusicPath];
+    NSError *error;
+    alarmSoundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:alarmMusicURL error:&error];
+    [alarmSoundPlayer setNumberOfLoops:1];   // Negative number means loop forever
     
     // enables easy local datastore
     [Parse enableLocalDatastore];
@@ -140,6 +149,12 @@
 - (void)alertView:(UIAlertView *)alertView
 clickedButtonAtIndex:(NSInteger)buttonIndex {
     
+    // stop sound
+    if (alarmSoundIsPlaying == YES) {
+        [alarmSoundPlayer stop];
+        alarmSoundIsPlaying = NO;
+    }
+    
     //no more snoozes left
     if ([alertView numberOfButtons] == 1) {
         //delete the alarm
@@ -192,6 +207,13 @@ didReceiveLocalNotification:(UILocalNotification *)notification
         [alertView show];
         //[deleteAlarm deleteAlarm:notification];
         application.applicationIconBadgeNumber = 0;
+        
+        // play the music
+        [alarmSoundPlayer prepareToPlay];
+        alarmSoundPlayer.currentTime = 0.0;
+        [alarmSoundPlayer play];
+        alarmSoundIsPlaying = YES;
+        
     }
     
     else {

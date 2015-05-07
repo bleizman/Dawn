@@ -38,6 +38,7 @@ DawnPreferences *prefs;
 @property (weak, nonatomic) IBOutlet UIButton *friButton;
 @property (weak, nonatomic) IBOutlet UIButton *satButton;
 @property (weak, nonatomic) IBOutlet UIButton *sunButton;
+@property CGPoint originalCenter;
 
 @end
 
@@ -62,6 +63,8 @@ DawnPreferences *prefs;
     self.snoozeTimePicker.delegate = self;
     self.maxSnoozePicker.dataSource = self;
     self.maxSnoozePicker.delegate = self;
+    
+    self.originalCenter = self.view.center;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -192,6 +195,15 @@ DawnPreferences *prefs;
     [self.remindersTextView resignFirstResponder];
     [self.zipField resignFirstResponder];
 }
+- (IBAction)BeginEditZipCode:(id)sender {
+    self.view.center = CGPointMake(self.originalCenter.x, self.originalCenter.y-200);
+    
+}
+
+- (IBAction)EndEditZipCode:(id)sender {
+    self.view.center = self.originalCenter;
+}
+
 
 - (IBAction)tappedReturn:(id)sender {
     [sender resignFirstResponder];
