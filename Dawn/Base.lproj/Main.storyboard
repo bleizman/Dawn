@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="P16-CJ-aQj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="P16-CJ-aQj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -1504,6 +1504,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CMl-QB-jYl">
                                                 <rect key="frame" x="137" y="4" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="SwitchSnooze:" destination="lRV-1X-dtS" eventType="valueChanged" id="ozn-85-PRa"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1605,6 +1608,7 @@
                         <outlet property="NewsView" destination="1Yv-1h-dmT" id="6hy-Uc-qHL"/>
                         <outlet property="PanelSwitcher" destination="NBy-Q9-KFu" id="CvK-eD-5HC"/>
                         <outlet property="RedditSwitch" destination="JYy-Jg-0nx" id="RGk-2g-972"/>
+                        <outlet property="SnoozeSwitch" destination="CMl-QB-jYl" id="Ze1-DL-ecz"/>
                         <outlet property="SnoozeView" destination="j1K-MV-qz1" id="ylg-Fx-nPI"/>
                         <outlet property="SportsSwitch" destination="0cl-IG-Vff" id="7lX-Vz-Ypn"/>
                         <outlet property="WeatherSwitch" destination="6j6-84-zpp" id="VIa-dx-qpR"/>

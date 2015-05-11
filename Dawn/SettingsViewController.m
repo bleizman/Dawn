@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *PanelSwitcher;
 @property (weak, nonatomic) IBOutlet UIPickerView *snoozeTimePicker;
 @property (weak, nonatomic) IBOutlet UIPickerView *maxSnoozePicker;
+@property (weak, nonatomic) IBOutlet UISwitch *SnoozeSwitch;
 
 @end
 
@@ -38,6 +39,7 @@
     self.RedditSwitch.on = currentUser.preferences.redditNews;
     self.WeatherSwitch.on = currentUser.preferences.weather;
     self.ZipCodeField.text = currentUser.preferences.zipCode;
+    self.SnoozeSwitch.on = currentUser.preferences.snooze;
     
     //Set tap to stop editing zipCode
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
@@ -130,6 +132,18 @@
     }
 }
 
+- (IBAction)SwitchSnooze:(id)sender {
+    UISwitch *snoozeSwitch = (UISwitch *)sender;
+    if([snoozeSwitch isOn])
+    {
+        currentUser.preferences.snooze = YES;
+    }
+    else
+    {
+        currentUser.preferences.snooze = NO;
+    }
+}
+
 - (IBAction)SwitchWeather:(id)sender {
     UISwitch *weatherSwitch = (UISwitch *)sender;
     if([weatherSwitch isOn])
@@ -169,6 +183,24 @@
             NSLog(@"Zipcode already exists in database");
         }
     }
+}
+
+- (void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    if (pickerView == self.snoozeTimePicker) {
+        NSString *snoozeMins = [self pickerView:self.snoozeTimePicker titleForRow:row forComponent:0];
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        formatter.numberStyle = NSNumberFormatterDecimalStyle;
+        currentUser.preferences.snoozeMins = [formatter numberFromString:snoozeMins];
+        NSLog(@"snoozeMins is %d", [currentUser.preferences.snoozeMins intValue]);
+    }
+    else if (pickerView == self.maxSnoozePicker) {
+        NSString *maxSnooze = [self pickerView:self.maxSnoozePicker titleForRow:row forComponent:0];
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        formatter.numberStyle = NSNumberFormatterDecimalStyle;
+        currentUser.preferences.maxSnooze = [formatter numberFromString:maxSnooze];
+        NSLog(@"maxSnooze is %d", [currentUser.preferences.maxSnooze intValue]);
+    }
+    else NSLog(@"Won't be here, if so, there's an issue");
 }
 
 - (IBAction)BeginEditZipCode:(id)sender {
