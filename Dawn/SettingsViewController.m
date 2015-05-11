@@ -26,6 +26,10 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *snoozeTimePicker;
 @property (weak, nonatomic) IBOutlet UIPickerView *maxSnoozePicker;
 @property (weak, nonatomic) IBOutlet UISwitch *SnoozeSwitch;
+@property (weak, nonatomic) IBOutlet UILabel *snoozeLengthLabel;
+@property (weak, nonatomic) IBOutlet UILabel *maxSnoozeLabel;
+@property NSNumber *oldMaxSnooze;
+@property NSNumber *oldSnoozeTime;
 
 @end
 
@@ -137,10 +141,24 @@
     if([snoozeSwitch isOn])
     {
         currentUser.preferences.snooze = YES;
+        self.snoozeLengthLabel.hidden = NO;
+        self.maxSnoozeLabel.hidden = NO;
+        self.snoozeTimePicker.hidden = NO;
+        self.maxSnoozePicker.hidden = NO;
+        currentUser.preferences.maxSnooze = self.oldMaxSnooze;
+        currentUser.preferences.snoozeMins = self.oldSnoozeTime;
     }
     else
     {
         currentUser.preferences.snooze = NO;
+        self.snoozeLengthLabel.hidden = YES;
+        self.maxSnoozeLabel.hidden = YES;
+        self.snoozeTimePicker.hidden = YES;
+        self.maxSnoozePicker.hidden = YES;
+        self.oldMaxSnooze = currentUser.preferences.maxSnooze;
+        self.oldSnoozeTime = currentUser.preferences.snoozeMins;
+        currentUser.preferences.snoozeMins = [NSNumber numberWithInt:0];
+        currentUser.preferences.maxSnooze = [NSNumber numberWithInt:0];
     }
 }
 

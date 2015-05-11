@@ -39,6 +39,8 @@ DawnPreferences *prefs;
 @property (weak, nonatomic) IBOutlet UIButton *satButton;
 @property (weak, nonatomic) IBOutlet UIButton *sunButton;
 @property CGPoint originalCenter;
+@property (weak, nonatomic) IBOutlet UILabel *snoozeLengthLabel;
+@property (weak, nonatomic) IBOutlet UILabel *maxSnoozeLabel;
 
 @end
 
@@ -99,9 +101,33 @@ DawnPreferences *prefs;
     else return _maxSnoozePickerData[row];
 }
 
+- (IBAction)SwitchSnooze:(id)sender {
+    UISwitch *snoozeSwitch = (UISwitch *)sender;
+    if([snoozeSwitch isOn])
+    {
+        self.snoozeLengthLabel.hidden = NO;
+        self.maxSnoozeLabel.hidden = NO;
+        self.snoozeTimePicker.hidden = NO;
+        self.maxSnoozePicker.hidden = NO;
+    }
+    else
+    {
+        self.snoozeLengthLabel.hidden = YES;
+        self.maxSnoozeLabel.hidden = YES;
+        self.snoozeTimePicker.hidden = YES;
+        self.maxSnoozePicker.hidden = YES;
+    }
+}
+
 - (void) setToAdvancedPreferences1 {
     
     prefs.snooze = [self.snoozeSwitch isOn];
+    if (!prefs.snooze) {
+        prefs.snoozeMins = [NSNumber numberWithInt:0];
+        prefs.maxSnooze = [NSNumber numberWithInt:0];
+        return;
+    }
+        
     NSLog(@"Snooze is %d", prefs.snooze);
     
     // Must convert snoozeMins/maxSnooze from String to NSNumber
