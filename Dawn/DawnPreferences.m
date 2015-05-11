@@ -56,7 +56,6 @@
         _repeatWeeks = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                        [NSNumber numberWithBool:0], @"This week only", //one time alarm
                        [NSNumber numberWithBool:0], @"Every week",
-                       [NSNumber numberWithBool:0], @"Every 2 weeks",
                        nil];
     }
     return self;

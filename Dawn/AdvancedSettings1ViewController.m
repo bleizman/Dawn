@@ -176,17 +176,10 @@ DawnPreferences *prefs;
     if ([prefName isEqualToString:@"This week only"]) {
         [prefs.repeatWeeks setObject:[NSNumber numberWithBool:TRUE] forKey:@"This week only"];
         [prefs.repeatWeeks setObject:[NSNumber numberWithBool:FALSE] forKey:@"Every week"];
-        [prefs.repeatWeeks setObject:[NSNumber numberWithBool:FALSE] forKey:@"Every 2 weeks"];
     }
     if ([prefName isEqualToString:@"Every week"]) {
         [prefs.repeatWeeks setObject:[NSNumber numberWithBool:FALSE] forKey:@"This week only"];
         [prefs.repeatWeeks setObject:[NSNumber numberWithBool:TRUE] forKey:@"Every week"];
-        [prefs.repeatWeeks setObject:[NSNumber numberWithBool:FALSE] forKey:@"Every 2 weeks"];
-    }
-    if ([prefName isEqualToString:@"Every 2 weeks"]) {
-        [prefs.repeatWeeks setObject:[NSNumber numberWithBool:FALSE] forKey:@"This week only"];
-        [prefs.repeatWeeks setObject:[NSNumber numberWithBool:FALSE] forKey:@"Every week"];
-        [prefs.repeatWeeks setObject:[NSNumber numberWithBool:TRUE] forKey:@"Every 2 weeks"];
     }
 }
 

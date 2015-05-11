@@ -135,10 +135,6 @@ DawnAlarm* alarmToAdd;
             calUnit = NSCalendarUnitMinute; //NSCalendarUnitWeekOfMonth //Doing a minute exclusively for testing purposes
             NSLog(@"Repeat interval = every week");
         }
-        else if ([[newAlarm.prefs.repeatWeeks objectForKey:@"Every 2 weeks"] intValue]) { //Has value of 1
-            calUnit = 0; //Not sure if this is correct either
-            NSLog(@"Repeat interval = every 2 weeks");
-        }
         //Should never hit here, because automatically starts with "This week only" selected
         else NSLog(@"There is an error!");
         
