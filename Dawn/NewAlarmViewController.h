@@ -24,12 +24,16 @@ NSString *name;
 @property (weak, nonatomic) IBOutlet UITextField *labelTextField;
 
 - (IBAction)unwindToNewAlarm:(UIStoryboardSegue *)segue;
-+ (void) scheduleNotificationOn:(NSDate*) fireDate
++ (void) addNotifs:(DawnAlarm*) newAlarm;
+
++ (UILocalNotification*) scheduleNotificationOn:(NSDate*) fireDate
                            text:(NSString*) alertText
                          action:(NSString*) alertAction
                           sound:(NSString*) soundfileName
                     launchImage:(NSString*) launchImage
-                        andInfo:(NSDictionary*) userInfo;
+                        andInfo:(NSDictionary*) userInfo
+                 repeatInterval:(NSCalendarUnit) repeat;
+
 + (void) setAlarmAndNotifwithPrefs:(DawnPreferences *) prefs;
 
 

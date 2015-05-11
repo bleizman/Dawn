@@ -36,6 +36,11 @@
     
     // Override point for customization after application launch.
     if (notif) {
+        // set the current alarm
+        self.lastNotif = notif;
+        currentAlarm = [AlarmMethods getAlarmFromNotif:notif];
+        //delete the notification from the alarm's set
+        [self deleteAlarmNotifFromAlarmNotifs:notif];
         
         application.applicationIconBadgeNumber = 0;
         [self goToGoodMorning];
@@ -126,10 +131,6 @@
 
 - (void)goToGoodMorning {
     
-    //delete the alarm
-    NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:[self.lastNotif.userInfo objectForKey:@"alarmData"]];
-    currentAlarm = [[DawnAlarm alloc] initWithCoder:unarchiver];
-    
     //get navigation controller
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     GoodMorningViewController *goodMornVC = [storyboard instantiateViewControllerWithIdentifier:@"goodMorning"];
@@ -146,6 +147,26 @@
     
 }
 
+- (void) deleteAlarmNotifFromAlarmNotifs:(UILocalNotification*) notif {
+    // if the alarm is a quick alarm, turn it off
+    if (currentAlarm == nil) {
+        NSLog(@"Alarm does not exist so nothing will be deleted");
+        return;
+    }
+    else if ([currentAlarm.alarmType isEqualToString:@"quick"]) {
+        //delete the alarm
+        [AlarmMethods deleteAlarm:notif];
+    }
+    else { //advanced alarm
+        // otherwise, delete the alarm notification
+        // if it's a snooze notificaion, it won't be in the alarmNotif array, so nothing will change
+        NSLog(@"currentAlarm.alarmNotifs BEFORE deleting the notificatin: \n");
+        [currentAlarm printNotifs];
+        NSLog(@"currentAlarm.alarmNotifs AFTER deleting the notificatin: \n");
+        [currentAlarm printNotifs];
+    }
+}
+
 - (void)alertView:(UIAlertView *)alertView
 clickedButtonAtIndex:(NSInteger)buttonIndex {
     
@@ -158,20 +179,20 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
     //no more snoozes left
     if ([alertView numberOfButtons] == 1) {
         //delete the alarm
-        [AlarmMethods deleteAlarm:self.lastNotif];
+        [self deleteAlarmNotifFromAlarmNotifs:self.lastNotif];
         [self goToGoodMorning];
     }
     //snoozes left and choose to go to good morning page
     else if (buttonIndex == 1) {
         //delete the alarm
-        [AlarmMethods deleteAlarm:self.lastNotif];
+        [self deleteAlarmNotifFromAlarmNotifs:self.lastNotif];
         [self goToGoodMorning];
     }
     
     //snooze
     else {
-        [[UIApplication sharedApplication] cancelAllLocalNotifications];
         [AlarmMethods scheduleSnoozeNotificationWithLastNotification:self.lastNotif];
+        // don't delete the alarm- only delete when go to good morning page
     }
 }
 
@@ -180,7 +201,9 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
 didReceiveLocalNotification:(UILocalNotification *)notification
 {
     UIApplicationState state = [application applicationState];
+    // set the current alarm
     self.lastNotif = notification;
+    currentAlarm = [AlarmMethods getAlarmFromNotif:notification];
     if (state == UIApplicationStateActive) {
         NSLog(@"Getting an alert while in the app");
         
@@ -202,10 +225,7 @@ didReceiveLocalNotification:(UILocalNotification *)notification
                                         delegate:self cancelButtonTitle:@"Snooze"
                                otherButtonTitles:@"Morning Report", nil];
         }
-        
-        [application cancelAllLocalNotifications];
         [alertView show];
-        //[deleteAlarm deleteAlarm:notification];
         application.applicationIconBadgeNumber = 0;
         
         // play the music
@@ -216,8 +236,10 @@ didReceiveLocalNotification:(UILocalNotification *)notification
         
     }
     
+    // The app is running in the background (inactive state)
     else {
-        [AlarmMethods deleteAlarm:notification];
+        //delete the notification from the alarm's set
+        [self deleteAlarmNotifFromAlarmNotifs:notification];
         [self goToGoodMorning];
     }
 }

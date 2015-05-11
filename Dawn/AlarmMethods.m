@@ -15,21 +15,7 @@
 + (void)deleteAlarm:(UILocalNotification *)notification {
     
     //delete the alarm
-    NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:[notification.userInfo objectForKey:@"alarmData"]];
-    DawnAlarm *alarm = [DawnAlarm new];
-    alarm = [alarm initWithCoder:unarchiver];
-    [alarm.prefs printPreferences];
-    DawnAlarm *tbd;
-    
-    for (DawnAlarm *identifier in currentUser.myAlarms) {
-        NSLog(@"Does %@ match %@?", identifier, alarm);
-        
-        if ([identifier isEqual:alarm]) { //here isEqual means same hash value
-            NSLog(@"They are equal");
-            tbd = identifier;
-            break;
-        }
-    }
+    DawnAlarm *tbd = [AlarmMethods getAlarmFromNotif:notification];
     if (tbd != nil) {
         NSLog(@"Alarm %@ is being deleted", tbd.name);
         NSLog(@"Alarm has reference %@", tbd);
@@ -75,6 +61,38 @@
     // Schedule it with the app
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     //[localNotification release];
+    
+    //delete the old notification from the alarm's notification array (as long as it's not the first) and add the new one
+    DawnAlarm* alarmToChange = [AlarmMethods getAlarmFromNotif:lastNotif];
+    NSLog(@"Current notifications in list BEFORE deletions are :");
+    [alarmToChange printNotifs];
+    NSLog(@"lastNotif has fireDate of %@", lastNotif.fireDate);
+    
+    //If not the first one, then delete the lastNotif
+    if (!([alarmToChange.prefs.maxSnooze intValue] - ([newMaxSnooze intValue]+1))) {
+        [alarmToChange.alarmNotifs removeObject:lastNotif];
+        NSLog(@"Current notifications in list AFTER deletions and BEFORE adding are :");
+        [alarmToChange printNotifs];
+    }
+    
+    [alarmToChange.alarmNotifs addObject:localNotification];
+    NSLog(@"Current notifications in list AFTER adding are :");
+    [alarmToChange printNotifs];
+}
+
++ (DawnAlarm *) getAlarmFromNotif:(UILocalNotification *) thisNotif {
+    NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:[thisNotif.userInfo objectForKey:@"alarmData"]];
+    DawnAlarm* newAlarm = [[DawnAlarm alloc] initWithCoder:unarchiver];
+    for (DawnAlarm* a in currentUser.myAlarms) {
+        if([a isEqual:newAlarm]) {
+            newAlarm = a;
+            NSLog(@"Found a match for the current alarm!");
+            // if it's a snooze notificaion, it won't be in the alarmNotif array, so nothing will change
+            return newAlarm;
+        }
+    }
+    NSLog(@"No match found");
+    return nil;
 }
 
 @end

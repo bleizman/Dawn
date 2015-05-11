@@ -12,10 +12,12 @@
 
 extern UITableView *alarmTable;
 extern DawnUser *currentUser;
+extern DawnAlarm *currentAlarm;
 
 @interface AlarmMethods : NSObject
 
 + (void)deleteAlarm:(UILocalNotification *)notification;
 + (void) scheduleSnoozeNotificationWithLastNotification: (UILocalNotification *) lastNotif;
++ (DawnAlarm *) getAlarmFromNotif:(UILocalNotification *) thisNotif;
 
 @end

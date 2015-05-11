@@ -18,10 +18,13 @@
 @property BOOL isOn;
 @property BOOL isNew; //don't think we need this but leaving it just in case
 @property NSString *alarmType;
+@property NSMutableSet *alarmNotifs;
 
 // initialize with Name, Date, and Default prefs
 - (id)initWithName:(NSString*) name andTime:(NSDate*) time andPrefs: (DawnPreferences*) prefs andType:(NSString*) type;
 
 - (id)initWithCoder:(NSCoder *)aDecoder;
+
+- (void) printNotifs;
 
 @end

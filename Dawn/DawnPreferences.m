@@ -65,6 +65,7 @@
 -(void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:self.name forKey:@"pName"];
+    [aCoder encodeBool:self.snooze forKey: @"pSnooze"];
     [aCoder encodeBool:self.weather forKey: @"pWeather"];
     [aCoder encodeBool:self.nyTimesNews forKey: @"pNews"];
     [aCoder encodeBool:self.redditNews forKey:@"pReddit"];
@@ -82,6 +83,7 @@
     self = [super init];
     if (self) {
         _name = [aDecoder decodeObjectForKey:@"pName"];
+        _snooze = [aDecoder decodeBoolForKey:@"pSnooze"];
         _weather = [aDecoder decodeBoolForKey:@"pWeather"];
         _nyTimesNews = [aDecoder decodeBoolForKey:@"pNews"];
         _redditNews = [aDecoder decodeBoolForKey:@"pReddit"];

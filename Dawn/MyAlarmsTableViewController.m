@@ -11,6 +11,7 @@
 #import "DawnUser.h"
 #import "AppDelegate.h"
 #import "GoodMorningViewController.h"
+#import "NewAlarmViewController.h"
 
 @interface MyAlarmsTableViewController ()
 
@@ -66,9 +67,6 @@
     
     DawnAlarm *alarmobj = [currentUser.myAlarms objectAtIndex:indexPath.row];
     
-    /*if (!alarmobj.isNew) //don't need this
-        return cell;*/
-    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.timeStyle = NSDateFormatterShortStyle;
     NSString *myAlarmTime = [dateFormatter stringFromDate:alarmobj.alarmTime];
@@ -86,16 +84,36 @@
     
     [mySwitch addTarget:self action:@selector(alarmSwitchChanged:) forControlEvents:UIControlEventValueChanged];
     
-    alarmobj.isNew = false;
     return cell;
 }
 
 - (void) alarmSwitchChanged:(id)sender {
     UISwitch *oldSwitch = sender;
     DawnAlarm *alarm = [currentUser.myAlarms objectAtIndex:oldSwitch.tag];
-    if (alarm.isOn)
+    if (alarm.isOn) {
         alarm.isOn = false;
-    else alarm.isOn = true;
+        // set turn delete all notifications for that alarm
+        NSLog(@"Alarm notifs before deletion are :\n");
+        [alarm printNotifs];
+        for (UILocalNotification *notif in alarm.alarmNotifs) {
+            NSLog(@"Notification to delete has firedate %@", notif.fireDate);
+            [[UIApplication sharedApplication] cancelLocalNotification:notif];
+        }
+        [alarm.alarmNotifs removeAllObjects];
+        NSLog(@"Alarm notifs after deletion are :\n");
+        [alarm printNotifs];
+    }
+    else {
+        alarm.isOn = true;
+        // reset the notifcations for the turned-off alarm
+        NSLog(@"Alarm notifs BEFORE addition are :\n");
+        [alarm printNotifs];
+        
+        [NewAlarmViewController addNotifs:alarm];
+        
+        NSLog(@"Alarm notifs AFTER addition are :\n");
+        [alarm printNotifs];
+    }
     NSLog( @"Alarm being printed is of the name %@", alarm.name);
     NSLog( @"The switch is now %@", alarm.isOn ? @"ON" : @"OFF" );
 }
@@ -119,9 +137,6 @@
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
         NSLog(@"Deleted alarm entitled '%@'", alarmobj.name);
         NSLog(@"Alarms left are %@", currentUser.myAlarms.description);
-        //[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        //^^ maybe this instead?
-        //[tableView reloadData];
     }
 }
 
@@ -149,13 +164,6 @@
     [currentUser.myAlarms removeObjectAtIndex:sourceIndexPath.row];
     [currentUser.myAlarms insertObject:alarm atIndex:destinationIndexPath.row];
 }
-
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
 
 /*
 // Override to support conditional rearranging of the table view.
