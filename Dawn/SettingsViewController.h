@@ -11,7 +11,7 @@
 
 extern DawnUser *currentUser;
 
-@interface SettingsViewController : UIViewController
+@interface SettingsViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 
 
 @end
