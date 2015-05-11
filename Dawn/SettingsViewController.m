@@ -10,6 +10,10 @@
 #import <Parse/Parse.h>
 
 @interface SettingsViewController ()
+{
+    NSArray *_snoozeTimePickerData;
+    NSArray *_maxSnoozePickerData;
+}
 @property (weak, nonatomic) IBOutlet UISwitch *SportsSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *NewYorkTimesSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *RedditSwitch;
@@ -19,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UIView *NewsView;
 @property (weak, nonatomic) IBOutlet UIView *SnoozeView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *PanelSwitcher;
+@property (weak, nonatomic) IBOutlet UIPickerView *snoozeTimePicker;
+@property (weak, nonatomic) IBOutlet UIPickerView *maxSnoozePicker;
 
 @end
 
@@ -42,7 +48,46 @@
     self.originalCenter = self.view.center;
     
     self.SnoozeView.hidden = YES;
+    
+    // Do any additional setup after loading the view.
+    // Initialize Data
+    _snoozeTimePickerData = @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"12", @"15", @"20", @"30"];
+    
+    _maxSnoozePickerData = @[@"1", @"2", @"3", @"4", @"5", @"10"];
+    
+    // Connect data to picker views
+    self.snoozeTimePicker.dataSource = self;
+    self.snoozeTimePicker.delegate = self;
+    self.maxSnoozePicker.dataSource = self;
+    self.maxSnoozePicker.delegate = self;
 }
+
+
+
+// The number of columns of data in picker view
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+// The number of rows of data in picker view
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    if(pickerView == _snoozeTimePicker){
+        return _snoozeTimePickerData.count;
+    }
+    else return _maxSnoozePickerData.count;
+}
+
+// The data to return for the row and component (column) that's being passed in to picker view
+- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    if(pickerView == _snoozeTimePicker)
+        return _snoozeTimePickerData[row];
+    else return _maxSnoozePickerData[row];
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
