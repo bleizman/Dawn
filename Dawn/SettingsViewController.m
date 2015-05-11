@@ -16,6 +16,9 @@
 @property (weak, nonatomic) IBOutlet UISwitch *WeatherSwitch;
 @property (weak, nonatomic) IBOutlet UITextField *ZipCodeField;
 @property CGPoint originalCenter;
+@property (weak, nonatomic) IBOutlet UIView *NewsView;
+@property (weak, nonatomic) IBOutlet UIView *SnoozeView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *PanelSwitcher;
 
 @end
 
@@ -37,6 +40,8 @@
     [self.view addGestureRecognizer:tap];
     
     self.originalCenter = self.view.center;
+    
+    self.SnoozeView.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -132,6 +137,18 @@
 - (IBAction)DoneEditing {
     [self.ZipCodeField resignFirstResponder];
 }
+- (IBAction)PanelSwitch:(id)sender {
+    if(self.PanelSwitcher.selectedSegmentIndex == 0){
+        self.NewsView.hidden = NO;
+        self.SnoozeView.hidden = YES;
+    }
+    if(self.PanelSwitcher.selectedSegmentIndex == 1){
+        self.NewsView.hidden = YES;
+        self.SnoozeView.hidden = NO;
+    }
+    
+}
+
 
 /*
 #pragma mark - Navigation
