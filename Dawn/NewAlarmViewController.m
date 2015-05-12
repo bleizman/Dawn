@@ -5,7 +5,6 @@
 //  Created by Ben Leizman on 4/16/15.
 //  Copyright (c) 2015 Dawnteam. All rights reserved.
 //
-
 #import "NewAlarmViewController.h"
 #import "MyAlarmsTableViewController.h"
 #import "DawnUser.h"
@@ -39,7 +38,7 @@ DawnAlarm* alarmToAdd;
 }
 
 - (IBAction)unwindToNewAlarm:(UIStoryboardSegue *)segue {
-    
+
 }
 
 - (void) setDate:(NSDate*) date andName:(NSString*) thisname {
@@ -132,15 +131,14 @@ DawnAlarm* alarmToAdd;
             NSLog(@"Repeat interval = this week only");
         }
         else if ([[newAlarm.prefs.repeatWeeks objectForKey:@"Every week"] intValue]) { //Has value of 1
-            calUnit = NSCalendarUnitMinute; //NSCalendarUnitWeekOfMonth //Doing a minute exclusively for testing purposes
+            calUnit = NSWeekCalendarUnit; //Change to NSCalendarUnitMinute for testing purposes
             NSLog(@"Repeat interval = every week");
         }
         //Should never hit here, because automatically starts with "This week only" selected
         else NSLog(@"There is an error!");
         
         //set alarms for each day that is selected
-        NSArray *array = [newAlarm.prefs.repeatDays allKeys];
-        if ([array indexOfObject:@"sun"] != NSNotFound) { // means that array contains @"sun"
+        if ([[newAlarm.prefs.repeatDays objectForKey:@"sun"] intValue]) { // means that sunday is set
             //set an alarm for next sunday
             long daysInFuture = weekday-1; //1 is Sunday
             if (daysInFuture < 0) daysInFuture += 7;
@@ -149,7 +147,7 @@ DawnAlarm* alarmToAdd;
             [newAlarm.alarmNotifs addObject:newNotif];
             NSLog(@"Alarm is being added on date: %@", [date description]);
         }
-        if ([array indexOfObject:@"mon"] != NSNotFound) {
+        if ([[newAlarm.prefs.repeatDays objectForKey:@"mon"] intValue]) {
             //set an alarm for next monday
             long daysInFuture = weekday-2; //2 is Monday
             if (daysInFuture < 0) daysInFuture += 7;
@@ -158,7 +156,7 @@ DawnAlarm* alarmToAdd;
             [newAlarm.alarmNotifs addObject:newNotif];
             NSLog(@"Alarm is being added on date: %@", [date description]);
         }
-        if ([array indexOfObject:@"tue"] != NSNotFound) {
+        if ([[newAlarm.prefs.repeatDays objectForKey:@"tue"] intValue]) {
             //set an alarm for next tuesday
             long daysInFuture = weekday-3; //3 is tuesday
             if (daysInFuture < 0) daysInFuture += 7;
@@ -167,7 +165,7 @@ DawnAlarm* alarmToAdd;
             [newAlarm.alarmNotifs addObject:newNotif];
             NSLog(@"Alarm is being added on date: %@", [date description]);
         }
-        if ([array indexOfObject:@"wed"] != NSNotFound) {
+        if ([[newAlarm.prefs.repeatDays objectForKey:@"wed"] intValue]) {
             //set an alarm for next wednesday
             long daysInFuture = weekday-4; //4 is wednesday
             if (daysInFuture < 0) daysInFuture += 7;
@@ -176,7 +174,7 @@ DawnAlarm* alarmToAdd;
             [newAlarm.alarmNotifs addObject:newNotif];
             NSLog(@"Alarm is being added on date: %@", [date description]);
         }
-        if ([array indexOfObject:@"thu"] != NSNotFound) {
+        if ([[newAlarm.prefs.repeatDays objectForKey:@"thu"] intValue]) {
             //set an alarm for next thursday
             long daysInFuture = weekday-5; //5 is thursday
             if (daysInFuture < 0) daysInFuture += 7;
@@ -185,7 +183,7 @@ DawnAlarm* alarmToAdd;
             [newAlarm.alarmNotifs addObject:newNotif];
             NSLog(@"Alarm is being added on date: %@", [date description]);
         }
-        if ([array indexOfObject:@"fri"] != NSNotFound) {
+        if ([[newAlarm.prefs.repeatDays objectForKey:@"fri"] intValue]) {
             //set an alarm for next friday
             long daysInFuture = weekday-6; //6 is friday
             if (daysInFuture < 0) daysInFuture += 7;
@@ -194,7 +192,7 @@ DawnAlarm* alarmToAdd;
             [newAlarm.alarmNotifs addObject:newNotif];
             NSLog(@"Alarm is being added on date: %@", [date description]);
         }
-        if ([array indexOfObject:@"sat"] != NSNotFound) {
+        if ([[newAlarm.prefs.repeatDays objectForKey:@"sat"] intValue]) {
             //set an alarm for next saturday
             long daysInFuture = weekday-7; //7 is saturday
             if (daysInFuture < 0) daysInFuture += 7;

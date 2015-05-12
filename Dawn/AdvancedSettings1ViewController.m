@@ -71,6 +71,25 @@ DawnPreferences *prefs;
     // set zipcode button
     if ([self.zipField.text isEqualToString:@""])
         self.zipField.text = currentUser.preferences.zipCode;
+    
+    // set the current day's button to be pressed if alarm is set for that day
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:(NSCalendarUnitWeekday) fromDate:[NSDate date]];
+    long weekday = [components weekday];
+    if (weekday == 1)
+        self.sunButton.selected = YES;
+    else if (weekday == 2)
+        self.monButton.selected = YES;
+    else if (weekday == 3)
+        self.tueButton.selected = YES;
+    else if (weekday == 4)
+        self.wedButton.selected = YES;
+    else if (weekday == 5)
+        self.thuButton.selected = YES;
+    else if (weekday == 6)
+        self.friButton.selected = YES;
+    else if (weekday == 7)
+        self.sunButton.selected = YES;
+    else NSLog(@"It's messed up");
 }
 
 - (void)didReceiveMemoryWarning {
@@ -254,12 +273,6 @@ DawnPreferences *prefs;
         [self setToAdvancedPreferences3];
         [NewAlarmViewController setAlarmAndNotifwithPrefs:prefs];
     }
-    
-    
-    
-    // THIS IS A BUG BUT WILL ALWAYS SAVE THE ALARM (CAN'T CANCEL ALARM ONCE IT IS MADE)
-    
-    
 }
 
 @end
