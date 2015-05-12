@@ -987,7 +987,10 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yZ3-iI-T57">
-                                <rect key="frame" x="145" y="532" width="311" height="29"/>
+                                <rect key="frame" x="173" y="532" width="255" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="255" id="eZ9-Ij-XaI"/>
+                                </constraints>
                                 <segments>
                                     <segment title="This week only"/>
                                     <segment title="Every week"/>
@@ -1078,6 +1081,7 @@
                             <constraint firstItem="m7Z-fv-7NF" firstAttribute="top" secondItem="mtT-Mh-rru" secondAttribute="bottom" id="rxH-no-7V0"/>
                             <constraint firstItem="m7Z-fv-7NF" firstAttribute="top" secondItem="cdM-pJ-Fuv" secondAttribute="bottom" constant="2" id="sna-xm-3jS"/>
                             <constraint firstItem="waE-1h-Pyi" firstAttribute="leading" secondItem="mtT-Mh-rru" secondAttribute="leading" constant="8" id="uhn-Cj-rmy"/>
+                            <constraint firstAttribute="centerX" secondItem="yZ3-iI-T57" secondAttribute="centerX" id="xqx-fx-A58"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -1086,8 +1090,10 @@
                                 <exclude reference="Ltn-Oh-jTN"/>
                                 <exclude reference="SJj-oh-UJI"/>
                                 <exclude reference="fEn-gJ-2va"/>
+                                <exclude reference="Dtk-3p-C0d"/>
                                 <exclude reference="QYL-1l-zdg"/>
                                 <exclude reference="dxL-xY-XFq"/>
+                                <exclude reference="IRM-y7-qQq"/>
                                 <exclude reference="HSm-WZ-UAe"/>
                                 <exclude reference="P4R-Pl-dkw"/>
                             </mask>
