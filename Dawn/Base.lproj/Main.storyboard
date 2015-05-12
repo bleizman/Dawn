@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="P16-CJ-aQj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="P16-CJ-aQj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -455,6 +455,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Advanced Settings 1/3" id="1Z4-pF-pul">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="93v-cS-eL7"/>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="xnC-b0-U0f">
                             <connections>
                                 <segue destination="FnB-yB-OaI" kind="show" id="Hk5-6S-iCe"/>
@@ -708,6 +709,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Advanced Settings 2/3" id="8DX-CS-QkA">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="BY6-9C-iAb">
+                            <connections>
+                                <segue destination="S5m-SJ-4Sa" kind="unwind" unwindAction="unwindToNewAlarm:" id="Ihd-9r-j6v"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="ZHb-WV-l4b">
                             <connections>
                                 <segue destination="Xlh-tf-84o" kind="show" id="SCU-xS-ksO"/>
@@ -724,6 +730,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SWK-lg-uzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="S5m-SJ-4Sa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3041" y="-1604"/>
         </scene>
@@ -1090,16 +1097,21 @@
                                 <exclude reference="Ltn-Oh-jTN"/>
                                 <exclude reference="SJj-oh-UJI"/>
                                 <exclude reference="fEn-gJ-2va"/>
+                                <exclude reference="IRM-y7-qQq"/>
                                 <exclude reference="Dtk-3p-C0d"/>
                                 <exclude reference="QYL-1l-zdg"/>
                                 <exclude reference="dxL-xY-XFq"/>
-                                <exclude reference="IRM-y7-qQq"/>
                                 <exclude reference="HSm-WZ-UAe"/>
                                 <exclude reference="P4R-Pl-dkw"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Advanced Settings 3/3" id="nxS-FM-6L7">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Z0b-un-HoU">
+                            <connections>
+                                <segue destination="6al-9j-INz" kind="unwind" unwindAction="unwindToNewAlarm:" id="JXy-S2-xWE"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Create Alarm!" id="UjS-3B-JJv">
                             <connections>
                                 <segue destination="6al-9j-INz" kind="unwind" unwindAction="unwindToNewAlarm:" id="ryj-b0-g2R"/>
