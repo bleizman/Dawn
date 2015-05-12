@@ -33,7 +33,6 @@
     NSLog(@"Getting an alert while not in the app");
     UILocalNotification *notif =
     [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
-    
     // Override point for customization after application launch.
     if (notif) {
         // set the current alarm

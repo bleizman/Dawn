@@ -7,6 +7,7 @@
 //
 
 #import "DawnUser.h"
+#import <UIKit/UIKit.h>
 
 @implementation DawnUser
 
@@ -67,6 +68,11 @@
 // Delete an Alarm from the array
 - (void) deleteAlarm:(DawnAlarm*) deleteThisAlarm
 {
+    // cancel all notifications
+    for (UILocalNotification* notif in deleteThisAlarm.alarmNotifs) {
+        [[UIApplication sharedApplication] cancelLocalNotification:notif];
+    }
+    [deleteThisAlarm.alarmNotifs removeAllObjects];
     // code here to delete alarm from the set
     [_myAlarms removeObject: deleteThisAlarm];
 }
