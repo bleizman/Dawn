@@ -455,10 +455,14 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Advanced Settings 1/3" id="1Z4-pF-pul">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="93v-cS-eL7"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="93v-cS-eL7">
+                            <connections>
+                                <segue destination="5ea-7k-w4Z" kind="unwind" unwindAction="unwindToNewAlarm:" id="3Vp-M9-0AV"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="xnC-b0-U0f">
                             <connections>
-                                <segue destination="FnB-yB-OaI" kind="show" id="Hk5-6S-iCe"/>
+                                <segue destination="ezP-Rw-GMd" kind="show" id="Hk5-6S-iCe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -472,6 +476,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C8C-eY-nbX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5ea-7k-w4Z" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2294" y="-1604"/>
         </scene>
@@ -709,14 +714,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Advanced Settings 2/3" id="8DX-CS-QkA">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="BY6-9C-iAb">
-                            <connections>
-                                <segue destination="S5m-SJ-4Sa" kind="unwind" unwindAction="unwindToNewAlarm:" id="Ihd-9r-j6v"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="ZHb-WV-l4b">
                             <connections>
-                                <segue destination="Xlh-tf-84o" kind="show" id="SCU-xS-ksO"/>
+                                <segue destination="VaO-A7-qFk" kind="show" id="SCU-xS-ksO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -730,9 +730,8 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SWK-lg-uzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="S5m-SJ-4Sa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3041" y="-1604"/>
+            <point key="canvasLocation" x="3853" y="-1604"/>
         </scene>
         <!--Advanced Settings 3/3-->
         <scene sceneID="jDG-SQ-FbE">
@@ -1107,11 +1106,6 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Advanced Settings 3/3" id="nxS-FM-6L7">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Z0b-un-HoU">
-                            <connections>
-                                <segue destination="6al-9j-INz" kind="unwind" unwindAction="unwindToNewAlarm:" id="JXy-S2-xWE"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Create Alarm!" id="UjS-3B-JJv">
                             <connections>
                                 <segue destination="6al-9j-INz" kind="unwind" unwindAction="unwindToNewAlarm:" id="ryj-b0-g2R"/>
@@ -1134,7 +1128,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yYA-EB-jzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="6al-9j-INz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3769" y="-1604"/>
+            <point key="canvasLocation" x="5393" y="-1604"/>
         </scene>
         <!--Alarm Created View Controller-->
         <scene sceneID="l1p-nr-W9V">
@@ -1488,7 +1482,7 @@
                                             <constraint firstAttribute="height" constant="30" id="okE-ZQ-16p"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snooze length" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSO-E8-34M">
@@ -1499,7 +1493,7 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="293" id="jnK-ud-JOY"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -1518,7 +1512,7 @@
                                                     <constraint firstAttribute="width" constant="58" id="TAc-fR-Vjz"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CMl-QB-jYl">
@@ -1636,7 +1630,6 @@
                         <outlet property="maxSnoozePicker" destination="q44-EM-oWt" id="tbB-zl-9Hn"/>
                         <outlet property="snoozeLengthLabel" destination="nSO-E8-34M" id="nqq-Sv-CLL"/>
                         <outlet property="snoozeTimePicker" destination="zRX-TR-I30" id="iae-ev-KLs"/>
-                        <segue destination="6eA-Z0-w0c" kind="show" identifier="goodMorning" id="08z-tb-ybL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GO7-ux-gXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2038,6 +2031,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UZm-5R-emB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-264" y="-840"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5in-q1-RcO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VaO-A7-qFk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="q75-e4-xyU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Xlh-tf-84o" kind="relationship" relationship="rootViewController" id="tcm-Jk-FMo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hDQ-fx-ofF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4581" y="-1604"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6Ei-Wm-WL6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ezP-Rw-GMd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qsg-9N-Bms">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FnB-yB-OaI" kind="relationship" relationship="rootViewController" id="dQT-8I-G70"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OXP-mK-W0H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3041" y="-1604"/>
         </scene>
     </scenes>
     <resources>
