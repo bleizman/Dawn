@@ -8,6 +8,7 @@
 
 #import "AdvancedSettings1ViewController.h"
 #import "DawnPreferences.h"
+#import <Parse/Parse.h>
 
 DawnPreferences *prefs;
 
@@ -71,6 +72,7 @@ DawnPreferences *prefs;
     // set zipcode button
     if ([self.zipField.text isEqualToString:@""])
         self.zipField.text = currentUser.preferences.zipCode;
+    
     
     // set the current day's button to be pressed if alarm is set for that day
     NSDateComponents *components = [[NSCalendar currentCalendar] components:(NSCalendarUnitWeekday) fromDate:[NSDate date]];
@@ -244,6 +246,31 @@ DawnPreferences *prefs;
 
 - (IBAction)EndEditZipCode:(id)sender {
     self.view.center = self.originalCenter;
+    if(self.zipField.text.length == 5){
+        currentUser.preferences.zipCode = self.zipField.text;
+        
+        //Check if zipcode exists in database
+        PFQuery *query = [PFQuery queryWithClassName:@"Weather"];
+        [query whereKey:@"zipcode" equalTo:self.zipField.text];
+        NSArray* weatherarray = [query findObjects];
+        
+        //If it does not, add it!
+        if ([weatherarray count] <= 0){
+            NSLog(@"Zipcode does not exist in database");
+            PFObject *weather = [PFObject objectWithClassName:@"Weather"];
+            weather[@"zipcode"] = self.zipField.text;
+            [weather saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    NSLog(@"Sucessfully saved zipcode to database!");
+                } else {
+                    NSLog(@"Error in saving zipcode to database.");
+                }
+            }];
+        }
+        else {
+            NSLog(@"Zipcode already exists in database");
+        }
+    }
 }
 
 
