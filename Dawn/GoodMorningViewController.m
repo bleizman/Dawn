@@ -42,9 +42,11 @@
     }
     
     
-    if(currentPrefs.weather) {
+    if(currentPrefs.weather && currentPrefs.zipCode != nil) {
         
         query = [PFQuery queryWithClassName:@"Weather"];
+        if (currentPrefs.zipCode == nil)
+            currentPrefs.zipCode  = @"1";
         [query whereKey:@"zipcode" equalTo:currentPrefs.zipCode];
         NSArray* weatherarray = [query findObjects];
         
@@ -90,20 +92,17 @@
     
     
     if(currentPrefs.sportsNews) {
-        [builderText appendString:@"\n\nESPN News:\n"];
+        [builderText appendString:@"\n\nSports News:\n"];
         
         query = [PFQuery queryWithClassName:@"Sports"];
         NSArray* sportsArray = [query findObjects];
         
         for (PFObject *sports in sportsArray) {
             
-            myString = sports[@"text"];
+            myString = sports[@"title"];
             if (myString != nil) {
                 NSLog(@"%@", myString);
-                NSString *sport = sports[@"sport"];
                 [builderText appendString:@"-"];
-                [builderText appendString:sport];
-                [builderText appendString:@": "];
                 [builderText appendString:myString];
                 [builderText appendString:@"\n   "];
                 
