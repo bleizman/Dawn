@@ -195,7 +195,7 @@
                     <navigationItem key="navigationItem" title="New Alarm" id="Gvr-9O-g1V"/>
                     <connections>
                         <outlet property="advancedSettingsButton" destination="NNa-rs-mlU" id="RDR-x4-tHY"/>
-                        <outlet property="alarmDatePicker" destination="HPA-eJ-c0l" id="heZ-39-Q6g"/>
+                        <outlet property="alarmDatePicker" destination="HPA-eJ-c0l" id="tkE-OQ-L4a"/>
                         <outlet property="alarmLabel" destination="Nqy-Cc-t7M" id="RpI-Vi-6eO"/>
                         <outlet property="createNewAlarm" destination="0bC-vm-szE" id="Pf6-V6-ynm"/>
                         <outlet property="labelTextField" destination="Nqy-Cc-t7M" id="x6u-hn-IAv"/>

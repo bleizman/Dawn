@@ -17,6 +17,8 @@
 #import "GoodMorningViewController.h"
 #import "AlarmMethods.h"
 
+extern UIDatePicker *datePicker;
+
 @interface AppDelegate ()
 
 @property BOOL isBackground;
@@ -96,6 +98,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     application.applicationIconBadgeNumber = 0;
+    [datePicker setDate:[NSDate date] animated:NO];
     
     // Necissary for FB interface
     [FBSDKAppEvents activateApp];

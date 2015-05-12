@@ -29,7 +29,7 @@ DawnAlarm* alarmToAdd;
     [self.view addGestureRecognizer:tap];
     NSLog(@"Default number is %d", [currentUser.defaultNumber intValue]);
     secInDay = 86400; //The number of seconds in a day
-    
+    datePicker = self.alarmDatePicker;
 }
 
 - (void)didReceiveMemoryWarning {

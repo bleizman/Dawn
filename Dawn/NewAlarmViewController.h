@@ -14,7 +14,7 @@ extern DawnUser *currentUser;
 extern UITableView *alarmTable;
 NSDate *selectedDate;
 NSString *name;
-
+UIDatePicker *datePicker;
 
 @interface NewAlarmViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *alarmLabel;
