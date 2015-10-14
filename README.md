@@ -1,6 +1,10 @@
 # Dawn
 Dawn's main repo, COS 333 project
 
+Report: https://drive.google.com/file/d/0Bz-nBSkMKxU4UEhyM3o1Ty01dDQ/view?usp=sharing
+Internal Documentation: https://drive.google.com/file/d/0B5i0czrr9zCxTW82ZHFUQ2lJX1k/view?usp=sharing
+DemoDay Powerpoint: https://docs.google.com/presentation/d/10L1ZKFx5WQI5XGuz_c2zhgV1pEh7ENTz_a2KDfzv-K0/edit?usp=sharing
+
 Authors:
 Ben Leizman, bleizman 
 Colter Smith, crsmith
